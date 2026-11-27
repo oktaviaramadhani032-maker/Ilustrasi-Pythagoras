@@ -1,0 +1,1929 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ilustrasi Interaktif Triple Pythagoras</title>
+<style>
+html { background: #3E6B4A; }
+body { margin: 0; padding: 16px 12px 32px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+section { width: 100%; max-width: 1000px; }
+iframe { display: block; width: 100%; aspect-ratio: 1000 / 740; border: 0; background: transparent; }
+</style>
+</head>
+<body>
+<section><iframe title="Ilustrasi 1: Apa itu Triple Pythagoras?" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;id&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Ilustrasi Triple 1 Apa itu Triple Pythagoras&lt;/title&gt;
+
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Lora:ital,wght@1,600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body { margin: 0; }
+button { font-family: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #C9822B; outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+.press { transition: transform .12s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }
+.press:hover:not(:disabled) { transform: translateY(-1px); }
+.press:active:not(:disabled) { transform: scale(.96); }
+.go { min-height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: #2F5D3A; color: #FBF3DC; font-weight: 800; font-size: 16px; }
+.go:hover:not(:disabled) { background: #244A2E; }
+.stp { width: 44px; height: 44px; flex: none; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-size: 22px; font-weight: 700; line-height: 1; padding: 0; }
+.stp:hover:not(:disabled) { background: #FFF6DC; border-color: #C98B3C; }
+.stp:disabled { opacity: .4; }
+.btn { min-height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-weight: 700; font-size: 15px; line-height: 20px; }
+.btn:hover:not(:disabled) { background: #FFF6DC; }
+.btn.on, .btn.on:hover:not(:disabled) { background: #2F5D3A; border-color: #2F5D3A; color: #FBF3DC; }
+.rowc { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 14px; padding: 3px 6px 3px 12px; }
+.off { display: none; }
+
+/* efek ledakan titik warna */
+.burst { position: absolute; width: 0; height: 0; pointer-events: none; }
+.arm { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.dot { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; opacity: 0; }
+.arm:nth-child(even) .dot { width: 7px; height: 7px; left: -3.5px; top: -3.5px; }
+.r0 { transform: rotate(0deg); }
+.r1 { transform: rotate(30deg); }
+.r2 { transform: rotate(60deg); }
+.r3 { transform: rotate(90deg); }
+.r4 { transform: rotate(120deg); }
+.r5 { transform: rotate(150deg); }
+.r6 { transform: rotate(180deg); }
+.r7 { transform: rotate(210deg); }
+.r8 { transform: rotate(240deg); }
+.r9 { transform: rotate(270deg); }
+.r10 { transform: rotate(300deg); }
+.r11 { transform: rotate(330deg); }
+.c0 .dot { background: #F2B01E; }
+.c1 .dot { background: #2F5D3A; }
+.c2 .dot { background: #B8520A; }
+.c3 .dot { background: #2A63A8; }
+.fxA .dot { animation: outA .85s ease-out both; }
+.fxB .dot { animation: outB .85s ease-out both; }
+@keyframes outA {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+@keyframes outB {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+.riseA { animation: riseA .4s ease both; }
+.riseB { animation: riseB .4s ease both; }
+@keyframes riseA {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes riseB {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+.d1 { animation-delay: .02s; }
+.d2 { animation-delay: .12s; }
+.d3 { animation-delay: .22s; }
+.d4 { animation-delay: .32s; }
+.popA { animation: popA .45s cubic-bezier(.2, 1.5, .4, 1); }
+.popB { animation: popB .45s cubic-bezier(.2, 1.5, .4, 1); }
+@keyframes popA {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+@keyframes popB {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.ang { fill: rgba(226, 169, 74, .4); stroke: #8A4B0F; transition: fill .25s ease, stroke .25s ease; }
+.ang.right { fill: rgba(47, 93, 58, .32); stroke: #2F5D3A; }
+.verdict { border-radius: 16px; padding: 10px 16px; border: 2px solid #D9C48F; background: #FFFFFF; display: flex; flex-direction: column; gap: 4px; }
+.verdict.right { background: #DDEBCF; border-color: #2F5D3A; }
+.verdict.wrong { background: #FFF1DA; border-color: #E2A94A; }
+.cA { color: #1D4780; }
+.cB { color: #145A3B; }
+.cC { color: #8F3B04; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+#stage { position: absolute; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;/div&gt;
+&lt;template id=&quot;tpl&quot;&gt;
+
+&lt;div style=&quot;width: 1000px; height: 740px; box-sizing: border-box; border: 14px solid #C98B3C; border-radius: 28px; background: #3E6B4A; padding: 18px 24px 22px; display: flex; flex-direction: column; gap: 12px; font-family: &#x27;Nunito&#x27;, system-ui, sans-serif; color: #6E1B1B&quot;&gt;
+
+&lt;div style=&quot;display: flex; flex-direction: column; align-items: center; gap: 8px&quot;&gt;
+&lt;div style=&quot;background: #FBF3DC; border: 4px solid #E2A94A; border-radius: 999px; padding: 4px 44px; font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 30px; line-height: 40px; font-weight: 600; color: #2F5D3A&quot;&gt;Ilustrasi&lt;/div&gt;
+&lt;div style=&quot;color: #FBF3DC; font-size: 16px; line-height: 24px; font-weight: 700&quot;&gt;Ilustrasi 1 · Apa itu Triple Pythagoras?&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-height: 0; background: #FBF3DC; border-radius: 18px; padding: 20px; box-sizing: border-box; display: flex; gap: 24px&quot;&gt;
+
+&lt;div style=&quot;flex: none; display: flex; flex-direction: column; gap: 8px&quot;&gt;
+&lt;div style=&quot;position: relative; width: 500px; height: 420px; box-sizing: content-box; background: linear-gradient(rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFF8E1 58%, #F3E6BD 100%); border: 3px solid #E2A94A; border-radius: 18px; overflow: hidden&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Segitiga dengan sisi a, b, dan c. Jenis segitiga ditentukan dengan membandingkan a kuadrat tambah b kuadrat dengan c kuadrat.&quot; width=&quot;500&quot; height=&quot;420&quot; viewBox=&quot;0 0 500 420&quot; style=&quot;display: block&quot;&gt;
+&lt;g class=&quot;{{triG}}&quot;&gt;
+&lt;polygon points=&quot;{{pts}}&quot; fill=&quot;{{triFill}}&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;5&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/polygon&gt;
+&lt;g stroke-width=&quot;7&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;&gt;
+&lt;line x1=&quot;{{sB.x1}}&quot; y1=&quot;{{sB.y1}}&quot; x2=&quot;{{sB.x2}}&quot; y2=&quot;{{sB.y2}}&quot; stroke=&quot;#1F7A55&quot;&gt;&lt;/line&gt;
+&lt;line x1=&quot;{{sA.x1}}&quot; y1=&quot;{{sA.y1}}&quot; x2=&quot;{{sA.x2}}&quot; y2=&quot;{{sA.y2}}&quot; stroke=&quot;#2A63A8&quot;&gt;&lt;/line&gt;
+&lt;line x1=&quot;{{sC.x1}}&quot; y1=&quot;{{sC.y1}}&quot; x2=&quot;{{sC.x2}}&quot; y2=&quot;{{sC.y2}}&quot; stroke=&quot;#B8520A&quot;&gt;&lt;/line&gt;
+&lt;/g&gt;
+&lt;path class=&quot;{{angCls}}&quot; d=&quot;{{angD}}&quot; stroke-width=&quot;2.5&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/path&gt;
+&lt;g font-family=&quot;&#x27;Lora&#x27;, serif&quot; font-style=&quot;italic&quot; font-weight=&quot;600&quot; font-size=&quot;32&quot; text-anchor=&quot;middle&quot; fill=&quot;#6E1B1B&quot;&gt;
+&lt;text x=&quot;{{vA.x}}&quot; y=&quot;{{vA.y}}&quot;&gt;A&lt;/text&gt;
+&lt;text x=&quot;{{vB.x}}&quot; y=&quot;{{vB.y}}&quot;&gt;B&lt;/text&gt;
+&lt;text x=&quot;{{vC.x}}&quot; y=&quot;{{vC.y}}&quot;&gt;C&lt;/text&gt;
+&lt;/g&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;23&quot; text-anchor=&quot;middle&quot;&gt;
+&lt;rect x=&quot;{{la.rx}}&quot; y=&quot;{{la.ry}}&quot; width=&quot;{{la.rw}}&quot; height=&quot;36&quot; rx=&quot;18&quot; fill=&quot;#FFFFFF&quot; stroke=&quot;#2A63A8&quot; stroke-width=&quot;3.5&quot;&gt;&lt;/rect&gt;
+&lt;text x=&quot;{{la.x}}&quot; y=&quot;{{la.y}}&quot; fill=&quot;#1D4780&quot;&gt;{{la.t}}&lt;/text&gt;
+&lt;rect x=&quot;{{lb.rx}}&quot; y=&quot;{{lb.ry}}&quot; width=&quot;{{lb.rw}}&quot; height=&quot;36&quot; rx=&quot;18&quot; fill=&quot;#FFFFFF&quot; stroke=&quot;#1F7A55&quot; stroke-width=&quot;3.5&quot;&gt;&lt;/rect&gt;
+&lt;text x=&quot;{{lb.x}}&quot; y=&quot;{{lb.y}}&quot; fill=&quot;#145A3B&quot;&gt;{{lb.t}}&lt;/text&gt;
+&lt;rect x=&quot;{{lc.rx}}&quot; y=&quot;{{lc.ry}}&quot; width=&quot;{{lc.rw}}&quot; height=&quot;36&quot; rx=&quot;18&quot; fill=&quot;#FFFFFF&quot; stroke=&quot;#B8520A&quot; stroke-width=&quot;3.5&quot;&gt;&lt;/rect&gt;
+&lt;text x=&quot;{{lc.x}}&quot; y=&quot;{{lc.y}}&quot; fill=&quot;#8F3B04&quot;&gt;{{lc.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;text x=&quot;{{angX}}&quot; y=&quot;{{angY}}&quot; text-anchor=&quot;middle&quot; font-family=&quot;&#x27;Fredoka&#x27;, sans-serif&quot; font-weight=&quot;600&quot; font-size=&quot;22&quot; fill=&quot;#6E1B1B&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;5&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;{{angText}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;g class=&quot;{{msgCls}}&quot; font-family=&quot;&#x27;Fredoka&#x27;, sans-serif&quot; font-weight=&quot;600&quot; text-anchor=&quot;middle&quot; fill=&quot;#8A4B0F&quot;&gt;
+&lt;text x=&quot;250&quot; y=&quot;190&quot; font-size=&quot;26&quot;&gt;Tiga sisi ini tidak bisa&lt;/text&gt;
+&lt;text x=&quot;250&quot; y=&quot;224&quot; font-size=&quot;26&quot;&gt;membentuk segitiga.&lt;/text&gt;
+&lt;text x=&quot;250&quot; y=&quot;262&quot; font-size=&quot;16&quot; font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;700&quot; fill=&quot;#6E1B1B&quot;&gt;Syarat: a + b harus lebih besar dari c.&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;burst {{fxCls}}&quot; style=&quot;left: 250px; top: 210px&quot;&gt;&lt;sc-for list=&quot;{{particles}}&quot; as=&quot;p&quot; hint-placeholder-count=&quot;12&quot;&gt;&lt;div class=&quot;{{p.cls}}&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/sc-for&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center; font-size: 17px; line-height: 28px; font-weight: 800; color: #8A6A12&quot;&gt;{{caption}}&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px&quot;&gt;
+&lt;div style=&quot;font-size: 14px; line-height: 20px; font-weight: 700&quot;&gt;Atur sisi a &amp;lt; b &amp;lt; c, lalu lihat jenis segitiganya.&lt;/div&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; gap: 6px&quot;&gt;
+&lt;sc-for list=&quot;{{knowns}}&quot; as=&quot;k&quot; hint-placeholder-count=&quot;3&quot;&gt;
+&lt;div class=&quot;rowc&quot;&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; min-width: 0&quot;&gt;
+&lt;span style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 26px&quot;&gt;{{k.label}}&lt;/span&gt;
+&lt;span style=&quot;font-size: 12px; line-height: 16px; color: #6B4F33&quot;&gt;{{k.note}}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: flex; align-items: center; gap: 4px&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;stp press&quot; aria-label=&quot;{{k.decLabel}}&quot; disabled=&quot;{{k.decDis}}&quot; onClick=&quot;{{k.dec}}&quot;&gt;−&lt;/button&gt;
+&lt;span style=&quot;min-width: 36px; text-align: center; font-size: 22px; font-weight: 800&quot;&gt;{{k.val}}&lt;/span&gt;
+&lt;button type=&quot;button&quot; class=&quot;stp press&quot; aria-label=&quot;{{k.incLabel}}&quot; disabled=&quot;{{k.incDis}}&quot; onClick=&quot;{{k.inc}}&quot;&gt;+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{presets}}&quot; as=&quot;pr&quot; hint-placeholder-count=&quot;3&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{pr.cls}}&quot; style=&quot;white-space: pre-line&quot; onClick=&quot;{{pr.pick}}&quot;&gt;{{pr.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div class=&quot;{{verdictCls}}&quot; aria-live=&quot;polite&quot;&gt;
+&lt;div style=&quot;font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; color: #2F5D3A&quot;&gt;{{vTitle}}&lt;/div&gt;
+&lt;div style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 17px; line-height: 22px&quot;&gt;{{l1}}&lt;/div&gt;
+&lt;div style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 17px; line-height: 22px&quot;&gt;{{l2}}&lt;/div&gt;
+&lt;div style=&quot;font-size: 14px; line-height: 20px; font-weight: 800&quot;&gt;{{l3}}&lt;/div&gt;
+&lt;sc-if value=&quot;{{isTriple}}&quot; hint-placeholder-val=&quot;{{ false }}&quot;&gt;
+&lt;div style=&quot;font-size: 14px; line-height: 20px; font-weight: 800; color: #2F5D3A&quot;&gt;{{tripleText}}&lt;/div&gt;
+&lt;/sc-if&gt;
+&lt;/div&gt;
+&lt;div style=&quot;margin-top: auto; background: #FFF3C9; border: 1px solid #E8D58A; border-radius: 12px; padding: 10px 14px; font-size: 14px; line-height: 20px&quot;&gt;&lt;b&gt;Coba ini:&lt;/b&gt; dari (3, 4, 5), naikkan c lalu turunkan lagi. Sudut C berubah dari siku-siku menjadi tumpul.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;!function(n){&quot;function&quot;==typeof define&amp;&amp;define.amd?define(n):n()}(function(){var n,l,t,u,i,o,e,r,f,c,s,a,h,p=65536,v=1&lt;&lt;17,d={},y=[],w=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,_=Array.isArray;function g(n,l){for(var t in l)n[t]=l[t];return n}function m(n){n&amp;&amp;n.parentNode&amp;&amp;n.parentNode.removeChild(n)}function b(l,t,u){var i,o,e,r={};for(e in t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:r[e]=t[e];if(arguments.length&gt;2&amp;&amp;(r.children=arguments.length&gt;3?n.call(arguments,2):u),&quot;function&quot;==typeof l&amp;&amp;null!=l.defaultProps)for(e in l.defaultProps)void 0===r[e]&amp;&amp;(r[e]=l.defaultProps[e]);return k(l,r,i,o,null)}function k(n,u,i,o,e){var r={type:n,props:u,key:i,ref:o,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:null==e?++t:e,__i:-1,__u:0};return null==e&amp;&amp;null!=l.vnode&amp;&amp;l.vnode(r),r}function C(n){return n.children}function x(n,l){this.props=n,this.context=l}function S(n,l){if(null==l)return n.__?S(n.__,n.__i+1):null;for(var t;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e)return t.__e;return&quot;function&quot;==typeof n.type?S(n):null}function M(n){var l,t;if(null!=(n=n.__)&amp;&amp;null!=n.__c){for(n.__e=n.__c.base=null,l=0;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e){n.__e=n.__c.base=t.__e;break}return M(n)}}function P(n){(!n.__d&amp;&amp;(n.__d=!0)&amp;&amp;i.push(n)&amp;&amp;!$.__r++||o!==l.debounceRendering)&amp;&amp;((o=l.debounceRendering)||e)($)}function $(){var n,t,u,o,e,f,c,s;for(i.sort(r);n=i.shift();)n.__d&amp;&amp;(t=i.length,o=void 0,f=(e=(u=n).__v).__e,c=[],s=[],u.__P&amp;&amp;((o=g({},e)).__v=e.__v+1,l.vnode&amp;&amp;l.vnode(o),O(u.__P,o,e,u.__n,u.__P.namespaceURI,32&amp;e.__u?[f]:null,c,null==f?S(e):f,!!(32&amp;e.__u),s),o.__v=e.__v,o.__.__k[o.__i]=o,V(c,o,s),o.__e!=f&amp;&amp;M(o)),i.length&gt;t&amp;&amp;i.sort(r));$.__r=0}function I(n,l,t,u,i,o,e,r,f,c,s){var a,h,v,w,_,g=u&amp;&amp;u.__k||y,m=l.length;for(t.__d=f,A(t,l,g),f=t.__d,a=0;a&lt;m;a++)null!=(v=t.__k[a])&amp;&amp;(h=-1===v.__i?d:g[v.__i]||d,v.__i=a,O(n,v,h,i,o,e,r,f,c,s),w=v.__e,v.ref&amp;&amp;h.ref!=v.ref&amp;&amp;(h.ref&amp;&amp;z(h.ref,null,v),s.push(v.ref,v.__c||w,v)),null==_&amp;&amp;null!=w&amp;&amp;(_=w),v.__u&amp;p||h.__k===v.__k?f=E(v,f,n):&quot;function&quot;==typeof v.type&amp;&amp;void 0!==v.__d?f=v.__d:w&amp;&amp;(f=w.nextSibling),v.__d=void 0,v.__u&amp;=-196609);t.__d=f,t.__e=_}function A(n,l,t){var u,i,o,e,r,f=l.length,c=t.length,s=c,a=0;for(n.__k=[],u=0;u&lt;f;u++)null!=(i=l[u])&amp;&amp;&quot;boolean&quot;!=typeof i&amp;&amp;&quot;function&quot;!=typeof i?(e=u+a,(i=n.__k[u]=&quot;string&quot;==typeof i||&quot;number&quot;==typeof i||&quot;bigint&quot;==typeof i||i.constructor==String?k(null,i,null,null,null):_(i)?k(C,{children:i},null,null,null):void 0===i.constructor&amp;&amp;i.__b&gt;0?k(i.type,i.props,i.key,i.ref?i.ref:null,i.__v):i).__=n,i.__b=n.__b+1,o=null,-1!==(r=i.__i=F(i,t,e,s))&amp;&amp;(s--,(o=t[r])&amp;&amp;(o.__u|=v)),null==o||null===o.__v?(-1==r&amp;&amp;a--,&quot;function&quot;!=typeof i.type&amp;&amp;(i.__u|=p)):r!==e&amp;&amp;(r==e-1?a--:r==e+1?a++:(r&gt;e?a--:a++,i.__u|=p))):i=n.__k[u]=null;if(s)for(u=0;u&lt;c;u++)null!=(o=t[u])&amp;&amp;0==(o.__u&amp;v)&amp;&amp;(o.__e==n.__d&amp;&amp;(n.__d=S(o)),N(o,o))}function E(n,l,t){var u,i;if(&quot;function&quot;==typeof n.type){for(u=n.__k,i=0;u&amp;&amp;i&lt;u.length;i++)u[i]&amp;&amp;(u[i].__=n,l=E(u[i],l,t));return l}n.__e!=l&amp;&amp;(l&amp;&amp;n.type&amp;&amp;!t.contains(l)&amp;&amp;(l=S(n)),t.insertBefore(n.__e,l||null),l=n.__e);do{l=l&amp;&amp;l.nextSibling}while(null!=l&amp;&amp;8===l.nodeType);return l}function F(n,l,t,u){var i=n.key,o=n.type,e=t-1,r=t+1,f=l[t];if(null===f||f&amp;&amp;i==f.key&amp;&amp;o===f.type&amp;&amp;0==(f.__u&amp;v))return t;if(u&gt;(null!=f&amp;&amp;0==(f.__u&amp;v)?1:0))for(;e&gt;=0||r&lt;l.length;){if(e&gt;=0){if((f=l[e])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return e;e--}if(r&lt;l.length){if((f=l[r])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return r;r++}}return-1}function H(n,l,t){&quot;-&quot;===l[0]?n.setProperty(l,null==t?&quot;&quot;:t):n[l]=null==t?&quot;&quot;:&quot;number&quot;!=typeof t||w.test(l)?t:t+&quot;px&quot;}function L(n,l,t,u,i){var o;n:if(&quot;style&quot;===l)if(&quot;string&quot;==typeof t)n.style.cssText=t;else{if(&quot;string&quot;==typeof u&amp;&amp;(n.style.cssText=u=&quot;&quot;),u)for(l in u)t&amp;&amp;l in t||H(n.style,l,&quot;&quot;);if(t)for(l in t)u&amp;&amp;t[l]===u[l]||H(n.style,l,t[l])}else if(&quot;o&quot;===l[0]&amp;&amp;&quot;n&quot;===l[1])o=l!==(l=l.replace(/(PointerCapture)$|Capture$/i,&quot;$1&quot;)),l=l.toLowerCase()in n||&quot;onFocusOut&quot;===l||&quot;onFocusIn&quot;===l?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+o]=t,t?u?t.t=u.t:(t.t=f,n.addEventListener(l,o?s:c,o)):n.removeEventListener(l,o?s:c,o);else{if(&quot;http://www.w3.org/2000/svg&quot;==i)l=l.replace(/xlink(H|:h)/,&quot;h&quot;).replace(/sName$/,&quot;s&quot;);else if(&quot;width&quot;!=l&amp;&amp;&quot;height&quot;!=l&amp;&amp;&quot;href&quot;!=l&amp;&amp;&quot;list&quot;!=l&amp;&amp;&quot;form&quot;!=l&amp;&amp;&quot;tabIndex&quot;!=l&amp;&amp;&quot;download&quot;!=l&amp;&amp;&quot;rowSpan&quot;!=l&amp;&amp;&quot;colSpan&quot;!=l&amp;&amp;&quot;role&quot;!=l&amp;&amp;&quot;popover&quot;!=l&amp;&amp;l in n)try{n[l]=null==t?&quot;&quot;:t;break n}catch(n){}&quot;function&quot;==typeof t||(null==t||!1===t&amp;&amp;&quot;-&quot;!==l[4]?n.removeAttribute(l):n.setAttribute(l,&quot;popover&quot;==l&amp;&amp;1==t?&quot;&quot;:t))}}function T(n){return function(t){if(this.l){var u=this.l[t.type+n];if(null==t.u)t.u=f++;else if(t.u&lt;u.t)return;return u(l.event?l.event(t):t)}}}function O(n,t,u,i,o,e,r,f,c,s){var a,h,p,v,d,y,w,m,b,k,S,M,P,$,A,E,F=t.type;if(void 0!==t.constructor)return null;128&amp;u.__u&amp;&amp;(c=!!(32&amp;u.__u),e=[f=t.__e=u.__e]),(a=l.__b)&amp;&amp;a(t);n:if(&quot;function&quot;==typeof F)try{if(m=t.props,b=&quot;prototype&quot;in F&amp;&amp;F.prototype.render,k=(a=F.contextType)&amp;&amp;i[a.__c],S=a?k?k.props.value:a.__:i,u.__c?w=(h=t.__c=u.__c).__=h.__E:(b?t.__c=h=new F(m,S):(t.__c=h=new x(m,S),h.constructor=F,h.render=R),k&amp;&amp;k.sub(h),h.props=m,h.state||(h.state={}),h.context=S,h.__n=i,p=h.__d=!0,h.__h=[],h._sb=[]),b&amp;&amp;null==h.__s&amp;&amp;(h.__s=h.state),b&amp;&amp;null!=F.getDerivedStateFromProps&amp;&amp;(h.__s==h.state&amp;&amp;(h.__s=g({},h.__s)),g(h.__s,F.getDerivedStateFromProps(m,h.__s))),v=h.props,d=h.state,h.__v=t,p)b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;null!=h.componentWillMount&amp;&amp;h.componentWillMount(),b&amp;&amp;null!=h.componentDidMount&amp;&amp;h.__h.push(h.componentDidMount);else{if(b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;m!==v&amp;&amp;null!=h.componentWillReceiveProps&amp;&amp;h.componentWillReceiveProps(m,S),!h.__e&amp;&amp;(null!=h.shouldComponentUpdate&amp;&amp;!1===h.shouldComponentUpdate(m,h.__s,S)||t.__v===u.__v)){for(t.__v!==u.__v&amp;&amp;(h.props=m,h.state=h.__s,h.__d=!1),t.__e=u.__e,t.__k=u.__k,t.__k.some(function(n){n&amp;&amp;(n.__=t)}),M=0;M&lt;h._sb.length;M++)h.__h.push(h._sb[M]);h._sb=[],h.__h.length&amp;&amp;r.push(h);break n}null!=h.componentWillUpdate&amp;&amp;h.componentWillUpdate(m,h.__s,S),b&amp;&amp;null!=h.componentDidUpdate&amp;&amp;h.__h.push(function(){h.componentDidUpdate(v,d,y)})}if(h.context=S,h.props=m,h.__P=n,h.__e=!1,P=l.__r,$=0,b){for(h.state=h.__s,h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),A=0;A&lt;h._sb.length;A++)h.__h.push(h._sb[A]);h._sb=[]}else do{h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),h.state=h.__s}while(h.__d&amp;&amp;++$&lt;25);h.state=h.__s,null!=h.getChildContext&amp;&amp;(i=g(g({},i),h.getChildContext())),b&amp;&amp;!p&amp;&amp;null!=h.getSnapshotBeforeUpdate&amp;&amp;(y=h.getSnapshotBeforeUpdate(v,d)),I(n,_(E=null!=a&amp;&amp;a.type===C&amp;&amp;null==a.key?a.props.children:a)?E:[E],t,u,i,o,e,r,f,c,s),h.base=t.__e,t.__u&amp;=-161,h.__h.length&amp;&amp;r.push(h),w&amp;&amp;(h.__E=h.__=null)}catch(n){if(t.__v=null,c||null!=e){for(t.__u|=c?160:128;f&amp;&amp;8===f.nodeType&amp;&amp;f.nextSibling;)f=f.nextSibling;e[e.indexOf(f)]=null,t.__e=f}else t.__e=u.__e,t.__k=u.__k;l.__e(n,t,u)}else null==e&amp;&amp;t.__v===u.__v?(t.__k=u.__k,t.__e=u.__e):t.__e=j(u.__e,t,u,i,o,e,r,c,s);(a=l.diffed)&amp;&amp;a(t)}function V(n,t,u){t.__d=void 0;for(var i=0;i&lt;u.length;i++)z(u[i],u[++i],u[++i]);l.__c&amp;&amp;l.__c(t,n),n.some(function(t){try{n=t.__h,t.__h=[],n.some(function(n){n.call(t)})}catch(n){l.__e(n,t.__v)}})}function j(t,u,i,o,e,r,f,c,s){var a,h,p,v,y,w,g,b=i.props,k=u.props,C=u.type;if(&quot;svg&quot;===C?e=&quot;http://www.w3.org/2000/svg&quot;:&quot;math&quot;===C?e=&quot;http://www.w3.org/1998/Math/MathML&quot;:e||(e=&quot;http://www.w3.org/1999/xhtml&quot;),null!=r)for(a=0;a&lt;r.length;a++)if((y=r[a])&amp;&amp;&quot;setAttribute&quot;in y==!!C&amp;&amp;(C?y.localName===C:3===y.nodeType)){t=y,r[a]=null;break}if(null==t){if(null===C)return document.createTextNode(k);t=document.createElementNS(e,C,k.is&amp;&amp;k),c&amp;&amp;(l.__m&amp;&amp;l.__m(u,r),c=!1),r=null}if(null===C)b===k||c&amp;&amp;t.data===k||(t.data=k);else{if(r=r&amp;&amp;n.call(t.childNodes),b=i.props||d,!c&amp;&amp;null!=r)for(b={},a=0;a&lt;t.attributes.length;a++)b[(y=t.attributes[a]).name]=y.value;for(a in b)if(y=b[a],&quot;children&quot;==a);else if(&quot;dangerouslySetInnerHTML&quot;==a)p=y;else if(!(a in k)){if(&quot;value&quot;==a&amp;&amp;&quot;defaultValue&quot;in k||&quot;checked&quot;==a&amp;&amp;&quot;defaultChecked&quot;in k)continue;L(t,a,null,y,e)}for(a in k)y=k[a],&quot;children&quot;==a?v=y:&quot;dangerouslySetInnerHTML&quot;==a?h=y:&quot;value&quot;==a?w=y:&quot;checked&quot;==a?g=y:c&amp;&amp;&quot;function&quot;!=typeof y||b[a]===y||L(t,a,y,b[a],e);if(h)c||p&amp;&amp;(h.__html===p.__html||h.__html===t.innerHTML)||(t.innerHTML=h.__html),u.__k=[];else if(p&amp;&amp;(t.innerHTML=&quot;&quot;),I(t,_(v)?v:[v],u,i,o,&quot;foreignObject&quot;===C?&quot;http://www.w3.org/1999/xhtml&quot;:e,r,f,r?r[0]:i.__k&amp;&amp;S(i,0),c,s),null!=r)for(a=r.length;a--;)m(r[a]);c||(a=&quot;value&quot;,&quot;progress&quot;===C&amp;&amp;null==w?t.removeAttribute(&quot;value&quot;):void 0!==w&amp;&amp;(w!==t[a]||&quot;progress&quot;===C&amp;&amp;!w||&quot;option&quot;===C&amp;&amp;w!==b[a])&amp;&amp;L(t,a,w,b[a],e),a=&quot;checked&quot;,void 0!==g&amp;&amp;g!==t[a]&amp;&amp;L(t,a,g,b[a],e))}return t}function z(n,t,u){try{if(&quot;function&quot;==typeof n){var i=&quot;function&quot;==typeof n.__u;i&amp;&amp;n.__u(),i&amp;&amp;null==t||(n.__u=n(t))}else n.current=t}catch(n){l.__e(n,u)}}function N(n,t,u){var i,o;if(l.unmount&amp;&amp;l.unmount(n),(i=n.ref)&amp;&amp;(i.current&amp;&amp;i.current!==n.__e||z(i,null,t)),null!=(i=n.__c)){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(n){l.__e(n,t)}i.base=i.__P=null}if(i=n.__k)for(o=0;o&lt;i.length;o++)i[o]&amp;&amp;N(i[o],t,u||&quot;function&quot;!=typeof n.type);u||m(n.__e),n.__c=n.__=n.__e=n.__d=void 0}function R(n,l,t){return this.constructor(n,t)}function q(t,u,i){var o,e,r,f;l.__&amp;&amp;l.__(t,u),e=(o=&quot;function&quot;==typeof i)?null:i&amp;&amp;i.__k||u.__k,r=[],f=[],O(u,t=(!o&amp;&amp;i||u).__k=b(C,null,[t]),e||d,d,u.namespaceURI,!o&amp;&amp;i?[i]:e?null:u.firstChild?n.call(u.childNodes):null,r,!o&amp;&amp;i?i:e?e.__e:u.firstChild,o,f),V(r,t,f)}n=y.slice,l={__e:function(n,l,t,u){for(var i,o,e;l=l.__;)if((i=l.__c)&amp;&amp;!i.__)try{if((o=i.constructor)&amp;&amp;null!=o.getDerivedStateFromError&amp;&amp;(i.setState(o.getDerivedStateFromError(n)),e=i.__d),null!=i.componentDidCatch&amp;&amp;(i.componentDidCatch(n,u||{}),e=i.__d),e)return i.__E=i}catch(l){n=l}throw n}},t=0,u=function(n){return null!=n&amp;&amp;null==n.constructor},x.prototype.setState=function(n,l){var t;t=null!=this.__s&amp;&amp;this.__s!==this.state?this.__s:this.__s=g({},this.state),&quot;function&quot;==typeof n&amp;&amp;(n=n(g({},t),this.props)),n&amp;&amp;g(t,n),null!=n&amp;&amp;this.__v&amp;&amp;(l&amp;&amp;this._sb.push(l),P(this))},x.prototype.forceUpdate=function(n){this.__v&amp;&amp;(this.__e=!0,n&amp;&amp;this.__h.push(n),P(this))},x.prototype.render=C,i=[],e=&quot;function&quot;==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,r=function(n,l){return n.__v.__b-l.__v.__b},$.__r=0,f=0,c=T(!1),s=T(!0),a=0,h={__proto__:null,render:q,hydrate:function n(l,t){q(l,t,n)},createElement:b,h:b,Fragment:C,createRef:function(){return{current:null}},isValidElement:u,Component:x,cloneElement:function(l,t,u){var i,o,e,r,f=g({},l.props);for(e in l.type&amp;&amp;l.type.defaultProps&amp;&amp;(r=l.type.defaultProps),t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:f[e]=void 0===t[e]&amp;&amp;void 0!==r?r[e]:t[e];return arguments.length&gt;2&amp;&amp;(f.children=arguments.length&gt;3?n.call(arguments,2):u),k(l.type,f,i||l.key,o||l.ref,null)},createContext:function(n,l){var t={__c:l=&quot;__cC&quot;+a++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var t,u;return this.getChildContext||(t=new Set,(u={})[l]=this,this.getChildContext=function(){return u},this.componentWillUnmount=function(){t=null},this.shouldComponentUpdate=function(n){this.props.value!==n.value&amp;&amp;t.forEach(function(n){n.__e=!0,P(n)})},this.sub=function(n){t.add(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){t&amp;&amp;t.delete(n),l&amp;&amp;l.call(n)}}),n.children}};return t.Provider.__=t.Consumer.contextType=t},toChildArray:function n(l,t){return t=t||[],null==l||&quot;boolean&quot;==typeof l||(_(l)?l.some(function(l){n(l,t)}):t.push(l)),t},options:l},typeof module&lt;&quot;u&quot;?module.exports=h:self.preact=h});
+//# sourceMappingURL=preact.min.umd.js.map
+&lt;/script&gt;
+&lt;script&gt;/* Runtime mini: menjalankan template .dc.html (sc-for, sc-if, {{lubang}}, onClick) tanpa editor kanvas. */
+(function () {
+  var h = preact.h;
+  var render = preact.render;
+
+  class DCLogic {
+    constructor(props) {
+      this.props = props || {};
+      this.state = {};
+      this.__render = null;
+    }
+    setState(p) {
+      var next = typeof p === &#x27;function&#x27; ? p(this.state, this.props) : p;
+      if (next == null) return;
+      this.state = Object.assign({}, this.state, next);
+      if (this.__render) this.__render();
+    }
+    forceUpdate() {
+      if (this.__render) this.__render();
+    }
+  }
+  window.DCLogic = DCLogic;
+
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+
+  function lookup(scope, path) {
+    if (path === &#x27;true&#x27;) return true;
+    if (path === &#x27;false&#x27;) return false;
+    if (path === &#x27;null&#x27;) return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split(&#x27;.&#x27;);
+    var cur = scope;
+    for (var i = 0; i &lt; parts.length; i++) {
+      if (cur == null) return undefined;
+      cur = cur[parts[i]];
+    }
+    return cur;
+  }
+
+  function evalAttr(value, scope) {
+    var m = WHOLE.exec(value);
+    if (m) return lookup(scope, m[1]);
+    return value.replace(HOLE, function (_, p) {
+      var v = lookup(scope, p);
+      return v == null ? &#x27;&#x27; : String(v);
+    });
+  }
+
+  function flatten(list, out) {
+    for (var i = 0; i &lt; list.length; i++) {
+      var c = list[i];
+      if (Array.isArray(c)) flatten(c, out);
+      else if (c !== null &amp;&amp; c !== undefined &amp;&amp; c !== false) out.push(c);
+    }
+    return out;
+  }
+
+  function buildChildren(node, scope) {
+    var out = [];
+    for (var i = 0; i &lt; node.childNodes.length; i++) {
+      out.push(build(node.childNodes[i], scope));
+    }
+    return flatten(out, []);
+  }
+
+  function build(node, scope) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      if (!t.trim() &amp;&amp; t.indexOf(&#x27;\n&#x27;) &gt;= 0) return null;
+      var m = WHOLE.exec(t);
+      if (m) {
+        var raw = lookup(scope, m[1]);
+        return raw == null ? &#x27;&#x27; : String(raw);
+      }
+      return t.replace(HOLE, function (_, p) {
+        var v = lookup(scope, p);
+        return v == null ? &#x27;&#x27; : String(v);
+      });
+    }
+    if (node.nodeType !== 1) return null;
+    var tag = node.localName;
+
+    if (tag === &#x27;sc-if&#x27;) {
+      var cond = evalAttr(node.getAttribute(&#x27;value&#x27;) || &#x27;&#x27;, scope);
+      return cond ? buildChildren(node, scope) : null;
+    }
+    if (tag === &#x27;sc-for&#x27;) {
+      var list = evalAttr(node.getAttribute(&#x27;list&#x27;) || &#x27;&#x27;, scope) || [];
+      var as = node.getAttribute(&#x27;as&#x27;) || &#x27;item&#x27;;
+      var out = [];
+      for (var i = 0; i &lt; list.length; i++) {
+        var sub = Object.create(scope);
+        sub[as] = list[i];
+        sub.$index = i;
+        out.push(buildChildren(node, sub));
+      }
+      return flatten(out, []);
+    }
+
+    var props = {};
+    for (var a = 0; a &lt; node.attributes.length; a++) {
+      var name = node.attributes[a].name;
+      var val = node.attributes[a].value;
+      if (name.indexOf(&#x27;hint-&#x27;) === 0) continue;
+      if (name.indexOf(&#x27;on&#x27;) === 0 &amp;&amp; name.length &gt; 2) {
+        var fn = evalAttr(val, scope);
+        if (typeof fn === &#x27;function&#x27;) {
+          var evt = name.toLowerCase();
+          if (evt === &#x27;onchange&#x27; &amp;&amp; tag === &#x27;input&#x27;) evt = &#x27;oninput&#x27;;
+          props[evt] = fn;
+        }
+        continue;
+      }
+      props[name] = evalAttr(val, scope);
+    }
+    return h.apply(null, [tag, props].concat(buildChildren(node, scope)));
+  }
+
+  window.DCMount = function (templateEl, mountEl, ComponentClass, size) {
+    var root = templateEl.content.firstElementChild;
+    var comp = new ComponentClass({});
+    function draw() {
+      var vals = comp.renderVals();
+      render(build(root, vals), mountEl);
+    }
+    comp.__render = draw;
+    draw();
+
+    var stage = mountEl;
+    function fit() {
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var s = Math.min(vw / size.w, vh / size.h, 2);
+      stage.style.width = size.w + &#x27;px&#x27;;
+      stage.style.height = size.h + &#x27;px&#x27;;
+      stage.style.transformOrigin = &#x27;0 0&#x27;;
+      stage.style.transform = &#x27;scale(&#x27; + s + &#x27;)&#x27;;
+      stage.style.left = Math.max(0, (vw - size.w * s) / 2) + &#x27;px&#x27;;
+      stage.style.top = Math.max(0, (vh - size.h * s) / 2) + &#x27;px&#x27;;
+    }
+    window.addEventListener(&#x27;resize&#x27;, fit);
+    fit();
+    return comp;
+  };
+})();
+&lt;/script&gt;
+&lt;script&gt;
+
+class Component extends DCLogic {
+  S(st) {
+    return Object.assign(this.D(), st || {});
+  }
+
+  fx(n) {
+    if (n === 0) return &#x27;fx0&#x27;;
+    return n % 2 === 1 ? &#x27;fxA&#x27; : &#x27;fxB&#x27;;
+  }
+
+  alt(prefix, n) {
+    if (n === 0) return &#x27;&#x27;;
+    return prefix + (n % 2 === 1 ? &#x27;A&#x27; : &#x27;B&#x27;);
+  }
+
+  burstParticles() {
+    const particles = [];
+    for (let i = 0; i &lt; 12; i++) {
+      particles.push({ cls: &#x27;arm r&#x27; + i + &#x27; c&#x27; + (i % 4) });
+    }
+    return particles;
+  }
+
+  D() {
+    return { v: { a: 3, b: 4, c: 5 }, fx: 0 };
+  }
+
+  isRight(v) {
+    return v.a * v.a + v.b * v.b === v.c * v.c;
+  }
+
+  step(v0, key, d) {
+    const v = Object.assign({}, v0);
+    v[key] += d;
+    if (key === &#x27;a&#x27;) {
+      if (v.b &lt;= v.a) v.b = v.a + 1;
+      if (v.c &lt;= v.b) v.c = v.b + 1;
+    } else if (key === &#x27;b&#x27;) {
+      if (v.a &gt;= v.b) v.a = v.b - 1;
+      if (v.c &lt;= v.b) v.c = v.b + 1;
+    } else {
+      if (v.b &gt;= v.c) v.b = v.c - 1;
+      if (v.a &gt;= v.b) v.a = v.b - 1;
+    }
+    if (v.a &lt; 1 || v.c &gt; 20) return null;
+    return v;
+  }
+
+  setV(nv) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      const patch = { v: nv };
+      if (this.isRight(nv) &amp;&amp; !this.isRight(cur.v)) patch.fx = cur.fx + 1;
+      return patch;
+    });
+  }
+
+  renderVals() {
+    const s = this.S(this.state);
+    const v = s.v;
+    const a = v.a;
+    const b = v.b;
+    const c = v.c;
+    const f = (n) =&gt; n.toFixed(1);
+    const pt = (P) =&gt; f(P[0]) + &#x27; &#x27; + f(P[1]);
+    const a2 = a * a;
+    const b2 = b * b;
+    const c2 = c * c;
+    const sum = a2 + b2;
+    const kind = sum === c2 ? &#x27;siku&#x27; : (sum &gt; c2 ? &#x27;lancip&#x27; : &#x27;tumpul&#x27;);
+    const valid = a + b &gt; c;
+
+    const xC = (b2 + c2 - a2) / (2 * c);
+    const h = Math.sqrt(Math.max(0.0001, b2 - xC * xC));
+    const u = valid ? Math.min(300 / c, 280 / h, 56) : 1;
+    const x0 = (500 - c * u) / 2;
+    const y0 = 220 + h * u / 2;
+    const A = [x0, y0];
+    const B = [x0 + c * u, y0];
+    const C = [x0 + xC * u, y0 - h * u];
+    const G = [(A[0] + B[0] + C[0]) / 3, (A[1] + B[1] + C[1]) / 3];
+    const unit = (P, Q) =&gt; {
+      const dx = Q[0] - P[0];
+      const dy = Q[1] - P[1];
+      const L = Math.hypot(dx, dy);
+      return [dx / L, dy / L];
+    };
+    const uA = unit(C, A);
+    const uB = unit(C, B);
+    const cosC = (a2 + b2 - c2) / (2 * a * b);
+    const deg = Math.round(Math.acos(Math.max(-1, Math.min(1, cosC))) * 180 / Math.PI);
+    const right = kind === &#x27;siku&#x27;;
+    const r = right ? 26 : 36;
+    const p1 = [C[0] + r * uA[0], C[1] + r * uA[1]];
+    const p2 = [C[0] + r * uB[0], C[1] + r * uB[1]];
+    let angD;
+    if (right) {
+      const q = [C[0] + r * (uA[0] + uB[0]), C[1] + r * (uA[1] + uB[1])];
+      angD = &#x27;M &#x27; + pt(C) + &#x27; L &#x27; + pt(p1) + &#x27; L &#x27; + pt(q) + &#x27; L &#x27; + pt(p2) + &#x27; Z&#x27;;
+    } else {
+      const cross = uA[0] * uB[1] - uA[1] * uB[0];
+      angD = &#x27;M &#x27; + pt(C) + &#x27; L &#x27; + pt(p1) + &#x27; A &#x27; + r + &#x27; &#x27; + r + &#x27; 0 0 &#x27; + (cross &gt; 0 ? 1 : 0) + &#x27; &#x27; + pt(p2) + &#x27; Z&#x27;;
+    }
+    let bx = uA[0] + uB[0];
+    let by = uA[1] + uB[1];
+    const bl = Math.hypot(bx, by) || 1;
+    bx /= bl;
+    by /= bl;
+    const dist = right ? 58 : 68;
+
+    const sideLab = (P, Q, t, d, anc) =&gt; {
+      const mx = (P[0] + Q[0]) / 2;
+      const my = (P[1] + Q[1]) / 2;
+      let nx = -(Q[1] - P[1]);
+      let ny = Q[0] - P[0];
+      const L = Math.hypot(nx, ny) || 1;
+      nx /= L;
+      ny /= L;
+      if ((mx - G[0]) * nx + (my - G[1]) * ny &lt; 0) {
+        nx = -nx;
+        ny = -ny;
+      }
+      const cx = mx + nx * d;
+      const cy = my + ny * d;
+      const w = 28 + 13 * t.length;
+      return { x: f(cx), y: f(cy + 8), t: t, anc: anc, rx: f(cx - w / 2), ry: f(cy - 18), rw: f(w) };
+    };
+
+    const fills = { siku: &#x27;#DDEBCF&#x27;, lancip: &#x27;#FDEBC8&#x27;, tumpul: &#x27;#F9D9D0&#x27; };
+    const names = { siku: &#x27;siku-siku&#x27;, lancip: &#x27;lancip&#x27;, tumpul: &#x27;tumpul&#x27; };
+
+    let vTitle = &#x27;a² + b² = c²&#x27;;
+    let l3 = &#x27;Sama besar, sudut C = 90°: siku-siku.&#x27;;
+    let vcls = &#x27;verdict right &#x27; + this.alt(&#x27;pop&#x27;, s.fx);
+    if (kind === &#x27;lancip&#x27;) {
+      vTitle = &#x27;a² + b² &gt; c²&#x27;;
+      l3 = &#x27;c² lebih kecil, sudut C menyempit: segitiga lancip.&#x27;;
+      vcls = &#x27;verdict wrong&#x27;;
+    } else if (kind === &#x27;tumpul&#x27;) {
+      vTitle = &#x27;a² + b² &lt; c²&#x27;;
+      l3 = &#x27;c² lebih besar, sudut C melebar lewat 90°: segitiga tumpul.&#x27;;
+      vcls = &#x27;verdict wrong&#x27;;
+    }
+    if (!valid) {
+      l3 = &#x27;Karena a + b tidak lebih dari c, ketiganya tidak membentuk segitiga.&#x27;;
+      vcls = &#x27;verdict wrong&#x27;;
+    }
+
+    const defs = [
+      { k: &#x27;a&#x27;, note: &#x27;sisi terpendek&#x27; },
+      { k: &#x27;b&#x27;, note: &#x27;sisi tengah&#x27; },
+      { k: &#x27;c&#x27;, note: &#x27;sisi terpanjang&#x27; }
+    ];
+    const knowns = defs.map((d) =&gt; {
+      const dn = this.step(v, d.k, -1);
+      const up = this.step(v, d.k, 1);
+      return {
+        label: d.k,
+        note: d.note,
+        val: v[d.k],
+        decLabel: &#x27;Kurangi &#x27; + d.k,
+        incLabel: &#x27;Tambah &#x27; + d.k,
+        decDis: dn === null,
+        incDis: up === null,
+        dec: () =&gt; { const n = this.step(this.S(this.state).v, d.k, -1); if (n) this.setV(n); },
+        inc: () =&gt; { const n = this.step(this.S(this.state).v, d.k, 1); if (n) this.setV(n); }
+      };
+    });
+
+    const presets = [
+      { v: { a: 3, b: 4, c: 5 }, label: &#x27;Siku-siku\n(3, 4, 5)&#x27; },
+      { v: { a: 4, b: 5, c: 6 }, label: &#x27;Lancip\n(4, 5, 6)&#x27; },
+      { v: { a: 2, b: 3, c: 4 }, label: &#x27;Tumpul\n(2, 3, 4)&#x27; }
+    ].map((p) =&gt; ({
+      label: p.label,
+      cls: &#x27;btn press&#x27; + (p.v.a === a &amp;&amp; p.v.b === b &amp;&amp; p.v.c === c ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.setV(p.v)
+    }));
+
+    return {
+      particles: this.burstParticles(),
+      fxCls: this.fx(s.fx),
+      triG: valid ? &#x27;&#x27; : &#x27;off&#x27;,
+      msgCls: valid ? &#x27;off&#x27; : &#x27;&#x27;,
+      pts: pt(A) + &#x27; &#x27; + pt(B) + &#x27; &#x27; + pt(C),
+      triFill: fills[kind],
+      angCls: &#x27;ang&#x27; + (right ? &#x27; right&#x27; : &#x27;&#x27;),
+      angD: angD,
+      vA: { x: f(A[0] - 16), y: f(A[1] + 30) },
+      vB: { x: f(B[0] + 16), y: f(B[1] + 30) },
+      vC: { x: f(C[0] - bx * 30), y: f(C[1] - by * 30 + 11) },
+      sA: { x1: f(B[0]), y1: f(B[1]), x2: f(C[0]), y2: f(C[1]) },
+      sB: { x1: f(A[0]), y1: f(A[1]), x2: f(C[0]), y2: f(C[1]) },
+      sC: { x1: f(A[0]), y1: f(A[1]), x2: f(B[0]), y2: f(B[1]) },
+      la: sideLab(B, C, &#x27;a = &#x27; + a, 40, &#x27;middle&#x27;),
+      lb: sideLab(A, C, &#x27;b = &#x27; + b, 40, &#x27;middle&#x27;),
+      lc: sideLab(A, B, &#x27;c = &#x27; + c, 36, &#x27;middle&#x27;),
+      angX: f(C[0] + bx * (dist + 4)),
+      angY: f(C[1] + by * (dist + 4) + 8),
+      angText: deg + &#x27;°&#x27;,
+      caption: valid ? &#x27;Segitiga &#x27; + names[kind] + &#x27; dengan sisi &#x27; + a + &#x27;, &#x27; + b + &#x27;, &#x27; + c : &#x27;Belum bisa dibentuk menjadi segitiga&#x27;,
+      knowns: knowns,
+      presets: presets,
+      verdictCls: vcls,
+      vTitle: vTitle,
+      l1: &#x27;a² + b² = &#x27; + a + &#x27;² + &#x27; + b + &#x27;² = &#x27; + sum,
+      l2: &#x27;c² = &#x27; + c + &#x27;² = &#x27; + c2,
+      l3: l3,
+      isTriple: kind === &#x27;siku&#x27;,
+      tripleText: &#x27;Triple Pythagoras: (&#x27; + a + &#x27;, &#x27; + b + &#x27;, &#x27; + c + &#x27;)&#x27;
+    };
+  }
+}
+
+&lt;/script&gt;
+&lt;script&gt;
+DCMount(document.getElementById(&#x27;tpl&#x27;), document.getElementById(&#x27;stage&#x27;), Component, { w: 1000, h: 740 });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></section>
+<section><iframe title="Ilustrasi 2: Cara 1: Pola kelipatan triple dasar" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;id&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Ilustrasi Triple 2 Kelipatan triple dasar&lt;/title&gt;
+
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Lora:ital,wght@1,600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body { margin: 0; }
+button { font-family: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #C9822B; outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+.press { transition: transform .12s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }
+.press:hover:not(:disabled) { transform: translateY(-1px); }
+.press:active:not(:disabled) { transform: scale(.96); }
+.go { min-height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: #2F5D3A; color: #FBF3DC; font-weight: 800; font-size: 16px; }
+.go:hover:not(:disabled) { background: #244A2E; }
+.stp { width: 44px; height: 44px; flex: none; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-size: 22px; font-weight: 700; line-height: 1; padding: 0; }
+.stp:hover:not(:disabled) { background: #FFF6DC; border-color: #C98B3C; }
+.stp:disabled { opacity: .4; }
+.btn { min-height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-weight: 700; font-size: 15px; line-height: 20px; }
+.btn:hover:not(:disabled) { background: #FFF6DC; }
+.btn.on, .btn.on:hover:not(:disabled) { background: #2F5D3A; border-color: #2F5D3A; color: #FBF3DC; }
+.rowc { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 14px; padding: 3px 6px 3px 12px; }
+.off { display: none; }
+
+/* efek ledakan titik warna */
+.burst { position: absolute; width: 0; height: 0; pointer-events: none; }
+.arm { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.dot { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; opacity: 0; }
+.arm:nth-child(even) .dot { width: 7px; height: 7px; left: -3.5px; top: -3.5px; }
+.r0 { transform: rotate(0deg); }
+.r1 { transform: rotate(30deg); }
+.r2 { transform: rotate(60deg); }
+.r3 { transform: rotate(90deg); }
+.r4 { transform: rotate(120deg); }
+.r5 { transform: rotate(150deg); }
+.r6 { transform: rotate(180deg); }
+.r7 { transform: rotate(210deg); }
+.r8 { transform: rotate(240deg); }
+.r9 { transform: rotate(270deg); }
+.r10 { transform: rotate(300deg); }
+.r11 { transform: rotate(330deg); }
+.c0 .dot { background: #F2B01E; }
+.c1 .dot { background: #2F5D3A; }
+.c2 .dot { background: #B8520A; }
+.c3 .dot { background: #2A63A8; }
+.fxA .dot { animation: outA .85s ease-out both; }
+.fxB .dot { animation: outB .85s ease-out both; }
+@keyframes outA {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+@keyframes outB {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+.riseA { animation: riseA .4s ease both; }
+.riseB { animation: riseB .4s ease both; }
+@keyframes riseA {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes riseB {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+.d1 { animation-delay: .02s; }
+.d2 { animation-delay: .12s; }
+.d3 { animation-delay: .22s; }
+.d4 { animation-delay: .32s; }
+.popA { animation: popA .45s cubic-bezier(.2, 1.5, .4, 1); }
+.popB { animation: popB .45s cubic-bezier(.2, 1.5, .4, 1); }
+@keyframes popA {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+@keyframes popB {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.ang { fill: rgba(226, 169, 74, .4); stroke: #8A4B0F; transition: fill .25s ease, stroke .25s ease; }
+.ang.right { fill: rgba(47, 93, 58, .32); stroke: #2F5D3A; }
+.verdict { border-radius: 16px; padding: 10px 16px; border: 2px solid #D9C48F; background: #FFFFFF; display: flex; flex-direction: column; gap: 4px; }
+.verdict.right { background: #DDEBCF; border-color: #2F5D3A; }
+.verdict.wrong { background: #FFF1DA; border-color: #E2A94A; }
+.cA { color: #1D4780; }
+.cB { color: #145A3B; }
+.cC { color: #8F3B04; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+#stage { position: absolute; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;/div&gt;
+&lt;template id=&quot;tpl&quot;&gt;
+
+&lt;div style=&quot;width: 1000px; height: 740px; box-sizing: border-box; border: 14px solid #C98B3C; border-radius: 28px; background: #3E6B4A; padding: 18px 24px 22px; display: flex; flex-direction: column; gap: 12px; font-family: &#x27;Nunito&#x27;, system-ui, sans-serif; color: #6E1B1B&quot;&gt;
+
+&lt;div style=&quot;display: flex; flex-direction: column; align-items: center; gap: 8px&quot;&gt;
+&lt;div style=&quot;background: #FBF3DC; border: 4px solid #E2A94A; border-radius: 999px; padding: 4px 44px; font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 30px; line-height: 40px; font-weight: 600; color: #2F5D3A&quot;&gt;Ilustrasi&lt;/div&gt;
+&lt;div style=&quot;color: #FBF3DC; font-size: 16px; line-height: 24px; font-weight: 700&quot;&gt;Ilustrasi 2 · Cara 1: Pola kelipatan triple dasar&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-height: 0; background: #FBF3DC; border-radius: 18px; padding: 20px; box-sizing: border-box; display: flex; gap: 24px&quot;&gt;
+
+&lt;div style=&quot;flex: none; display: flex; flex-direction: column; gap: 8px&quot;&gt;
+&lt;div style=&quot;position: relative; width: 500px; height: 420px; box-sizing: content-box; background: linear-gradient(rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFF8E1 58%, #F3E6BD 100%); border: 3px solid #E2A94A; border-radius: 18px; overflow: hidden&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Segitiga siku-siku dasar yang diperbesar k kali. Sisi-sisinya tetap membentuk triple Pythagoras.&quot; width=&quot;500&quot; height=&quot;420&quot; viewBox=&quot;0 0 500 420&quot; style=&quot;display: block&quot;&gt;
+&lt;polygon points=&quot;{{ghost}}&quot; fill=&quot;rgba(47, 93, 58, .10)&quot; stroke=&quot;#2F5D3A&quot; stroke-width=&quot;2.5&quot; stroke-dasharray=&quot;7 6&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/polygon&gt;
+&lt;polygon class=&quot;{{triAnim}}&quot; points=&quot;{{tri}}&quot; fill=&quot;#DDEBCF&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;5&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/polygon&gt;
+&lt;polyline points=&quot;{{rm}}&quot; fill=&quot;none&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;3&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;17&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;4&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{la.x}}&quot; y=&quot;{{la.y}}&quot; fill=&quot;#1D4780&quot; text-anchor=&quot;{{la.anc}}&quot;&gt;{{la.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lb.x}}&quot; y=&quot;{{lb.y}}&quot; fill=&quot;#145A3B&quot; text-anchor=&quot;{{lb.anc}}&quot;&gt;{{lb.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lc.x}}&quot; y=&quot;{{lc.y}}&quot; fill=&quot;#8F3B04&quot; text-anchor=&quot;{{lc.anc}}&quot;&gt;{{lc.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;burst {{fxCls}}&quot; style=&quot;left: 250px; top: 210px&quot;&gt;&lt;sc-for list=&quot;{{particles}}&quot; as=&quot;p&quot; hint-placeholder-count=&quot;12&quot;&gt;&lt;div class=&quot;{{p.cls}}&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/sc-for&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center; font-size: 17px; line-height: 28px; font-weight: 800; color: #8A6A12&quot;&gt;{{caption}}&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px&quot;&gt;
+&lt;div style=&quot;font-size: 14px; line-height: 20px; font-weight: 700&quot;&gt;Pilih triple dasar, lalu tentukan pengali k.&lt;/div&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{bases}}&quot; as=&quot;bs&quot; hint-placeholder-count=&quot;4&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{bs.cls}}&quot; aria-pressed=&quot;{{bs.pressed}}&quot; onClick=&quot;{{bs.pick}}&quot;&gt;{{bs.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;sc-for list=&quot;{{knowns}}&quot; as=&quot;k&quot; hint-placeholder-count=&quot;1&quot;&gt;
+&lt;div class=&quot;rowc&quot;&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; min-width: 0&quot;&gt;
+&lt;span style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 26px&quot;&gt;{{k.label}}&lt;/span&gt;
+&lt;span style=&quot;font-size: 12px; line-height: 16px; color: #6B4F33&quot;&gt;{{k.note}}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: flex; align-items: center; gap: 4px&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;stp press&quot; aria-label=&quot;{{k.decLabel}}&quot; disabled=&quot;{{k.decDis}}&quot; onClick=&quot;{{k.dec}}&quot;&gt;−&lt;/button&gt;
+&lt;span style=&quot;min-width: 36px; text-align: center; font-size: 22px; font-weight: 800&quot;&gt;{{k.val}}&lt;/span&gt;
+&lt;button type=&quot;button&quot; class=&quot;stp press&quot; aria-label=&quot;{{k.incLabel}}&quot; disabled=&quot;{{k.incDis}}&quot; onClick=&quot;{{k.inc}}&quot;&gt;+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/sc-for&gt;
+&lt;div class=&quot;verdict right&quot; aria-live=&quot;polite&quot;&gt;
+&lt;div class=&quot;{{rise1}}&quot; style=&quot;font-size: 15px; line-height: 22px; font-weight: 800; color: #2F5D3A&quot;&gt;{{t1}}&lt;/div&gt;
+&lt;div class=&quot;{{rise2}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 19px; line-height: 24px&quot;&gt;{{t2}}&lt;/div&gt;
+&lt;div class=&quot;{{rise3}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 19px; line-height: 24px&quot;&gt;{{t3}}&lt;/div&gt;
+&lt;div class=&quot;{{rise4}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 19px; line-height: 24px; color: #2F5D3A&quot;&gt;{{t4}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;margin-top: auto; background: #FFF3C9; border: 1px solid #E8D58A; border-radius: 12px; padding: 10px 14px; font-size: 14px; line-height: 20px&quot;&gt;{{ratio}}&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;!function(n){&quot;function&quot;==typeof define&amp;&amp;define.amd?define(n):n()}(function(){var n,l,t,u,i,o,e,r,f,c,s,a,h,p=65536,v=1&lt;&lt;17,d={},y=[],w=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,_=Array.isArray;function g(n,l){for(var t in l)n[t]=l[t];return n}function m(n){n&amp;&amp;n.parentNode&amp;&amp;n.parentNode.removeChild(n)}function b(l,t,u){var i,o,e,r={};for(e in t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:r[e]=t[e];if(arguments.length&gt;2&amp;&amp;(r.children=arguments.length&gt;3?n.call(arguments,2):u),&quot;function&quot;==typeof l&amp;&amp;null!=l.defaultProps)for(e in l.defaultProps)void 0===r[e]&amp;&amp;(r[e]=l.defaultProps[e]);return k(l,r,i,o,null)}function k(n,u,i,o,e){var r={type:n,props:u,key:i,ref:o,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:null==e?++t:e,__i:-1,__u:0};return null==e&amp;&amp;null!=l.vnode&amp;&amp;l.vnode(r),r}function C(n){return n.children}function x(n,l){this.props=n,this.context=l}function S(n,l){if(null==l)return n.__?S(n.__,n.__i+1):null;for(var t;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e)return t.__e;return&quot;function&quot;==typeof n.type?S(n):null}function M(n){var l,t;if(null!=(n=n.__)&amp;&amp;null!=n.__c){for(n.__e=n.__c.base=null,l=0;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e){n.__e=n.__c.base=t.__e;break}return M(n)}}function P(n){(!n.__d&amp;&amp;(n.__d=!0)&amp;&amp;i.push(n)&amp;&amp;!$.__r++||o!==l.debounceRendering)&amp;&amp;((o=l.debounceRendering)||e)($)}function $(){var n,t,u,o,e,f,c,s;for(i.sort(r);n=i.shift();)n.__d&amp;&amp;(t=i.length,o=void 0,f=(e=(u=n).__v).__e,c=[],s=[],u.__P&amp;&amp;((o=g({},e)).__v=e.__v+1,l.vnode&amp;&amp;l.vnode(o),O(u.__P,o,e,u.__n,u.__P.namespaceURI,32&amp;e.__u?[f]:null,c,null==f?S(e):f,!!(32&amp;e.__u),s),o.__v=e.__v,o.__.__k[o.__i]=o,V(c,o,s),o.__e!=f&amp;&amp;M(o)),i.length&gt;t&amp;&amp;i.sort(r));$.__r=0}function I(n,l,t,u,i,o,e,r,f,c,s){var a,h,v,w,_,g=u&amp;&amp;u.__k||y,m=l.length;for(t.__d=f,A(t,l,g),f=t.__d,a=0;a&lt;m;a++)null!=(v=t.__k[a])&amp;&amp;(h=-1===v.__i?d:g[v.__i]||d,v.__i=a,O(n,v,h,i,o,e,r,f,c,s),w=v.__e,v.ref&amp;&amp;h.ref!=v.ref&amp;&amp;(h.ref&amp;&amp;z(h.ref,null,v),s.push(v.ref,v.__c||w,v)),null==_&amp;&amp;null!=w&amp;&amp;(_=w),v.__u&amp;p||h.__k===v.__k?f=E(v,f,n):&quot;function&quot;==typeof v.type&amp;&amp;void 0!==v.__d?f=v.__d:w&amp;&amp;(f=w.nextSibling),v.__d=void 0,v.__u&amp;=-196609);t.__d=f,t.__e=_}function A(n,l,t){var u,i,o,e,r,f=l.length,c=t.length,s=c,a=0;for(n.__k=[],u=0;u&lt;f;u++)null!=(i=l[u])&amp;&amp;&quot;boolean&quot;!=typeof i&amp;&amp;&quot;function&quot;!=typeof i?(e=u+a,(i=n.__k[u]=&quot;string&quot;==typeof i||&quot;number&quot;==typeof i||&quot;bigint&quot;==typeof i||i.constructor==String?k(null,i,null,null,null):_(i)?k(C,{children:i},null,null,null):void 0===i.constructor&amp;&amp;i.__b&gt;0?k(i.type,i.props,i.key,i.ref?i.ref:null,i.__v):i).__=n,i.__b=n.__b+1,o=null,-1!==(r=i.__i=F(i,t,e,s))&amp;&amp;(s--,(o=t[r])&amp;&amp;(o.__u|=v)),null==o||null===o.__v?(-1==r&amp;&amp;a--,&quot;function&quot;!=typeof i.type&amp;&amp;(i.__u|=p)):r!==e&amp;&amp;(r==e-1?a--:r==e+1?a++:(r&gt;e?a--:a++,i.__u|=p))):i=n.__k[u]=null;if(s)for(u=0;u&lt;c;u++)null!=(o=t[u])&amp;&amp;0==(o.__u&amp;v)&amp;&amp;(o.__e==n.__d&amp;&amp;(n.__d=S(o)),N(o,o))}function E(n,l,t){var u,i;if(&quot;function&quot;==typeof n.type){for(u=n.__k,i=0;u&amp;&amp;i&lt;u.length;i++)u[i]&amp;&amp;(u[i].__=n,l=E(u[i],l,t));return l}n.__e!=l&amp;&amp;(l&amp;&amp;n.type&amp;&amp;!t.contains(l)&amp;&amp;(l=S(n)),t.insertBefore(n.__e,l||null),l=n.__e);do{l=l&amp;&amp;l.nextSibling}while(null!=l&amp;&amp;8===l.nodeType);return l}function F(n,l,t,u){var i=n.key,o=n.type,e=t-1,r=t+1,f=l[t];if(null===f||f&amp;&amp;i==f.key&amp;&amp;o===f.type&amp;&amp;0==(f.__u&amp;v))return t;if(u&gt;(null!=f&amp;&amp;0==(f.__u&amp;v)?1:0))for(;e&gt;=0||r&lt;l.length;){if(e&gt;=0){if((f=l[e])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return e;e--}if(r&lt;l.length){if((f=l[r])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return r;r++}}return-1}function H(n,l,t){&quot;-&quot;===l[0]?n.setProperty(l,null==t?&quot;&quot;:t):n[l]=null==t?&quot;&quot;:&quot;number&quot;!=typeof t||w.test(l)?t:t+&quot;px&quot;}function L(n,l,t,u,i){var o;n:if(&quot;style&quot;===l)if(&quot;string&quot;==typeof t)n.style.cssText=t;else{if(&quot;string&quot;==typeof u&amp;&amp;(n.style.cssText=u=&quot;&quot;),u)for(l in u)t&amp;&amp;l in t||H(n.style,l,&quot;&quot;);if(t)for(l in t)u&amp;&amp;t[l]===u[l]||H(n.style,l,t[l])}else if(&quot;o&quot;===l[0]&amp;&amp;&quot;n&quot;===l[1])o=l!==(l=l.replace(/(PointerCapture)$|Capture$/i,&quot;$1&quot;)),l=l.toLowerCase()in n||&quot;onFocusOut&quot;===l||&quot;onFocusIn&quot;===l?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+o]=t,t?u?t.t=u.t:(t.t=f,n.addEventListener(l,o?s:c,o)):n.removeEventListener(l,o?s:c,o);else{if(&quot;http://www.w3.org/2000/svg&quot;==i)l=l.replace(/xlink(H|:h)/,&quot;h&quot;).replace(/sName$/,&quot;s&quot;);else if(&quot;width&quot;!=l&amp;&amp;&quot;height&quot;!=l&amp;&amp;&quot;href&quot;!=l&amp;&amp;&quot;list&quot;!=l&amp;&amp;&quot;form&quot;!=l&amp;&amp;&quot;tabIndex&quot;!=l&amp;&amp;&quot;download&quot;!=l&amp;&amp;&quot;rowSpan&quot;!=l&amp;&amp;&quot;colSpan&quot;!=l&amp;&amp;&quot;role&quot;!=l&amp;&amp;&quot;popover&quot;!=l&amp;&amp;l in n)try{n[l]=null==t?&quot;&quot;:t;break n}catch(n){}&quot;function&quot;==typeof t||(null==t||!1===t&amp;&amp;&quot;-&quot;!==l[4]?n.removeAttribute(l):n.setAttribute(l,&quot;popover&quot;==l&amp;&amp;1==t?&quot;&quot;:t))}}function T(n){return function(t){if(this.l){var u=this.l[t.type+n];if(null==t.u)t.u=f++;else if(t.u&lt;u.t)return;return u(l.event?l.event(t):t)}}}function O(n,t,u,i,o,e,r,f,c,s){var a,h,p,v,d,y,w,m,b,k,S,M,P,$,A,E,F=t.type;if(void 0!==t.constructor)return null;128&amp;u.__u&amp;&amp;(c=!!(32&amp;u.__u),e=[f=t.__e=u.__e]),(a=l.__b)&amp;&amp;a(t);n:if(&quot;function&quot;==typeof F)try{if(m=t.props,b=&quot;prototype&quot;in F&amp;&amp;F.prototype.render,k=(a=F.contextType)&amp;&amp;i[a.__c],S=a?k?k.props.value:a.__:i,u.__c?w=(h=t.__c=u.__c).__=h.__E:(b?t.__c=h=new F(m,S):(t.__c=h=new x(m,S),h.constructor=F,h.render=R),k&amp;&amp;k.sub(h),h.props=m,h.state||(h.state={}),h.context=S,h.__n=i,p=h.__d=!0,h.__h=[],h._sb=[]),b&amp;&amp;null==h.__s&amp;&amp;(h.__s=h.state),b&amp;&amp;null!=F.getDerivedStateFromProps&amp;&amp;(h.__s==h.state&amp;&amp;(h.__s=g({},h.__s)),g(h.__s,F.getDerivedStateFromProps(m,h.__s))),v=h.props,d=h.state,h.__v=t,p)b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;null!=h.componentWillMount&amp;&amp;h.componentWillMount(),b&amp;&amp;null!=h.componentDidMount&amp;&amp;h.__h.push(h.componentDidMount);else{if(b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;m!==v&amp;&amp;null!=h.componentWillReceiveProps&amp;&amp;h.componentWillReceiveProps(m,S),!h.__e&amp;&amp;(null!=h.shouldComponentUpdate&amp;&amp;!1===h.shouldComponentUpdate(m,h.__s,S)||t.__v===u.__v)){for(t.__v!==u.__v&amp;&amp;(h.props=m,h.state=h.__s,h.__d=!1),t.__e=u.__e,t.__k=u.__k,t.__k.some(function(n){n&amp;&amp;(n.__=t)}),M=0;M&lt;h._sb.length;M++)h.__h.push(h._sb[M]);h._sb=[],h.__h.length&amp;&amp;r.push(h);break n}null!=h.componentWillUpdate&amp;&amp;h.componentWillUpdate(m,h.__s,S),b&amp;&amp;null!=h.componentDidUpdate&amp;&amp;h.__h.push(function(){h.componentDidUpdate(v,d,y)})}if(h.context=S,h.props=m,h.__P=n,h.__e=!1,P=l.__r,$=0,b){for(h.state=h.__s,h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),A=0;A&lt;h._sb.length;A++)h.__h.push(h._sb[A]);h._sb=[]}else do{h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),h.state=h.__s}while(h.__d&amp;&amp;++$&lt;25);h.state=h.__s,null!=h.getChildContext&amp;&amp;(i=g(g({},i),h.getChildContext())),b&amp;&amp;!p&amp;&amp;null!=h.getSnapshotBeforeUpdate&amp;&amp;(y=h.getSnapshotBeforeUpdate(v,d)),I(n,_(E=null!=a&amp;&amp;a.type===C&amp;&amp;null==a.key?a.props.children:a)?E:[E],t,u,i,o,e,r,f,c,s),h.base=t.__e,t.__u&amp;=-161,h.__h.length&amp;&amp;r.push(h),w&amp;&amp;(h.__E=h.__=null)}catch(n){if(t.__v=null,c||null!=e){for(t.__u|=c?160:128;f&amp;&amp;8===f.nodeType&amp;&amp;f.nextSibling;)f=f.nextSibling;e[e.indexOf(f)]=null,t.__e=f}else t.__e=u.__e,t.__k=u.__k;l.__e(n,t,u)}else null==e&amp;&amp;t.__v===u.__v?(t.__k=u.__k,t.__e=u.__e):t.__e=j(u.__e,t,u,i,o,e,r,c,s);(a=l.diffed)&amp;&amp;a(t)}function V(n,t,u){t.__d=void 0;for(var i=0;i&lt;u.length;i++)z(u[i],u[++i],u[++i]);l.__c&amp;&amp;l.__c(t,n),n.some(function(t){try{n=t.__h,t.__h=[],n.some(function(n){n.call(t)})}catch(n){l.__e(n,t.__v)}})}function j(t,u,i,o,e,r,f,c,s){var a,h,p,v,y,w,g,b=i.props,k=u.props,C=u.type;if(&quot;svg&quot;===C?e=&quot;http://www.w3.org/2000/svg&quot;:&quot;math&quot;===C?e=&quot;http://www.w3.org/1998/Math/MathML&quot;:e||(e=&quot;http://www.w3.org/1999/xhtml&quot;),null!=r)for(a=0;a&lt;r.length;a++)if((y=r[a])&amp;&amp;&quot;setAttribute&quot;in y==!!C&amp;&amp;(C?y.localName===C:3===y.nodeType)){t=y,r[a]=null;break}if(null==t){if(null===C)return document.createTextNode(k);t=document.createElementNS(e,C,k.is&amp;&amp;k),c&amp;&amp;(l.__m&amp;&amp;l.__m(u,r),c=!1),r=null}if(null===C)b===k||c&amp;&amp;t.data===k||(t.data=k);else{if(r=r&amp;&amp;n.call(t.childNodes),b=i.props||d,!c&amp;&amp;null!=r)for(b={},a=0;a&lt;t.attributes.length;a++)b[(y=t.attributes[a]).name]=y.value;for(a in b)if(y=b[a],&quot;children&quot;==a);else if(&quot;dangerouslySetInnerHTML&quot;==a)p=y;else if(!(a in k)){if(&quot;value&quot;==a&amp;&amp;&quot;defaultValue&quot;in k||&quot;checked&quot;==a&amp;&amp;&quot;defaultChecked&quot;in k)continue;L(t,a,null,y,e)}for(a in k)y=k[a],&quot;children&quot;==a?v=y:&quot;dangerouslySetInnerHTML&quot;==a?h=y:&quot;value&quot;==a?w=y:&quot;checked&quot;==a?g=y:c&amp;&amp;&quot;function&quot;!=typeof y||b[a]===y||L(t,a,y,b[a],e);if(h)c||p&amp;&amp;(h.__html===p.__html||h.__html===t.innerHTML)||(t.innerHTML=h.__html),u.__k=[];else if(p&amp;&amp;(t.innerHTML=&quot;&quot;),I(t,_(v)?v:[v],u,i,o,&quot;foreignObject&quot;===C?&quot;http://www.w3.org/1999/xhtml&quot;:e,r,f,r?r[0]:i.__k&amp;&amp;S(i,0),c,s),null!=r)for(a=r.length;a--;)m(r[a]);c||(a=&quot;value&quot;,&quot;progress&quot;===C&amp;&amp;null==w?t.removeAttribute(&quot;value&quot;):void 0!==w&amp;&amp;(w!==t[a]||&quot;progress&quot;===C&amp;&amp;!w||&quot;option&quot;===C&amp;&amp;w!==b[a])&amp;&amp;L(t,a,w,b[a],e),a=&quot;checked&quot;,void 0!==g&amp;&amp;g!==t[a]&amp;&amp;L(t,a,g,b[a],e))}return t}function z(n,t,u){try{if(&quot;function&quot;==typeof n){var i=&quot;function&quot;==typeof n.__u;i&amp;&amp;n.__u(),i&amp;&amp;null==t||(n.__u=n(t))}else n.current=t}catch(n){l.__e(n,u)}}function N(n,t,u){var i,o;if(l.unmount&amp;&amp;l.unmount(n),(i=n.ref)&amp;&amp;(i.current&amp;&amp;i.current!==n.__e||z(i,null,t)),null!=(i=n.__c)){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(n){l.__e(n,t)}i.base=i.__P=null}if(i=n.__k)for(o=0;o&lt;i.length;o++)i[o]&amp;&amp;N(i[o],t,u||&quot;function&quot;!=typeof n.type);u||m(n.__e),n.__c=n.__=n.__e=n.__d=void 0}function R(n,l,t){return this.constructor(n,t)}function q(t,u,i){var o,e,r,f;l.__&amp;&amp;l.__(t,u),e=(o=&quot;function&quot;==typeof i)?null:i&amp;&amp;i.__k||u.__k,r=[],f=[],O(u,t=(!o&amp;&amp;i||u).__k=b(C,null,[t]),e||d,d,u.namespaceURI,!o&amp;&amp;i?[i]:e?null:u.firstChild?n.call(u.childNodes):null,r,!o&amp;&amp;i?i:e?e.__e:u.firstChild,o,f),V(r,t,f)}n=y.slice,l={__e:function(n,l,t,u){for(var i,o,e;l=l.__;)if((i=l.__c)&amp;&amp;!i.__)try{if((o=i.constructor)&amp;&amp;null!=o.getDerivedStateFromError&amp;&amp;(i.setState(o.getDerivedStateFromError(n)),e=i.__d),null!=i.componentDidCatch&amp;&amp;(i.componentDidCatch(n,u||{}),e=i.__d),e)return i.__E=i}catch(l){n=l}throw n}},t=0,u=function(n){return null!=n&amp;&amp;null==n.constructor},x.prototype.setState=function(n,l){var t;t=null!=this.__s&amp;&amp;this.__s!==this.state?this.__s:this.__s=g({},this.state),&quot;function&quot;==typeof n&amp;&amp;(n=n(g({},t),this.props)),n&amp;&amp;g(t,n),null!=n&amp;&amp;this.__v&amp;&amp;(l&amp;&amp;this._sb.push(l),P(this))},x.prototype.forceUpdate=function(n){this.__v&amp;&amp;(this.__e=!0,n&amp;&amp;this.__h.push(n),P(this))},x.prototype.render=C,i=[],e=&quot;function&quot;==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,r=function(n,l){return n.__v.__b-l.__v.__b},$.__r=0,f=0,c=T(!1),s=T(!0),a=0,h={__proto__:null,render:q,hydrate:function n(l,t){q(l,t,n)},createElement:b,h:b,Fragment:C,createRef:function(){return{current:null}},isValidElement:u,Component:x,cloneElement:function(l,t,u){var i,o,e,r,f=g({},l.props);for(e in l.type&amp;&amp;l.type.defaultProps&amp;&amp;(r=l.type.defaultProps),t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:f[e]=void 0===t[e]&amp;&amp;void 0!==r?r[e]:t[e];return arguments.length&gt;2&amp;&amp;(f.children=arguments.length&gt;3?n.call(arguments,2):u),k(l.type,f,i||l.key,o||l.ref,null)},createContext:function(n,l){var t={__c:l=&quot;__cC&quot;+a++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var t,u;return this.getChildContext||(t=new Set,(u={})[l]=this,this.getChildContext=function(){return u},this.componentWillUnmount=function(){t=null},this.shouldComponentUpdate=function(n){this.props.value!==n.value&amp;&amp;t.forEach(function(n){n.__e=!0,P(n)})},this.sub=function(n){t.add(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){t&amp;&amp;t.delete(n),l&amp;&amp;l.call(n)}}),n.children}};return t.Provider.__=t.Consumer.contextType=t},toChildArray:function n(l,t){return t=t||[],null==l||&quot;boolean&quot;==typeof l||(_(l)?l.some(function(l){n(l,t)}):t.push(l)),t},options:l},typeof module&lt;&quot;u&quot;?module.exports=h:self.preact=h});
+//# sourceMappingURL=preact.min.umd.js.map
+&lt;/script&gt;
+&lt;script&gt;/* Runtime mini: menjalankan template .dc.html (sc-for, sc-if, {{lubang}}, onClick) tanpa editor kanvas. */
+(function () {
+  var h = preact.h;
+  var render = preact.render;
+
+  class DCLogic {
+    constructor(props) {
+      this.props = props || {};
+      this.state = {};
+      this.__render = null;
+    }
+    setState(p) {
+      var next = typeof p === &#x27;function&#x27; ? p(this.state, this.props) : p;
+      if (next == null) return;
+      this.state = Object.assign({}, this.state, next);
+      if (this.__render) this.__render();
+    }
+    forceUpdate() {
+      if (this.__render) this.__render();
+    }
+  }
+  window.DCLogic = DCLogic;
+
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+
+  function lookup(scope, path) {
+    if (path === &#x27;true&#x27;) return true;
+    if (path === &#x27;false&#x27;) return false;
+    if (path === &#x27;null&#x27;) return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split(&#x27;.&#x27;);
+    var cur = scope;
+    for (var i = 0; i &lt; parts.length; i++) {
+      if (cur == null) return undefined;
+      cur = cur[parts[i]];
+    }
+    return cur;
+  }
+
+  function evalAttr(value, scope) {
+    var m = WHOLE.exec(value);
+    if (m) return lookup(scope, m[1]);
+    return value.replace(HOLE, function (_, p) {
+      var v = lookup(scope, p);
+      return v == null ? &#x27;&#x27; : String(v);
+    });
+  }
+
+  function flatten(list, out) {
+    for (var i = 0; i &lt; list.length; i++) {
+      var c = list[i];
+      if (Array.isArray(c)) flatten(c, out);
+      else if (c !== null &amp;&amp; c !== undefined &amp;&amp; c !== false) out.push(c);
+    }
+    return out;
+  }
+
+  function buildChildren(node, scope) {
+    var out = [];
+    for (var i = 0; i &lt; node.childNodes.length; i++) {
+      out.push(build(node.childNodes[i], scope));
+    }
+    return flatten(out, []);
+  }
+
+  function build(node, scope) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      if (!t.trim() &amp;&amp; t.indexOf(&#x27;\n&#x27;) &gt;= 0) return null;
+      var m = WHOLE.exec(t);
+      if (m) {
+        var raw = lookup(scope, m[1]);
+        return raw == null ? &#x27;&#x27; : String(raw);
+      }
+      return t.replace(HOLE, function (_, p) {
+        var v = lookup(scope, p);
+        return v == null ? &#x27;&#x27; : String(v);
+      });
+    }
+    if (node.nodeType !== 1) return null;
+    var tag = node.localName;
+
+    if (tag === &#x27;sc-if&#x27;) {
+      var cond = evalAttr(node.getAttribute(&#x27;value&#x27;) || &#x27;&#x27;, scope);
+      return cond ? buildChildren(node, scope) : null;
+    }
+    if (tag === &#x27;sc-for&#x27;) {
+      var list = evalAttr(node.getAttribute(&#x27;list&#x27;) || &#x27;&#x27;, scope) || [];
+      var as = node.getAttribute(&#x27;as&#x27;) || &#x27;item&#x27;;
+      var out = [];
+      for (var i = 0; i &lt; list.length; i++) {
+        var sub = Object.create(scope);
+        sub[as] = list[i];
+        sub.$index = i;
+        out.push(buildChildren(node, sub));
+      }
+      return flatten(out, []);
+    }
+
+    var props = {};
+    for (var a = 0; a &lt; node.attributes.length; a++) {
+      var name = node.attributes[a].name;
+      var val = node.attributes[a].value;
+      if (name.indexOf(&#x27;hint-&#x27;) === 0) continue;
+      if (name.indexOf(&#x27;on&#x27;) === 0 &amp;&amp; name.length &gt; 2) {
+        var fn = evalAttr(val, scope);
+        if (typeof fn === &#x27;function&#x27;) {
+          var evt = name.toLowerCase();
+          if (evt === &#x27;onchange&#x27; &amp;&amp; tag === &#x27;input&#x27;) evt = &#x27;oninput&#x27;;
+          props[evt] = fn;
+        }
+        continue;
+      }
+      props[name] = evalAttr(val, scope);
+    }
+    return h.apply(null, [tag, props].concat(buildChildren(node, scope)));
+  }
+
+  window.DCMount = function (templateEl, mountEl, ComponentClass, size) {
+    var root = templateEl.content.firstElementChild;
+    var comp = new ComponentClass({});
+    function draw() {
+      var vals = comp.renderVals();
+      render(build(root, vals), mountEl);
+    }
+    comp.__render = draw;
+    draw();
+
+    var stage = mountEl;
+    function fit() {
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var s = Math.min(vw / size.w, vh / size.h, 2);
+      stage.style.width = size.w + &#x27;px&#x27;;
+      stage.style.height = size.h + &#x27;px&#x27;;
+      stage.style.transformOrigin = &#x27;0 0&#x27;;
+      stage.style.transform = &#x27;scale(&#x27; + s + &#x27;)&#x27;;
+      stage.style.left = Math.max(0, (vw - size.w * s) / 2) + &#x27;px&#x27;;
+      stage.style.top = Math.max(0, (vh - size.h * s) / 2) + &#x27;px&#x27;;
+    }
+    window.addEventListener(&#x27;resize&#x27;, fit);
+    fit();
+    return comp;
+  };
+})();
+&lt;/script&gt;
+&lt;script&gt;
+
+class Component extends DCLogic {
+  S(st) {
+    return Object.assign(this.D(), st || {});
+  }
+
+  fx(n) {
+    if (n === 0) return &#x27;fx0&#x27;;
+    return n % 2 === 1 ? &#x27;fxA&#x27; : &#x27;fxB&#x27;;
+  }
+
+  alt(prefix, n) {
+    if (n === 0) return &#x27;&#x27;;
+    return prefix + (n % 2 === 1 ? &#x27;A&#x27; : &#x27;B&#x27;);
+  }
+
+  burstParticles() {
+    const particles = [];
+    for (let i = 0; i &lt; 12; i++) {
+      particles.push({ cls: &#x27;arm r&#x27; + i + &#x27; c&#x27; + (i % 4) });
+    }
+    return particles;
+  }
+
+  D() {
+    return { base: 0, k: 2, fx: 0 };
+  }
+
+  setBase(i) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      return { base: i, fx: cur.fx + 1 };
+    });
+  }
+
+  adjK(d) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      const k = Math.max(2, Math.min(5, cur.k + d));
+      if (k === cur.k) return null;
+      return { k: k, fx: cur.fx + 1 };
+    });
+  }
+
+  renderVals() {
+    const s = this.S(this.state);
+    const bases = [[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25]];
+    const a = bases[s.base][0];
+    const b = bases[s.base][1];
+    const c = bases[s.base][2];
+    const k = s.k;
+    const A = a * k;
+    const B = b * k;
+    const C = c * k;
+    const f = (n) =&gt; n.toFixed(1);
+    const P = (x, y) =&gt; f(x) + &#x27;,&#x27; + f(y);
+
+    const u = Math.min(320 / (b * 5), 270 / (a * 5));
+    const Av = A * u;
+    const Bh = B * u;
+    const x0 = (500 - Bh) / 2;
+    const y0 = 210 + Av / 2 + 10;
+    const rmS = Math.min(18, 0.4 * Math.min(Av, Bh));
+    const hl = Math.hypot(Av, Bh);
+    const mx = x0 + Bh / 2;
+    const my = y0 - Av / 2;
+    const nx = Av / hl;
+    const ny = -Bh / hl;
+
+    const hy = nx &gt; 0.5 ? { x: mx + nx * 14, y: my + ny * 14 + 6, anc: &#x27;start&#x27; } : { x: mx + nx * 26, y: my + ny * 26 + 6, anc: &#x27;middle&#x27; };
+    const tup = (x, y, z) =&gt; &#x27;(&#x27; + x + &#x27;, &#x27; + y + &#x27;, &#x27; + z + &#x27;)&#x27;;
+    const alt = s.fx % 2 === 1 ? &#x27;riseA&#x27; : &#x27;riseB&#x27;;
+    const rise = (n) =&gt; (s.fx === 0 ? &#x27;&#x27; : alt + &#x27; d&#x27; + n);
+
+    const baseBtns = bases.map((bs, i) =&gt; ({
+      label: tup(bs[0], bs[1], bs[2]),
+      pressed: s.base === i,
+      cls: &#x27;btn press&#x27; + (s.base === i ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.setBase(i)
+    }));
+
+    const knowns = [{
+      label: &#x27;k&#x27;,
+      note: &#x27;pengali, k = 2, 3, 4, ...&#x27;,
+      val: k,
+      decLabel: &#x27;Kurangi k&#x27;,
+      incLabel: &#x27;Tambah k&#x27;,
+      decDis: k &lt;= 2,
+      incDis: k &gt;= 5,
+      dec: () =&gt; this.adjK(-1),
+      inc: () =&gt; this.adjK(1)
+    }];
+
+    return {
+      particles: this.burstParticles(),
+      fxCls: this.fx(s.fx),
+      ghost: P(x0, y0) + &#x27; &#x27; + P(x0, y0 - a * u) + &#x27; &#x27; + P(x0 + b * u, y0),
+      tri: P(x0, y0) + &#x27; &#x27; + P(x0, y0 - Av) + &#x27; &#x27; + P(x0 + Bh, y0),
+      triAnim: s.fx === 0 ? &#x27;&#x27; : this.alt(&#x27;pop&#x27;, s.fx),
+      rm: P(x0 + rmS, y0) + &#x27; &#x27; + P(x0 + rmS, y0 - rmS) + &#x27; &#x27; + P(x0, y0 - rmS),
+      la: { x: f(x0 - 10), y: f(y0 - Av / 2 + 6), t: &#x27;a = &#x27; + A, anc: &#x27;end&#x27; },
+      lb: { x: f(x0 + Bh / 2), y: f(y0 + 30), t: &#x27;b = &#x27; + B, anc: &#x27;middle&#x27; },
+      lc: { x: f(hy.x), y: f(hy.y), t: &#x27;c = &#x27; + C, anc: hy.anc },
+      caption: &#x27;Segitiga dasar (putus-putus) diperbesar &#x27; + k + &#x27; kali&#x27;,
+      bases: baseBtns,
+      knowns: knowns,
+      rise1: rise(1),
+      rise2: rise(2),
+      rise3: rise(3),
+      rise4: rise(4),
+      t1: tup(a, b, c) + &#x27; dikali &#x27; + k + &#x27; → &#x27; + tup(A, B, C),
+      t2: A + &#x27;² + &#x27; + B + &#x27;² = &#x27; + C + &#x27;²&#x27;,
+      t3: (A * A) + &#x27; + &#x27; + (B * B) + &#x27; = &#x27; + (C * C),
+      t4: (A * A + B * B) + &#x27; = &#x27; + (C * C) + &#x27; ✓&#x27;,
+      ratio: &#x27;Perbandingan sisinya selalu &#x27; + a + &#x27; : &#x27; + b + &#x27; : &#x27; + c + &#x27;, jadi bentuk segitiga tetap sebangun.&#x27;
+    };
+  }
+}
+
+&lt;/script&gt;
+&lt;script&gt;
+DCMount(document.getElementById(&#x27;tpl&#x27;), document.getElementById(&#x27;stage&#x27;), Component, { w: 1000, h: 740 });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></section>
+<section><iframe title="Ilustrasi 3: Cara 2: Dua bilangan asli p dan q" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;id&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Ilustrasi Triple 3 Dua bilangan asli p dan q&lt;/title&gt;
+
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Lora:ital,wght@1,600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body { margin: 0; }
+button { font-family: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #C9822B; outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+.press { transition: transform .12s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }
+.press:hover:not(:disabled) { transform: translateY(-1px); }
+.press:active:not(:disabled) { transform: scale(.96); }
+.go { min-height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: #2F5D3A; color: #FBF3DC; font-weight: 800; font-size: 16px; }
+.go:hover:not(:disabled) { background: #244A2E; }
+.stp { width: 44px; height: 44px; flex: none; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-size: 22px; font-weight: 700; line-height: 1; padding: 0; }
+.stp:hover:not(:disabled) { background: #FFF6DC; border-color: #C98B3C; }
+.stp:disabled { opacity: .4; }
+.btn { min-height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-weight: 700; font-size: 15px; line-height: 20px; }
+.btn:hover:not(:disabled) { background: #FFF6DC; }
+.btn.on, .btn.on:hover:not(:disabled) { background: #2F5D3A; border-color: #2F5D3A; color: #FBF3DC; }
+.rowc { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 14px; padding: 3px 6px 3px 12px; }
+.off { display: none; }
+
+/* efek ledakan titik warna */
+.burst { position: absolute; width: 0; height: 0; pointer-events: none; }
+.arm { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.dot { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; opacity: 0; }
+.arm:nth-child(even) .dot { width: 7px; height: 7px; left: -3.5px; top: -3.5px; }
+.r0 { transform: rotate(0deg); }
+.r1 { transform: rotate(30deg); }
+.r2 { transform: rotate(60deg); }
+.r3 { transform: rotate(90deg); }
+.r4 { transform: rotate(120deg); }
+.r5 { transform: rotate(150deg); }
+.r6 { transform: rotate(180deg); }
+.r7 { transform: rotate(210deg); }
+.r8 { transform: rotate(240deg); }
+.r9 { transform: rotate(270deg); }
+.r10 { transform: rotate(300deg); }
+.r11 { transform: rotate(330deg); }
+.c0 .dot { background: #F2B01E; }
+.c1 .dot { background: #2F5D3A; }
+.c2 .dot { background: #B8520A; }
+.c3 .dot { background: #2A63A8; }
+.fxA .dot { animation: outA .85s ease-out both; }
+.fxB .dot { animation: outB .85s ease-out both; }
+@keyframes outA {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+@keyframes outB {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+.riseA { animation: riseA .4s ease both; }
+.riseB { animation: riseB .4s ease both; }
+@keyframes riseA {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes riseB {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+.d1 { animation-delay: .02s; }
+.d2 { animation-delay: .12s; }
+.d3 { animation-delay: .22s; }
+.d4 { animation-delay: .32s; }
+.popA { animation: popA .45s cubic-bezier(.2, 1.5, .4, 1); }
+.popB { animation: popB .45s cubic-bezier(.2, 1.5, .4, 1); }
+@keyframes popA {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+@keyframes popB {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.ang { fill: rgba(226, 169, 74, .4); stroke: #8A4B0F; transition: fill .25s ease, stroke .25s ease; }
+.ang.right { fill: rgba(47, 93, 58, .32); stroke: #2F5D3A; }
+.verdict { border-radius: 16px; padding: 10px 16px; border: 2px solid #D9C48F; background: #FFFFFF; display: flex; flex-direction: column; gap: 4px; }
+.verdict.right { background: #DDEBCF; border-color: #2F5D3A; }
+.verdict.wrong { background: #FFF1DA; border-color: #E2A94A; }
+.cA { color: #1D4780; }
+.cB { color: #145A3B; }
+.cC { color: #8F3B04; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+#stage { position: absolute; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;/div&gt;
+&lt;template id=&quot;tpl&quot;&gt;
+
+&lt;div style=&quot;width: 1000px; height: 740px; box-sizing: border-box; border: 14px solid #C98B3C; border-radius: 28px; background: #3E6B4A; padding: 18px 24px 22px; display: flex; flex-direction: column; gap: 12px; font-family: &#x27;Nunito&#x27;, system-ui, sans-serif; color: #6E1B1B&quot;&gt;
+
+&lt;div style=&quot;display: flex; flex-direction: column; align-items: center; gap: 8px&quot;&gt;
+&lt;div style=&quot;background: #FBF3DC; border: 4px solid #E2A94A; border-radius: 999px; padding: 4px 44px; font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 30px; line-height: 40px; font-weight: 600; color: #2F5D3A&quot;&gt;Ilustrasi&lt;/div&gt;
+&lt;div style=&quot;color: #FBF3DC; font-size: 16px; line-height: 24px; font-weight: 700&quot;&gt;Ilustrasi 3 · Cara 2: Dua bilangan asli p dan q&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-height: 0; background: #FBF3DC; border-radius: 18px; padding: 20px; box-sizing: border-box; display: flex; gap: 24px&quot;&gt;
+
+&lt;div style=&quot;flex: none; display: flex; flex-direction: column; gap: 8px&quot;&gt;
+&lt;div style=&quot;position: relative; width: 500px; height: 420px; box-sizing: content-box; background: linear-gradient(rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFF8E1 58%, #F3E6BD 100%); border: 3px solid #E2A94A; border-radius: 18px; overflow: hidden&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Segitiga siku-siku dengan sisi p kuadrat dikurangi q kuadrat, dua kali p kali q, dan p kuadrat ditambah q kuadrat.&quot; width=&quot;500&quot; height=&quot;420&quot; viewBox=&quot;0 0 500 420&quot; style=&quot;display: block&quot;&gt;
+&lt;polygon class=&quot;{{triAnim}}&quot; points=&quot;{{tri}}&quot; fill=&quot;#DDEBCF&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;5&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/polygon&gt;
+&lt;polyline points=&quot;{{rm}}&quot; fill=&quot;none&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;3&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;17&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;4&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{la.x}}&quot; y=&quot;{{la.y}}&quot; fill=&quot;#1D4780&quot; text-anchor=&quot;{{la.anc}}&quot;&gt;{{la.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lb.x}}&quot; y=&quot;{{lb.y}}&quot; fill=&quot;#145A3B&quot; text-anchor=&quot;{{lb.anc}}&quot;&gt;{{lb.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lc.x}}&quot; y=&quot;{{lc.y}}&quot; fill=&quot;#8F3B04&quot; text-anchor=&quot;{{lc.anc}}&quot;&gt;{{lc.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;burst {{fxCls}}&quot; style=&quot;left: 250px; top: 210px&quot;&gt;&lt;sc-for list=&quot;{{particles}}&quot; as=&quot;p&quot; hint-placeholder-count=&quot;12&quot;&gt;&lt;div class=&quot;{{p.cls}}&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/sc-for&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center; font-size: 17px; line-height: 28px; font-weight: 800; color: #8A6A12&quot;&gt;{{caption}}&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px&quot;&gt;
+&lt;div style=&quot;font-size: 14px; line-height: 20px; font-weight: 700&quot;&gt;Pilih dua bilangan asli p dan q, dengan p &amp;gt; q.&lt;/div&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; gap: 6px&quot;&gt;
+&lt;sc-for list=&quot;{{knowns}}&quot; as=&quot;k&quot; hint-placeholder-count=&quot;2&quot;&gt;
+&lt;div class=&quot;rowc&quot;&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; min-width: 0&quot;&gt;
+&lt;span style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 26px&quot;&gt;{{k.label}}&lt;/span&gt;
+&lt;span style=&quot;font-size: 12px; line-height: 16px; color: #6B4F33&quot;&gt;{{k.note}}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: flex; align-items: center; gap: 4px&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;stp press&quot; aria-label=&quot;{{k.decLabel}}&quot; disabled=&quot;{{k.decDis}}&quot; onClick=&quot;{{k.dec}}&quot;&gt;−&lt;/button&gt;
+&lt;span style=&quot;min-width: 36px; text-align: center; font-size: 22px; font-weight: 800&quot;&gt;{{k.val}}&lt;/span&gt;
+&lt;button type=&quot;button&quot; class=&quot;stp press&quot; aria-label=&quot;{{k.incLabel}}&quot; disabled=&quot;{{k.incDis}}&quot; onClick=&quot;{{k.inc}}&quot;&gt;+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div class=&quot;verdict&quot; aria-live=&quot;polite&quot;&gt;
+&lt;div class=&quot;{{rise1}} cA&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 18px; line-height: 24px&quot;&gt;{{t1}}&lt;/div&gt;
+&lt;div class=&quot;{{rise2}} cB&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 18px; line-height: 24px&quot;&gt;{{t2}}&lt;/div&gt;
+&lt;div class=&quot;{{rise3}} cC&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 18px; line-height: 24px&quot;&gt;{{t3}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;{{resCls}}&quot; aria-live=&quot;polite&quot;&gt;
+&lt;div style=&quot;font-size: 15px; line-height: 22px; font-weight: 800; color: #2F5D3A&quot;&gt;{{res}}&lt;/div&gt;
+&lt;div style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 17px; line-height: 22px&quot;&gt;{{chk}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;button type=&quot;button&quot; class=&quot;go press&quot; onClick=&quot;{{rand}}&quot;&gt;Coba pasangan acak&lt;/button&gt;
+&lt;div style=&quot;margin-top: auto; background: #FFF3C9; border: 1px solid #E8D58A; border-radius: 12px; padding: 10px 14px; font-size: 14px; line-height: 20px&quot;&gt;&lt;b&gt;Coba ini:&lt;/b&gt; p = 5 dan q = 4 menghasilkan (9, 40, 41), seperti pada uraian.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;!function(n){&quot;function&quot;==typeof define&amp;&amp;define.amd?define(n):n()}(function(){var n,l,t,u,i,o,e,r,f,c,s,a,h,p=65536,v=1&lt;&lt;17,d={},y=[],w=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,_=Array.isArray;function g(n,l){for(var t in l)n[t]=l[t];return n}function m(n){n&amp;&amp;n.parentNode&amp;&amp;n.parentNode.removeChild(n)}function b(l,t,u){var i,o,e,r={};for(e in t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:r[e]=t[e];if(arguments.length&gt;2&amp;&amp;(r.children=arguments.length&gt;3?n.call(arguments,2):u),&quot;function&quot;==typeof l&amp;&amp;null!=l.defaultProps)for(e in l.defaultProps)void 0===r[e]&amp;&amp;(r[e]=l.defaultProps[e]);return k(l,r,i,o,null)}function k(n,u,i,o,e){var r={type:n,props:u,key:i,ref:o,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:null==e?++t:e,__i:-1,__u:0};return null==e&amp;&amp;null!=l.vnode&amp;&amp;l.vnode(r),r}function C(n){return n.children}function x(n,l){this.props=n,this.context=l}function S(n,l){if(null==l)return n.__?S(n.__,n.__i+1):null;for(var t;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e)return t.__e;return&quot;function&quot;==typeof n.type?S(n):null}function M(n){var l,t;if(null!=(n=n.__)&amp;&amp;null!=n.__c){for(n.__e=n.__c.base=null,l=0;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e){n.__e=n.__c.base=t.__e;break}return M(n)}}function P(n){(!n.__d&amp;&amp;(n.__d=!0)&amp;&amp;i.push(n)&amp;&amp;!$.__r++||o!==l.debounceRendering)&amp;&amp;((o=l.debounceRendering)||e)($)}function $(){var n,t,u,o,e,f,c,s;for(i.sort(r);n=i.shift();)n.__d&amp;&amp;(t=i.length,o=void 0,f=(e=(u=n).__v).__e,c=[],s=[],u.__P&amp;&amp;((o=g({},e)).__v=e.__v+1,l.vnode&amp;&amp;l.vnode(o),O(u.__P,o,e,u.__n,u.__P.namespaceURI,32&amp;e.__u?[f]:null,c,null==f?S(e):f,!!(32&amp;e.__u),s),o.__v=e.__v,o.__.__k[o.__i]=o,V(c,o,s),o.__e!=f&amp;&amp;M(o)),i.length&gt;t&amp;&amp;i.sort(r));$.__r=0}function I(n,l,t,u,i,o,e,r,f,c,s){var a,h,v,w,_,g=u&amp;&amp;u.__k||y,m=l.length;for(t.__d=f,A(t,l,g),f=t.__d,a=0;a&lt;m;a++)null!=(v=t.__k[a])&amp;&amp;(h=-1===v.__i?d:g[v.__i]||d,v.__i=a,O(n,v,h,i,o,e,r,f,c,s),w=v.__e,v.ref&amp;&amp;h.ref!=v.ref&amp;&amp;(h.ref&amp;&amp;z(h.ref,null,v),s.push(v.ref,v.__c||w,v)),null==_&amp;&amp;null!=w&amp;&amp;(_=w),v.__u&amp;p||h.__k===v.__k?f=E(v,f,n):&quot;function&quot;==typeof v.type&amp;&amp;void 0!==v.__d?f=v.__d:w&amp;&amp;(f=w.nextSibling),v.__d=void 0,v.__u&amp;=-196609);t.__d=f,t.__e=_}function A(n,l,t){var u,i,o,e,r,f=l.length,c=t.length,s=c,a=0;for(n.__k=[],u=0;u&lt;f;u++)null!=(i=l[u])&amp;&amp;&quot;boolean&quot;!=typeof i&amp;&amp;&quot;function&quot;!=typeof i?(e=u+a,(i=n.__k[u]=&quot;string&quot;==typeof i||&quot;number&quot;==typeof i||&quot;bigint&quot;==typeof i||i.constructor==String?k(null,i,null,null,null):_(i)?k(C,{children:i},null,null,null):void 0===i.constructor&amp;&amp;i.__b&gt;0?k(i.type,i.props,i.key,i.ref?i.ref:null,i.__v):i).__=n,i.__b=n.__b+1,o=null,-1!==(r=i.__i=F(i,t,e,s))&amp;&amp;(s--,(o=t[r])&amp;&amp;(o.__u|=v)),null==o||null===o.__v?(-1==r&amp;&amp;a--,&quot;function&quot;!=typeof i.type&amp;&amp;(i.__u|=p)):r!==e&amp;&amp;(r==e-1?a--:r==e+1?a++:(r&gt;e?a--:a++,i.__u|=p))):i=n.__k[u]=null;if(s)for(u=0;u&lt;c;u++)null!=(o=t[u])&amp;&amp;0==(o.__u&amp;v)&amp;&amp;(o.__e==n.__d&amp;&amp;(n.__d=S(o)),N(o,o))}function E(n,l,t){var u,i;if(&quot;function&quot;==typeof n.type){for(u=n.__k,i=0;u&amp;&amp;i&lt;u.length;i++)u[i]&amp;&amp;(u[i].__=n,l=E(u[i],l,t));return l}n.__e!=l&amp;&amp;(l&amp;&amp;n.type&amp;&amp;!t.contains(l)&amp;&amp;(l=S(n)),t.insertBefore(n.__e,l||null),l=n.__e);do{l=l&amp;&amp;l.nextSibling}while(null!=l&amp;&amp;8===l.nodeType);return l}function F(n,l,t,u){var i=n.key,o=n.type,e=t-1,r=t+1,f=l[t];if(null===f||f&amp;&amp;i==f.key&amp;&amp;o===f.type&amp;&amp;0==(f.__u&amp;v))return t;if(u&gt;(null!=f&amp;&amp;0==(f.__u&amp;v)?1:0))for(;e&gt;=0||r&lt;l.length;){if(e&gt;=0){if((f=l[e])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return e;e--}if(r&lt;l.length){if((f=l[r])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return r;r++}}return-1}function H(n,l,t){&quot;-&quot;===l[0]?n.setProperty(l,null==t?&quot;&quot;:t):n[l]=null==t?&quot;&quot;:&quot;number&quot;!=typeof t||w.test(l)?t:t+&quot;px&quot;}function L(n,l,t,u,i){var o;n:if(&quot;style&quot;===l)if(&quot;string&quot;==typeof t)n.style.cssText=t;else{if(&quot;string&quot;==typeof u&amp;&amp;(n.style.cssText=u=&quot;&quot;),u)for(l in u)t&amp;&amp;l in t||H(n.style,l,&quot;&quot;);if(t)for(l in t)u&amp;&amp;t[l]===u[l]||H(n.style,l,t[l])}else if(&quot;o&quot;===l[0]&amp;&amp;&quot;n&quot;===l[1])o=l!==(l=l.replace(/(PointerCapture)$|Capture$/i,&quot;$1&quot;)),l=l.toLowerCase()in n||&quot;onFocusOut&quot;===l||&quot;onFocusIn&quot;===l?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+o]=t,t?u?t.t=u.t:(t.t=f,n.addEventListener(l,o?s:c,o)):n.removeEventListener(l,o?s:c,o);else{if(&quot;http://www.w3.org/2000/svg&quot;==i)l=l.replace(/xlink(H|:h)/,&quot;h&quot;).replace(/sName$/,&quot;s&quot;);else if(&quot;width&quot;!=l&amp;&amp;&quot;height&quot;!=l&amp;&amp;&quot;href&quot;!=l&amp;&amp;&quot;list&quot;!=l&amp;&amp;&quot;form&quot;!=l&amp;&amp;&quot;tabIndex&quot;!=l&amp;&amp;&quot;download&quot;!=l&amp;&amp;&quot;rowSpan&quot;!=l&amp;&amp;&quot;colSpan&quot;!=l&amp;&amp;&quot;role&quot;!=l&amp;&amp;&quot;popover&quot;!=l&amp;&amp;l in n)try{n[l]=null==t?&quot;&quot;:t;break n}catch(n){}&quot;function&quot;==typeof t||(null==t||!1===t&amp;&amp;&quot;-&quot;!==l[4]?n.removeAttribute(l):n.setAttribute(l,&quot;popover&quot;==l&amp;&amp;1==t?&quot;&quot;:t))}}function T(n){return function(t){if(this.l){var u=this.l[t.type+n];if(null==t.u)t.u=f++;else if(t.u&lt;u.t)return;return u(l.event?l.event(t):t)}}}function O(n,t,u,i,o,e,r,f,c,s){var a,h,p,v,d,y,w,m,b,k,S,M,P,$,A,E,F=t.type;if(void 0!==t.constructor)return null;128&amp;u.__u&amp;&amp;(c=!!(32&amp;u.__u),e=[f=t.__e=u.__e]),(a=l.__b)&amp;&amp;a(t);n:if(&quot;function&quot;==typeof F)try{if(m=t.props,b=&quot;prototype&quot;in F&amp;&amp;F.prototype.render,k=(a=F.contextType)&amp;&amp;i[a.__c],S=a?k?k.props.value:a.__:i,u.__c?w=(h=t.__c=u.__c).__=h.__E:(b?t.__c=h=new F(m,S):(t.__c=h=new x(m,S),h.constructor=F,h.render=R),k&amp;&amp;k.sub(h),h.props=m,h.state||(h.state={}),h.context=S,h.__n=i,p=h.__d=!0,h.__h=[],h._sb=[]),b&amp;&amp;null==h.__s&amp;&amp;(h.__s=h.state),b&amp;&amp;null!=F.getDerivedStateFromProps&amp;&amp;(h.__s==h.state&amp;&amp;(h.__s=g({},h.__s)),g(h.__s,F.getDerivedStateFromProps(m,h.__s))),v=h.props,d=h.state,h.__v=t,p)b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;null!=h.componentWillMount&amp;&amp;h.componentWillMount(),b&amp;&amp;null!=h.componentDidMount&amp;&amp;h.__h.push(h.componentDidMount);else{if(b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;m!==v&amp;&amp;null!=h.componentWillReceiveProps&amp;&amp;h.componentWillReceiveProps(m,S),!h.__e&amp;&amp;(null!=h.shouldComponentUpdate&amp;&amp;!1===h.shouldComponentUpdate(m,h.__s,S)||t.__v===u.__v)){for(t.__v!==u.__v&amp;&amp;(h.props=m,h.state=h.__s,h.__d=!1),t.__e=u.__e,t.__k=u.__k,t.__k.some(function(n){n&amp;&amp;(n.__=t)}),M=0;M&lt;h._sb.length;M++)h.__h.push(h._sb[M]);h._sb=[],h.__h.length&amp;&amp;r.push(h);break n}null!=h.componentWillUpdate&amp;&amp;h.componentWillUpdate(m,h.__s,S),b&amp;&amp;null!=h.componentDidUpdate&amp;&amp;h.__h.push(function(){h.componentDidUpdate(v,d,y)})}if(h.context=S,h.props=m,h.__P=n,h.__e=!1,P=l.__r,$=0,b){for(h.state=h.__s,h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),A=0;A&lt;h._sb.length;A++)h.__h.push(h._sb[A]);h._sb=[]}else do{h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),h.state=h.__s}while(h.__d&amp;&amp;++$&lt;25);h.state=h.__s,null!=h.getChildContext&amp;&amp;(i=g(g({},i),h.getChildContext())),b&amp;&amp;!p&amp;&amp;null!=h.getSnapshotBeforeUpdate&amp;&amp;(y=h.getSnapshotBeforeUpdate(v,d)),I(n,_(E=null!=a&amp;&amp;a.type===C&amp;&amp;null==a.key?a.props.children:a)?E:[E],t,u,i,o,e,r,f,c,s),h.base=t.__e,t.__u&amp;=-161,h.__h.length&amp;&amp;r.push(h),w&amp;&amp;(h.__E=h.__=null)}catch(n){if(t.__v=null,c||null!=e){for(t.__u|=c?160:128;f&amp;&amp;8===f.nodeType&amp;&amp;f.nextSibling;)f=f.nextSibling;e[e.indexOf(f)]=null,t.__e=f}else t.__e=u.__e,t.__k=u.__k;l.__e(n,t,u)}else null==e&amp;&amp;t.__v===u.__v?(t.__k=u.__k,t.__e=u.__e):t.__e=j(u.__e,t,u,i,o,e,r,c,s);(a=l.diffed)&amp;&amp;a(t)}function V(n,t,u){t.__d=void 0;for(var i=0;i&lt;u.length;i++)z(u[i],u[++i],u[++i]);l.__c&amp;&amp;l.__c(t,n),n.some(function(t){try{n=t.__h,t.__h=[],n.some(function(n){n.call(t)})}catch(n){l.__e(n,t.__v)}})}function j(t,u,i,o,e,r,f,c,s){var a,h,p,v,y,w,g,b=i.props,k=u.props,C=u.type;if(&quot;svg&quot;===C?e=&quot;http://www.w3.org/2000/svg&quot;:&quot;math&quot;===C?e=&quot;http://www.w3.org/1998/Math/MathML&quot;:e||(e=&quot;http://www.w3.org/1999/xhtml&quot;),null!=r)for(a=0;a&lt;r.length;a++)if((y=r[a])&amp;&amp;&quot;setAttribute&quot;in y==!!C&amp;&amp;(C?y.localName===C:3===y.nodeType)){t=y,r[a]=null;break}if(null==t){if(null===C)return document.createTextNode(k);t=document.createElementNS(e,C,k.is&amp;&amp;k),c&amp;&amp;(l.__m&amp;&amp;l.__m(u,r),c=!1),r=null}if(null===C)b===k||c&amp;&amp;t.data===k||(t.data=k);else{if(r=r&amp;&amp;n.call(t.childNodes),b=i.props||d,!c&amp;&amp;null!=r)for(b={},a=0;a&lt;t.attributes.length;a++)b[(y=t.attributes[a]).name]=y.value;for(a in b)if(y=b[a],&quot;children&quot;==a);else if(&quot;dangerouslySetInnerHTML&quot;==a)p=y;else if(!(a in k)){if(&quot;value&quot;==a&amp;&amp;&quot;defaultValue&quot;in k||&quot;checked&quot;==a&amp;&amp;&quot;defaultChecked&quot;in k)continue;L(t,a,null,y,e)}for(a in k)y=k[a],&quot;children&quot;==a?v=y:&quot;dangerouslySetInnerHTML&quot;==a?h=y:&quot;value&quot;==a?w=y:&quot;checked&quot;==a?g=y:c&amp;&amp;&quot;function&quot;!=typeof y||b[a]===y||L(t,a,y,b[a],e);if(h)c||p&amp;&amp;(h.__html===p.__html||h.__html===t.innerHTML)||(t.innerHTML=h.__html),u.__k=[];else if(p&amp;&amp;(t.innerHTML=&quot;&quot;),I(t,_(v)?v:[v],u,i,o,&quot;foreignObject&quot;===C?&quot;http://www.w3.org/1999/xhtml&quot;:e,r,f,r?r[0]:i.__k&amp;&amp;S(i,0),c,s),null!=r)for(a=r.length;a--;)m(r[a]);c||(a=&quot;value&quot;,&quot;progress&quot;===C&amp;&amp;null==w?t.removeAttribute(&quot;value&quot;):void 0!==w&amp;&amp;(w!==t[a]||&quot;progress&quot;===C&amp;&amp;!w||&quot;option&quot;===C&amp;&amp;w!==b[a])&amp;&amp;L(t,a,w,b[a],e),a=&quot;checked&quot;,void 0!==g&amp;&amp;g!==t[a]&amp;&amp;L(t,a,g,b[a],e))}return t}function z(n,t,u){try{if(&quot;function&quot;==typeof n){var i=&quot;function&quot;==typeof n.__u;i&amp;&amp;n.__u(),i&amp;&amp;null==t||(n.__u=n(t))}else n.current=t}catch(n){l.__e(n,u)}}function N(n,t,u){var i,o;if(l.unmount&amp;&amp;l.unmount(n),(i=n.ref)&amp;&amp;(i.current&amp;&amp;i.current!==n.__e||z(i,null,t)),null!=(i=n.__c)){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(n){l.__e(n,t)}i.base=i.__P=null}if(i=n.__k)for(o=0;o&lt;i.length;o++)i[o]&amp;&amp;N(i[o],t,u||&quot;function&quot;!=typeof n.type);u||m(n.__e),n.__c=n.__=n.__e=n.__d=void 0}function R(n,l,t){return this.constructor(n,t)}function q(t,u,i){var o,e,r,f;l.__&amp;&amp;l.__(t,u),e=(o=&quot;function&quot;==typeof i)?null:i&amp;&amp;i.__k||u.__k,r=[],f=[],O(u,t=(!o&amp;&amp;i||u).__k=b(C,null,[t]),e||d,d,u.namespaceURI,!o&amp;&amp;i?[i]:e?null:u.firstChild?n.call(u.childNodes):null,r,!o&amp;&amp;i?i:e?e.__e:u.firstChild,o,f),V(r,t,f)}n=y.slice,l={__e:function(n,l,t,u){for(var i,o,e;l=l.__;)if((i=l.__c)&amp;&amp;!i.__)try{if((o=i.constructor)&amp;&amp;null!=o.getDerivedStateFromError&amp;&amp;(i.setState(o.getDerivedStateFromError(n)),e=i.__d),null!=i.componentDidCatch&amp;&amp;(i.componentDidCatch(n,u||{}),e=i.__d),e)return i.__E=i}catch(l){n=l}throw n}},t=0,u=function(n){return null!=n&amp;&amp;null==n.constructor},x.prototype.setState=function(n,l){var t;t=null!=this.__s&amp;&amp;this.__s!==this.state?this.__s:this.__s=g({},this.state),&quot;function&quot;==typeof n&amp;&amp;(n=n(g({},t),this.props)),n&amp;&amp;g(t,n),null!=n&amp;&amp;this.__v&amp;&amp;(l&amp;&amp;this._sb.push(l),P(this))},x.prototype.forceUpdate=function(n){this.__v&amp;&amp;(this.__e=!0,n&amp;&amp;this.__h.push(n),P(this))},x.prototype.render=C,i=[],e=&quot;function&quot;==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,r=function(n,l){return n.__v.__b-l.__v.__b},$.__r=0,f=0,c=T(!1),s=T(!0),a=0,h={__proto__:null,render:q,hydrate:function n(l,t){q(l,t,n)},createElement:b,h:b,Fragment:C,createRef:function(){return{current:null}},isValidElement:u,Component:x,cloneElement:function(l,t,u){var i,o,e,r,f=g({},l.props);for(e in l.type&amp;&amp;l.type.defaultProps&amp;&amp;(r=l.type.defaultProps),t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:f[e]=void 0===t[e]&amp;&amp;void 0!==r?r[e]:t[e];return arguments.length&gt;2&amp;&amp;(f.children=arguments.length&gt;3?n.call(arguments,2):u),k(l.type,f,i||l.key,o||l.ref,null)},createContext:function(n,l){var t={__c:l=&quot;__cC&quot;+a++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var t,u;return this.getChildContext||(t=new Set,(u={})[l]=this,this.getChildContext=function(){return u},this.componentWillUnmount=function(){t=null},this.shouldComponentUpdate=function(n){this.props.value!==n.value&amp;&amp;t.forEach(function(n){n.__e=!0,P(n)})},this.sub=function(n){t.add(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){t&amp;&amp;t.delete(n),l&amp;&amp;l.call(n)}}),n.children}};return t.Provider.__=t.Consumer.contextType=t},toChildArray:function n(l,t){return t=t||[],null==l||&quot;boolean&quot;==typeof l||(_(l)?l.some(function(l){n(l,t)}):t.push(l)),t},options:l},typeof module&lt;&quot;u&quot;?module.exports=h:self.preact=h});
+//# sourceMappingURL=preact.min.umd.js.map
+&lt;/script&gt;
+&lt;script&gt;/* Runtime mini: menjalankan template .dc.html (sc-for, sc-if, {{lubang}}, onClick) tanpa editor kanvas. */
+(function () {
+  var h = preact.h;
+  var render = preact.render;
+
+  class DCLogic {
+    constructor(props) {
+      this.props = props || {};
+      this.state = {};
+      this.__render = null;
+    }
+    setState(p) {
+      var next = typeof p === &#x27;function&#x27; ? p(this.state, this.props) : p;
+      if (next == null) return;
+      this.state = Object.assign({}, this.state, next);
+      if (this.__render) this.__render();
+    }
+    forceUpdate() {
+      if (this.__render) this.__render();
+    }
+  }
+  window.DCLogic = DCLogic;
+
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+
+  function lookup(scope, path) {
+    if (path === &#x27;true&#x27;) return true;
+    if (path === &#x27;false&#x27;) return false;
+    if (path === &#x27;null&#x27;) return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split(&#x27;.&#x27;);
+    var cur = scope;
+    for (var i = 0; i &lt; parts.length; i++) {
+      if (cur == null) return undefined;
+      cur = cur[parts[i]];
+    }
+    return cur;
+  }
+
+  function evalAttr(value, scope) {
+    var m = WHOLE.exec(value);
+    if (m) return lookup(scope, m[1]);
+    return value.replace(HOLE, function (_, p) {
+      var v = lookup(scope, p);
+      return v == null ? &#x27;&#x27; : String(v);
+    });
+  }
+
+  function flatten(list, out) {
+    for (var i = 0; i &lt; list.length; i++) {
+      var c = list[i];
+      if (Array.isArray(c)) flatten(c, out);
+      else if (c !== null &amp;&amp; c !== undefined &amp;&amp; c !== false) out.push(c);
+    }
+    return out;
+  }
+
+  function buildChildren(node, scope) {
+    var out = [];
+    for (var i = 0; i &lt; node.childNodes.length; i++) {
+      out.push(build(node.childNodes[i], scope));
+    }
+    return flatten(out, []);
+  }
+
+  function build(node, scope) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      if (!t.trim() &amp;&amp; t.indexOf(&#x27;\n&#x27;) &gt;= 0) return null;
+      var m = WHOLE.exec(t);
+      if (m) {
+        var raw = lookup(scope, m[1]);
+        return raw == null ? &#x27;&#x27; : String(raw);
+      }
+      return t.replace(HOLE, function (_, p) {
+        var v = lookup(scope, p);
+        return v == null ? &#x27;&#x27; : String(v);
+      });
+    }
+    if (node.nodeType !== 1) return null;
+    var tag = node.localName;
+
+    if (tag === &#x27;sc-if&#x27;) {
+      var cond = evalAttr(node.getAttribute(&#x27;value&#x27;) || &#x27;&#x27;, scope);
+      return cond ? buildChildren(node, scope) : null;
+    }
+    if (tag === &#x27;sc-for&#x27;) {
+      var list = evalAttr(node.getAttribute(&#x27;list&#x27;) || &#x27;&#x27;, scope) || [];
+      var as = node.getAttribute(&#x27;as&#x27;) || &#x27;item&#x27;;
+      var out = [];
+      for (var i = 0; i &lt; list.length; i++) {
+        var sub = Object.create(scope);
+        sub[as] = list[i];
+        sub.$index = i;
+        out.push(buildChildren(node, sub));
+      }
+      return flatten(out, []);
+    }
+
+    var props = {};
+    for (var a = 0; a &lt; node.attributes.length; a++) {
+      var name = node.attributes[a].name;
+      var val = node.attributes[a].value;
+      if (name.indexOf(&#x27;hint-&#x27;) === 0) continue;
+      if (name.indexOf(&#x27;on&#x27;) === 0 &amp;&amp; name.length &gt; 2) {
+        var fn = evalAttr(val, scope);
+        if (typeof fn === &#x27;function&#x27;) {
+          var evt = name.toLowerCase();
+          if (evt === &#x27;onchange&#x27; &amp;&amp; tag === &#x27;input&#x27;) evt = &#x27;oninput&#x27;;
+          props[evt] = fn;
+        }
+        continue;
+      }
+      props[name] = evalAttr(val, scope);
+    }
+    return h.apply(null, [tag, props].concat(buildChildren(node, scope)));
+  }
+
+  window.DCMount = function (templateEl, mountEl, ComponentClass, size) {
+    var root = templateEl.content.firstElementChild;
+    var comp = new ComponentClass({});
+    function draw() {
+      var vals = comp.renderVals();
+      render(build(root, vals), mountEl);
+    }
+    comp.__render = draw;
+    draw();
+
+    var stage = mountEl;
+    function fit() {
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var s = Math.min(vw / size.w, vh / size.h, 2);
+      stage.style.width = size.w + &#x27;px&#x27;;
+      stage.style.height = size.h + &#x27;px&#x27;;
+      stage.style.transformOrigin = &#x27;0 0&#x27;;
+      stage.style.transform = &#x27;scale(&#x27; + s + &#x27;)&#x27;;
+      stage.style.left = Math.max(0, (vw - size.w * s) / 2) + &#x27;px&#x27;;
+      stage.style.top = Math.max(0, (vh - size.h * s) / 2) + &#x27;px&#x27;;
+    }
+    window.addEventListener(&#x27;resize&#x27;, fit);
+    fit();
+    return comp;
+  };
+})();
+&lt;/script&gt;
+&lt;script&gt;
+
+class Component extends DCLogic {
+  S(st) {
+    return Object.assign(this.D(), st || {});
+  }
+
+  fx(n) {
+    if (n === 0) return &#x27;fx0&#x27;;
+    return n % 2 === 1 ? &#x27;fxA&#x27; : &#x27;fxB&#x27;;
+  }
+
+  alt(prefix, n) {
+    if (n === 0) return &#x27;&#x27;;
+    return prefix + (n % 2 === 1 ? &#x27;A&#x27; : &#x27;B&#x27;);
+  }
+
+  burstParticles() {
+    const particles = [];
+    for (let i = 0; i &lt; 12; i++) {
+      particles.push({ cls: &#x27;arm r&#x27; + i + &#x27; c&#x27; + (i % 4) });
+    }
+    return particles;
+  }
+
+  D() {
+    return { p: 5, q: 4, fx: 0 };
+  }
+
+  setPQ(p, q) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      return { p: p, q: q, fx: cur.fx + 1 };
+    });
+  }
+
+  adjP(d) {
+    const cur = this.S(this.state);
+    const p = Math.max(2, Math.min(9, cur.p + d));
+    if (p === cur.p) return;
+    this.setPQ(p, Math.min(cur.q, p - 1));
+  }
+
+  adjQ(d) {
+    const cur = this.S(this.state);
+    const q = Math.max(1, Math.min(cur.p - 1, cur.q + d));
+    if (q === cur.q) return;
+    this.setPQ(cur.p, q);
+  }
+
+  randomPair() {
+    const p = 2 + Math.floor(Math.random() * 8);
+    const q = 1 + Math.floor(Math.random() * (p - 1));
+    this.setPQ(p, q);
+  }
+
+  renderVals() {
+    const s = this.S(this.state);
+    const p = s.p;
+    const q = s.q;
+    const f = (n) =&gt; n.toFixed(1);
+    const P = (x, y) =&gt; f(x) + &#x27;,&#x27; + f(y);
+    const L1 = p * p - q * q;
+    const L2 = 2 * p * q;
+    const L3 = p * p + q * q;
+    const legs = [L1, L2].sort((x, y) =&gt; x - y);
+
+    const u = Math.min(320 / L1, 270 / L2, 40);
+    const Bh = L1 * u;
+    const Av = L2 * u;
+    const x0 = (500 - Bh) / 2;
+    const y0 = 210 + Av / 2 + 10;
+    const rmS = Math.min(18, 0.4 * Math.min(Av, Bh));
+    const hl = Math.hypot(Av, Bh);
+    const mx = x0 + Bh / 2;
+    const my = y0 - Av / 2;
+    const nx = Av / hl;
+    const ny = -Bh / hl;
+
+    const hy = nx &gt; 0.5 ? { x: mx + nx * 14, y: my + ny * 14 + 6, anc: &#x27;start&#x27; } : { x: mx + nx * 26, y: my + ny * 26 + 6, anc: &#x27;middle&#x27; };
+    const alt = s.fx % 2 === 1 ? &#x27;riseA&#x27; : &#x27;riseB&#x27;;
+    const rise = (n) =&gt; (s.fx === 0 ? &#x27;&#x27; : alt + &#x27; d&#x27; + n);
+
+    const knowns = [
+      {
+        label: &#x27;p&#x27;,
+        note: &#x27;bilangan asli, p &gt; q&#x27;,
+        val: p,
+        decLabel: &#x27;Kurangi p&#x27;,
+        incLabel: &#x27;Tambah p&#x27;,
+        decDis: p &lt;= 2,
+        incDis: p &gt;= 9,
+        dec: () =&gt; this.adjP(-1),
+        inc: () =&gt; this.adjP(1)
+      },
+      {
+        label: &#x27;q&#x27;,
+        note: &#x27;bilangan asli, q &lt; p&#x27;,
+        val: q,
+        decLabel: &#x27;Kurangi q&#x27;,
+        incLabel: &#x27;Tambah q&#x27;,
+        decDis: q &lt;= 1,
+        incDis: q &gt;= p - 1,
+        dec: () =&gt; this.adjQ(-1),
+        inc: () =&gt; this.adjQ(1)
+      }
+    ];
+
+    return {
+      particles: this.burstParticles(),
+      fxCls: this.fx(s.fx),
+      tri: P(x0, y0) + &#x27; &#x27; + P(x0, y0 - Av) + &#x27; &#x27; + P(x0 + Bh, y0),
+      triAnim: s.fx === 0 ? &#x27;&#x27; : this.alt(&#x27;pop&#x27;, s.fx),
+      rm: P(x0 + rmS, y0) + &#x27; &#x27; + P(x0 + rmS, y0 - rmS) + &#x27; &#x27; + P(x0, y0 - rmS),
+      la: { x: f(x0 + Bh / 2), y: f(y0 + 30), t: &#x27;p² − q² = &#x27; + L1, anc: &#x27;middle&#x27; },
+      lb: { x: f(x0 - 10), y: f(y0 - Av / 2 + 6), t: &#x27;2pq = &#x27; + L2, anc: &#x27;end&#x27; },
+      lc: { x: f(hy.x), y: f(hy.y), t: &#x27;p² + q² = &#x27; + L3, anc: hy.anc },
+      caption: &#x27;Segitiga siku-siku dari p = &#x27; + p + &#x27; dan q = &#x27; + q,
+      knowns: knowns,
+      rise1: rise(1),
+      rise2: rise(2),
+      rise3: rise(3),
+      t1: &#x27;p² − q² = &#x27; + (p * p) + &#x27; − &#x27; + (q * q) + &#x27; = &#x27; + L1,
+      t2: &#x27;2pq = 2 × &#x27; + p + &#x27; × &#x27; + q + &#x27; = &#x27; + L2,
+      t3: &#x27;p² + q² = &#x27; + (p * p) + &#x27; + &#x27; + (q * q) + &#x27; = &#x27; + L3,
+      resCls: &#x27;verdict right &#x27; + this.alt(&#x27;pop&#x27;, s.fx),
+      res: &#x27;Hasilnya: (&#x27; + legs[0] + &#x27;, &#x27; + legs[1] + &#x27;, &#x27; + L3 + &#x27;)&#x27;,
+      chk: L3 + &#x27;² = &#x27; + legs[0] + &#x27;² + &#x27; + legs[1] + &#x27;²  →  &#x27; + (L3 * L3) + &#x27; = &#x27; + (legs[0] * legs[0]) + &#x27; + &#x27; + (legs[1] * legs[1]) + &#x27; ✓&#x27;,
+      rand: () =&gt; this.randomPair()
+    };
+  }
+}
+
+&lt;/script&gt;
+&lt;script&gt;
+DCMount(document.getElementById(&#x27;tpl&#x27;), document.getElementById(&#x27;stage&#x27;), Component, { w: 1000, h: 740 });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></section>
+<section><iframe title="Ilustrasi 4: Cara 3: Aturan khusus bilangan ganjil" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;id&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Ilustrasi Triple 4 Aturan bilangan ganjil&lt;/title&gt;
+
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Lora:ital,wght@1,600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body { margin: 0; }
+button { font-family: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #C9822B; outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+.press { transition: transform .12s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }
+.press:hover:not(:disabled) { transform: translateY(-1px); }
+.press:active:not(:disabled) { transform: scale(.96); }
+.go { min-height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: #2F5D3A; color: #FBF3DC; font-weight: 800; font-size: 16px; }
+.go:hover:not(:disabled) { background: #244A2E; }
+.stp { width: 44px; height: 44px; flex: none; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-size: 22px; font-weight: 700; line-height: 1; padding: 0; }
+.stp:hover:not(:disabled) { background: #FFF6DC; border-color: #C98B3C; }
+.stp:disabled { opacity: .4; }
+.btn { min-height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-weight: 700; font-size: 15px; line-height: 20px; }
+.btn:hover:not(:disabled) { background: #FFF6DC; }
+.btn.on, .btn.on:hover:not(:disabled) { background: #2F5D3A; border-color: #2F5D3A; color: #FBF3DC; }
+.rowc { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 14px; padding: 3px 6px 3px 12px; }
+.off { display: none; }
+
+/* efek ledakan titik warna */
+.burst { position: absolute; width: 0; height: 0; pointer-events: none; }
+.arm { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.dot { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; opacity: 0; }
+.arm:nth-child(even) .dot { width: 7px; height: 7px; left: -3.5px; top: -3.5px; }
+.r0 { transform: rotate(0deg); }
+.r1 { transform: rotate(30deg); }
+.r2 { transform: rotate(60deg); }
+.r3 { transform: rotate(90deg); }
+.r4 { transform: rotate(120deg); }
+.r5 { transform: rotate(150deg); }
+.r6 { transform: rotate(180deg); }
+.r7 { transform: rotate(210deg); }
+.r8 { transform: rotate(240deg); }
+.r9 { transform: rotate(270deg); }
+.r10 { transform: rotate(300deg); }
+.r11 { transform: rotate(330deg); }
+.c0 .dot { background: #F2B01E; }
+.c1 .dot { background: #2F5D3A; }
+.c2 .dot { background: #B8520A; }
+.c3 .dot { background: #2A63A8; }
+.fxA .dot { animation: outA .85s ease-out both; }
+.fxB .dot { animation: outB .85s ease-out both; }
+@keyframes outA {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+@keyframes outB {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+.riseA { animation: riseA .4s ease both; }
+.riseB { animation: riseB .4s ease both; }
+@keyframes riseA {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes riseB {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+.d1 { animation-delay: .02s; }
+.d2 { animation-delay: .12s; }
+.d3 { animation-delay: .22s; }
+.d4 { animation-delay: .32s; }
+.popA { animation: popA .45s cubic-bezier(.2, 1.5, .4, 1); }
+.popB { animation: popB .45s cubic-bezier(.2, 1.5, .4, 1); }
+@keyframes popA {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+@keyframes popB {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.ang { fill: rgba(226, 169, 74, .4); stroke: #8A4B0F; transition: fill .25s ease, stroke .25s ease; }
+.ang.right { fill: rgba(47, 93, 58, .32); stroke: #2F5D3A; }
+.verdict { border-radius: 16px; padding: 10px 16px; border: 2px solid #D9C48F; background: #FFFFFF; display: flex; flex-direction: column; gap: 4px; }
+.verdict.right { background: #DDEBCF; border-color: #2F5D3A; }
+.verdict.wrong { background: #FFF1DA; border-color: #E2A94A; }
+.cA { color: #1D4780; }
+.cB { color: #145A3B; }
+.cC { color: #8F3B04; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+#stage { position: absolute; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;/div&gt;
+&lt;template id=&quot;tpl&quot;&gt;
+
+&lt;div style=&quot;width: 1000px; height: 740px; box-sizing: border-box; border: 14px solid #C98B3C; border-radius: 28px; background: #3E6B4A; padding: 18px 24px 22px; display: flex; flex-direction: column; gap: 12px; font-family: &#x27;Nunito&#x27;, system-ui, sans-serif; color: #6E1B1B&quot;&gt;
+
+&lt;div style=&quot;display: flex; flex-direction: column; align-items: center; gap: 8px&quot;&gt;
+&lt;div style=&quot;background: #FBF3DC; border: 4px solid #E2A94A; border-radius: 999px; padding: 4px 44px; font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 30px; line-height: 40px; font-weight: 600; color: #2F5D3A&quot;&gt;Ilustrasi&lt;/div&gt;
+&lt;div style=&quot;color: #FBF3DC; font-size: 16px; line-height: 24px; font-weight: 700&quot;&gt;Ilustrasi 4 · Cara 3: Aturan khusus bilangan ganjil&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-height: 0; background: #FBF3DC; border-radius: 18px; padding: 20px; box-sizing: border-box; display: flex; gap: 24px&quot;&gt;
+
+&lt;div style=&quot;flex: none; display: flex; flex-direction: column; gap: 8px&quot;&gt;
+&lt;div style=&quot;position: relative; width: 500px; height: 420px; box-sizing: content-box; background: linear-gradient(rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFF8E1 58%, #F3E6BD 100%); border: 3px solid #E2A94A; border-radius: 18px; overflow: hidden&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Segitiga siku-siku dengan sisi terpendek S ganjil, sisi tegak M sama dengan S kuadrat dikurangi satu dibagi dua, dan sisi miring c sama dengan M ditambah satu.&quot; width=&quot;500&quot; height=&quot;420&quot; viewBox=&quot;0 0 500 420&quot; style=&quot;display: block&quot;&gt;
+&lt;polygon class=&quot;{{triAnim}}&quot; points=&quot;{{tri}}&quot; fill=&quot;#DDEBCF&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;5&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/polygon&gt;
+&lt;polyline points=&quot;{{rm}}&quot; fill=&quot;none&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;3&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;17&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;4&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{la.x}}&quot; y=&quot;{{la.y}}&quot; fill=&quot;#1D4780&quot; text-anchor=&quot;{{la.anc}}&quot;&gt;{{la.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lb.x}}&quot; y=&quot;{{lb.y}}&quot; fill=&quot;#145A3B&quot; text-anchor=&quot;{{lb.anc}}&quot;&gt;{{lb.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lc.x}}&quot; y=&quot;{{lc.y}}&quot; fill=&quot;#8F3B04&quot; text-anchor=&quot;{{lc.anc}}&quot;&gt;{{lc.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;burst {{fxCls}}&quot; style=&quot;left: 250px; top: 210px&quot;&gt;&lt;sc-for list=&quot;{{particles}}&quot; as=&quot;p&quot; hint-placeholder-count=&quot;12&quot;&gt;&lt;div class=&quot;{{p.cls}}&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/sc-for&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center; font-size: 17px; line-height: 28px; font-weight: 800; color: #8A6A12&quot;&gt;{{caption}}&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px&quot;&gt;
+&lt;div style=&quot;font-size: 14px; line-height: 20px; font-weight: 700&quot;&gt;Pilih sisi terpendek S, bilangan ganjil lebih besar dari 1.&lt;/div&gt;
+&lt;sc-for list=&quot;{{knowns}}&quot; as=&quot;k&quot; hint-placeholder-count=&quot;1&quot;&gt;
+&lt;div class=&quot;rowc&quot;&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; min-width: 0&quot;&gt;
+&lt;span style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 26px&quot;&gt;{{k.label}}&lt;/span&gt;
+&lt;span style=&quot;font-size: 12px; line-height: 16px; color: #6B4F33&quot;&gt;{{k.note}}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: flex; align-items: center; gap: 4px&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;stp press&quot; aria-label=&quot;{{k.decLabel}}&quot; disabled=&quot;{{k.decDis}}&quot; onClick=&quot;{{k.dec}}&quot;&gt;−&lt;/button&gt;
+&lt;span style=&quot;min-width: 36px; text-align: center; font-size: 22px; font-weight: 800&quot;&gt;{{k.val}}&lt;/span&gt;
+&lt;button type=&quot;button&quot; class=&quot;stp press&quot; aria-label=&quot;{{k.incLabel}}&quot; disabled=&quot;{{k.incDis}}&quot; onClick=&quot;{{k.inc}}&quot;&gt;+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/sc-for&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{quick}}&quot; as=&quot;qk&quot; hint-placeholder-count=&quot;4&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{qk.cls}}&quot; onClick=&quot;{{qk.pick}}&quot;&gt;{{qk.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div class=&quot;verdict&quot; aria-live=&quot;polite&quot;&gt;
+&lt;div style=&quot;font-size: 13px; line-height: 18px; font-weight: 800; color: #6B4F33&quot;&gt;M = (S² − 1) ÷ 2  dan  c = M + 1&lt;/div&gt;
+&lt;div class=&quot;{{rise1}} cB&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 18px; line-height: 24px&quot;&gt;{{t1}}&lt;/div&gt;
+&lt;div class=&quot;{{rise2}} cC&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 18px; line-height: 24px&quot;&gt;{{t2}}&lt;/div&gt;
+&lt;div class=&quot;{{rise3}}&quot; style=&quot;font-size: 14px; line-height: 20px; font-weight: 800; color: #2F5D3A&quot;&gt;{{t3}}&lt;/div&gt;
+&lt;div class=&quot;{{rise4}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 22px&quot;&gt;{{t4}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;verdict&quot;&gt;
+&lt;div style=&quot;font-size: 13px; line-height: 18px; font-weight: 800&quot;&gt;c hanya 1 lebih panjang dari M&lt;/div&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Batang M dan batang c, c lebih panjang satu satuan dari M&quot; width=&quot;300&quot; height=&quot;52&quot; viewBox=&quot;0 0 300 52&quot; style=&quot;display: block&quot;&gt;
+&lt;rect x=&quot;0&quot; y=&quot;0&quot; width=&quot;{{wM}}&quot; height=&quot;22&quot; rx=&quot;5&quot; fill=&quot;#1F7A55&quot;&gt;&lt;/rect&gt;
+&lt;rect x=&quot;0&quot; y=&quot;30&quot; width=&quot;{{wM}}&quot; height=&quot;22&quot; rx=&quot;5&quot; fill=&quot;#E9A66B&quot;&gt;&lt;/rect&gt;
+&lt;rect x=&quot;{{wM}}&quot; y=&quot;30&quot; width=&quot;{{wOne}}&quot; height=&quot;22&quot; rx=&quot;3&quot; fill=&quot;#B8520A&quot;&gt;&lt;/rect&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;14&quot; text-anchor=&quot;middle&quot;&gt;
+&lt;text x=&quot;{{tx}}&quot; y=&quot;16&quot; fill=&quot;#FFFFFF&quot;&gt;{{lM}}&lt;/text&gt;
+&lt;text x=&quot;{{tx}}&quot; y=&quot;46&quot; fill=&quot;#4A2A08&quot;&gt;{{lC}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div style=&quot;margin-top: auto; background: #FFF3C9; border: 1px solid #E8D58A; border-radius: 12px; padding: 10px 14px; font-size: 14px; line-height: 20px&quot;&gt;&lt;b&gt;Coba ini:&lt;/b&gt; pilih S = 7. Hasilnya M = 24 dan c = 25, jadi (7, 24, 25).&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;!function(n){&quot;function&quot;==typeof define&amp;&amp;define.amd?define(n):n()}(function(){var n,l,t,u,i,o,e,r,f,c,s,a,h,p=65536,v=1&lt;&lt;17,d={},y=[],w=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,_=Array.isArray;function g(n,l){for(var t in l)n[t]=l[t];return n}function m(n){n&amp;&amp;n.parentNode&amp;&amp;n.parentNode.removeChild(n)}function b(l,t,u){var i,o,e,r={};for(e in t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:r[e]=t[e];if(arguments.length&gt;2&amp;&amp;(r.children=arguments.length&gt;3?n.call(arguments,2):u),&quot;function&quot;==typeof l&amp;&amp;null!=l.defaultProps)for(e in l.defaultProps)void 0===r[e]&amp;&amp;(r[e]=l.defaultProps[e]);return k(l,r,i,o,null)}function k(n,u,i,o,e){var r={type:n,props:u,key:i,ref:o,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:null==e?++t:e,__i:-1,__u:0};return null==e&amp;&amp;null!=l.vnode&amp;&amp;l.vnode(r),r}function C(n){return n.children}function x(n,l){this.props=n,this.context=l}function S(n,l){if(null==l)return n.__?S(n.__,n.__i+1):null;for(var t;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e)return t.__e;return&quot;function&quot;==typeof n.type?S(n):null}function M(n){var l,t;if(null!=(n=n.__)&amp;&amp;null!=n.__c){for(n.__e=n.__c.base=null,l=0;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e){n.__e=n.__c.base=t.__e;break}return M(n)}}function P(n){(!n.__d&amp;&amp;(n.__d=!0)&amp;&amp;i.push(n)&amp;&amp;!$.__r++||o!==l.debounceRendering)&amp;&amp;((o=l.debounceRendering)||e)($)}function $(){var n,t,u,o,e,f,c,s;for(i.sort(r);n=i.shift();)n.__d&amp;&amp;(t=i.length,o=void 0,f=(e=(u=n).__v).__e,c=[],s=[],u.__P&amp;&amp;((o=g({},e)).__v=e.__v+1,l.vnode&amp;&amp;l.vnode(o),O(u.__P,o,e,u.__n,u.__P.namespaceURI,32&amp;e.__u?[f]:null,c,null==f?S(e):f,!!(32&amp;e.__u),s),o.__v=e.__v,o.__.__k[o.__i]=o,V(c,o,s),o.__e!=f&amp;&amp;M(o)),i.length&gt;t&amp;&amp;i.sort(r));$.__r=0}function I(n,l,t,u,i,o,e,r,f,c,s){var a,h,v,w,_,g=u&amp;&amp;u.__k||y,m=l.length;for(t.__d=f,A(t,l,g),f=t.__d,a=0;a&lt;m;a++)null!=(v=t.__k[a])&amp;&amp;(h=-1===v.__i?d:g[v.__i]||d,v.__i=a,O(n,v,h,i,o,e,r,f,c,s),w=v.__e,v.ref&amp;&amp;h.ref!=v.ref&amp;&amp;(h.ref&amp;&amp;z(h.ref,null,v),s.push(v.ref,v.__c||w,v)),null==_&amp;&amp;null!=w&amp;&amp;(_=w),v.__u&amp;p||h.__k===v.__k?f=E(v,f,n):&quot;function&quot;==typeof v.type&amp;&amp;void 0!==v.__d?f=v.__d:w&amp;&amp;(f=w.nextSibling),v.__d=void 0,v.__u&amp;=-196609);t.__d=f,t.__e=_}function A(n,l,t){var u,i,o,e,r,f=l.length,c=t.length,s=c,a=0;for(n.__k=[],u=0;u&lt;f;u++)null!=(i=l[u])&amp;&amp;&quot;boolean&quot;!=typeof i&amp;&amp;&quot;function&quot;!=typeof i?(e=u+a,(i=n.__k[u]=&quot;string&quot;==typeof i||&quot;number&quot;==typeof i||&quot;bigint&quot;==typeof i||i.constructor==String?k(null,i,null,null,null):_(i)?k(C,{children:i},null,null,null):void 0===i.constructor&amp;&amp;i.__b&gt;0?k(i.type,i.props,i.key,i.ref?i.ref:null,i.__v):i).__=n,i.__b=n.__b+1,o=null,-1!==(r=i.__i=F(i,t,e,s))&amp;&amp;(s--,(o=t[r])&amp;&amp;(o.__u|=v)),null==o||null===o.__v?(-1==r&amp;&amp;a--,&quot;function&quot;!=typeof i.type&amp;&amp;(i.__u|=p)):r!==e&amp;&amp;(r==e-1?a--:r==e+1?a++:(r&gt;e?a--:a++,i.__u|=p))):i=n.__k[u]=null;if(s)for(u=0;u&lt;c;u++)null!=(o=t[u])&amp;&amp;0==(o.__u&amp;v)&amp;&amp;(o.__e==n.__d&amp;&amp;(n.__d=S(o)),N(o,o))}function E(n,l,t){var u,i;if(&quot;function&quot;==typeof n.type){for(u=n.__k,i=0;u&amp;&amp;i&lt;u.length;i++)u[i]&amp;&amp;(u[i].__=n,l=E(u[i],l,t));return l}n.__e!=l&amp;&amp;(l&amp;&amp;n.type&amp;&amp;!t.contains(l)&amp;&amp;(l=S(n)),t.insertBefore(n.__e,l||null),l=n.__e);do{l=l&amp;&amp;l.nextSibling}while(null!=l&amp;&amp;8===l.nodeType);return l}function F(n,l,t,u){var i=n.key,o=n.type,e=t-1,r=t+1,f=l[t];if(null===f||f&amp;&amp;i==f.key&amp;&amp;o===f.type&amp;&amp;0==(f.__u&amp;v))return t;if(u&gt;(null!=f&amp;&amp;0==(f.__u&amp;v)?1:0))for(;e&gt;=0||r&lt;l.length;){if(e&gt;=0){if((f=l[e])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return e;e--}if(r&lt;l.length){if((f=l[r])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return r;r++}}return-1}function H(n,l,t){&quot;-&quot;===l[0]?n.setProperty(l,null==t?&quot;&quot;:t):n[l]=null==t?&quot;&quot;:&quot;number&quot;!=typeof t||w.test(l)?t:t+&quot;px&quot;}function L(n,l,t,u,i){var o;n:if(&quot;style&quot;===l)if(&quot;string&quot;==typeof t)n.style.cssText=t;else{if(&quot;string&quot;==typeof u&amp;&amp;(n.style.cssText=u=&quot;&quot;),u)for(l in u)t&amp;&amp;l in t||H(n.style,l,&quot;&quot;);if(t)for(l in t)u&amp;&amp;t[l]===u[l]||H(n.style,l,t[l])}else if(&quot;o&quot;===l[0]&amp;&amp;&quot;n&quot;===l[1])o=l!==(l=l.replace(/(PointerCapture)$|Capture$/i,&quot;$1&quot;)),l=l.toLowerCase()in n||&quot;onFocusOut&quot;===l||&quot;onFocusIn&quot;===l?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+o]=t,t?u?t.t=u.t:(t.t=f,n.addEventListener(l,o?s:c,o)):n.removeEventListener(l,o?s:c,o);else{if(&quot;http://www.w3.org/2000/svg&quot;==i)l=l.replace(/xlink(H|:h)/,&quot;h&quot;).replace(/sName$/,&quot;s&quot;);else if(&quot;width&quot;!=l&amp;&amp;&quot;height&quot;!=l&amp;&amp;&quot;href&quot;!=l&amp;&amp;&quot;list&quot;!=l&amp;&amp;&quot;form&quot;!=l&amp;&amp;&quot;tabIndex&quot;!=l&amp;&amp;&quot;download&quot;!=l&amp;&amp;&quot;rowSpan&quot;!=l&amp;&amp;&quot;colSpan&quot;!=l&amp;&amp;&quot;role&quot;!=l&amp;&amp;&quot;popover&quot;!=l&amp;&amp;l in n)try{n[l]=null==t?&quot;&quot;:t;break n}catch(n){}&quot;function&quot;==typeof t||(null==t||!1===t&amp;&amp;&quot;-&quot;!==l[4]?n.removeAttribute(l):n.setAttribute(l,&quot;popover&quot;==l&amp;&amp;1==t?&quot;&quot;:t))}}function T(n){return function(t){if(this.l){var u=this.l[t.type+n];if(null==t.u)t.u=f++;else if(t.u&lt;u.t)return;return u(l.event?l.event(t):t)}}}function O(n,t,u,i,o,e,r,f,c,s){var a,h,p,v,d,y,w,m,b,k,S,M,P,$,A,E,F=t.type;if(void 0!==t.constructor)return null;128&amp;u.__u&amp;&amp;(c=!!(32&amp;u.__u),e=[f=t.__e=u.__e]),(a=l.__b)&amp;&amp;a(t);n:if(&quot;function&quot;==typeof F)try{if(m=t.props,b=&quot;prototype&quot;in F&amp;&amp;F.prototype.render,k=(a=F.contextType)&amp;&amp;i[a.__c],S=a?k?k.props.value:a.__:i,u.__c?w=(h=t.__c=u.__c).__=h.__E:(b?t.__c=h=new F(m,S):(t.__c=h=new x(m,S),h.constructor=F,h.render=R),k&amp;&amp;k.sub(h),h.props=m,h.state||(h.state={}),h.context=S,h.__n=i,p=h.__d=!0,h.__h=[],h._sb=[]),b&amp;&amp;null==h.__s&amp;&amp;(h.__s=h.state),b&amp;&amp;null!=F.getDerivedStateFromProps&amp;&amp;(h.__s==h.state&amp;&amp;(h.__s=g({},h.__s)),g(h.__s,F.getDerivedStateFromProps(m,h.__s))),v=h.props,d=h.state,h.__v=t,p)b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;null!=h.componentWillMount&amp;&amp;h.componentWillMount(),b&amp;&amp;null!=h.componentDidMount&amp;&amp;h.__h.push(h.componentDidMount);else{if(b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;m!==v&amp;&amp;null!=h.componentWillReceiveProps&amp;&amp;h.componentWillReceiveProps(m,S),!h.__e&amp;&amp;(null!=h.shouldComponentUpdate&amp;&amp;!1===h.shouldComponentUpdate(m,h.__s,S)||t.__v===u.__v)){for(t.__v!==u.__v&amp;&amp;(h.props=m,h.state=h.__s,h.__d=!1),t.__e=u.__e,t.__k=u.__k,t.__k.some(function(n){n&amp;&amp;(n.__=t)}),M=0;M&lt;h._sb.length;M++)h.__h.push(h._sb[M]);h._sb=[],h.__h.length&amp;&amp;r.push(h);break n}null!=h.componentWillUpdate&amp;&amp;h.componentWillUpdate(m,h.__s,S),b&amp;&amp;null!=h.componentDidUpdate&amp;&amp;h.__h.push(function(){h.componentDidUpdate(v,d,y)})}if(h.context=S,h.props=m,h.__P=n,h.__e=!1,P=l.__r,$=0,b){for(h.state=h.__s,h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),A=0;A&lt;h._sb.length;A++)h.__h.push(h._sb[A]);h._sb=[]}else do{h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),h.state=h.__s}while(h.__d&amp;&amp;++$&lt;25);h.state=h.__s,null!=h.getChildContext&amp;&amp;(i=g(g({},i),h.getChildContext())),b&amp;&amp;!p&amp;&amp;null!=h.getSnapshotBeforeUpdate&amp;&amp;(y=h.getSnapshotBeforeUpdate(v,d)),I(n,_(E=null!=a&amp;&amp;a.type===C&amp;&amp;null==a.key?a.props.children:a)?E:[E],t,u,i,o,e,r,f,c,s),h.base=t.__e,t.__u&amp;=-161,h.__h.length&amp;&amp;r.push(h),w&amp;&amp;(h.__E=h.__=null)}catch(n){if(t.__v=null,c||null!=e){for(t.__u|=c?160:128;f&amp;&amp;8===f.nodeType&amp;&amp;f.nextSibling;)f=f.nextSibling;e[e.indexOf(f)]=null,t.__e=f}else t.__e=u.__e,t.__k=u.__k;l.__e(n,t,u)}else null==e&amp;&amp;t.__v===u.__v?(t.__k=u.__k,t.__e=u.__e):t.__e=j(u.__e,t,u,i,o,e,r,c,s);(a=l.diffed)&amp;&amp;a(t)}function V(n,t,u){t.__d=void 0;for(var i=0;i&lt;u.length;i++)z(u[i],u[++i],u[++i]);l.__c&amp;&amp;l.__c(t,n),n.some(function(t){try{n=t.__h,t.__h=[],n.some(function(n){n.call(t)})}catch(n){l.__e(n,t.__v)}})}function j(t,u,i,o,e,r,f,c,s){var a,h,p,v,y,w,g,b=i.props,k=u.props,C=u.type;if(&quot;svg&quot;===C?e=&quot;http://www.w3.org/2000/svg&quot;:&quot;math&quot;===C?e=&quot;http://www.w3.org/1998/Math/MathML&quot;:e||(e=&quot;http://www.w3.org/1999/xhtml&quot;),null!=r)for(a=0;a&lt;r.length;a++)if((y=r[a])&amp;&amp;&quot;setAttribute&quot;in y==!!C&amp;&amp;(C?y.localName===C:3===y.nodeType)){t=y,r[a]=null;break}if(null==t){if(null===C)return document.createTextNode(k);t=document.createElementNS(e,C,k.is&amp;&amp;k),c&amp;&amp;(l.__m&amp;&amp;l.__m(u,r),c=!1),r=null}if(null===C)b===k||c&amp;&amp;t.data===k||(t.data=k);else{if(r=r&amp;&amp;n.call(t.childNodes),b=i.props||d,!c&amp;&amp;null!=r)for(b={},a=0;a&lt;t.attributes.length;a++)b[(y=t.attributes[a]).name]=y.value;for(a in b)if(y=b[a],&quot;children&quot;==a);else if(&quot;dangerouslySetInnerHTML&quot;==a)p=y;else if(!(a in k)){if(&quot;value&quot;==a&amp;&amp;&quot;defaultValue&quot;in k||&quot;checked&quot;==a&amp;&amp;&quot;defaultChecked&quot;in k)continue;L(t,a,null,y,e)}for(a in k)y=k[a],&quot;children&quot;==a?v=y:&quot;dangerouslySetInnerHTML&quot;==a?h=y:&quot;value&quot;==a?w=y:&quot;checked&quot;==a?g=y:c&amp;&amp;&quot;function&quot;!=typeof y||b[a]===y||L(t,a,y,b[a],e);if(h)c||p&amp;&amp;(h.__html===p.__html||h.__html===t.innerHTML)||(t.innerHTML=h.__html),u.__k=[];else if(p&amp;&amp;(t.innerHTML=&quot;&quot;),I(t,_(v)?v:[v],u,i,o,&quot;foreignObject&quot;===C?&quot;http://www.w3.org/1999/xhtml&quot;:e,r,f,r?r[0]:i.__k&amp;&amp;S(i,0),c,s),null!=r)for(a=r.length;a--;)m(r[a]);c||(a=&quot;value&quot;,&quot;progress&quot;===C&amp;&amp;null==w?t.removeAttribute(&quot;value&quot;):void 0!==w&amp;&amp;(w!==t[a]||&quot;progress&quot;===C&amp;&amp;!w||&quot;option&quot;===C&amp;&amp;w!==b[a])&amp;&amp;L(t,a,w,b[a],e),a=&quot;checked&quot;,void 0!==g&amp;&amp;g!==t[a]&amp;&amp;L(t,a,g,b[a],e))}return t}function z(n,t,u){try{if(&quot;function&quot;==typeof n){var i=&quot;function&quot;==typeof n.__u;i&amp;&amp;n.__u(),i&amp;&amp;null==t||(n.__u=n(t))}else n.current=t}catch(n){l.__e(n,u)}}function N(n,t,u){var i,o;if(l.unmount&amp;&amp;l.unmount(n),(i=n.ref)&amp;&amp;(i.current&amp;&amp;i.current!==n.__e||z(i,null,t)),null!=(i=n.__c)){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(n){l.__e(n,t)}i.base=i.__P=null}if(i=n.__k)for(o=0;o&lt;i.length;o++)i[o]&amp;&amp;N(i[o],t,u||&quot;function&quot;!=typeof n.type);u||m(n.__e),n.__c=n.__=n.__e=n.__d=void 0}function R(n,l,t){return this.constructor(n,t)}function q(t,u,i){var o,e,r,f;l.__&amp;&amp;l.__(t,u),e=(o=&quot;function&quot;==typeof i)?null:i&amp;&amp;i.__k||u.__k,r=[],f=[],O(u,t=(!o&amp;&amp;i||u).__k=b(C,null,[t]),e||d,d,u.namespaceURI,!o&amp;&amp;i?[i]:e?null:u.firstChild?n.call(u.childNodes):null,r,!o&amp;&amp;i?i:e?e.__e:u.firstChild,o,f),V(r,t,f)}n=y.slice,l={__e:function(n,l,t,u){for(var i,o,e;l=l.__;)if((i=l.__c)&amp;&amp;!i.__)try{if((o=i.constructor)&amp;&amp;null!=o.getDerivedStateFromError&amp;&amp;(i.setState(o.getDerivedStateFromError(n)),e=i.__d),null!=i.componentDidCatch&amp;&amp;(i.componentDidCatch(n,u||{}),e=i.__d),e)return i.__E=i}catch(l){n=l}throw n}},t=0,u=function(n){return null!=n&amp;&amp;null==n.constructor},x.prototype.setState=function(n,l){var t;t=null!=this.__s&amp;&amp;this.__s!==this.state?this.__s:this.__s=g({},this.state),&quot;function&quot;==typeof n&amp;&amp;(n=n(g({},t),this.props)),n&amp;&amp;g(t,n),null!=n&amp;&amp;this.__v&amp;&amp;(l&amp;&amp;this._sb.push(l),P(this))},x.prototype.forceUpdate=function(n){this.__v&amp;&amp;(this.__e=!0,n&amp;&amp;this.__h.push(n),P(this))},x.prototype.render=C,i=[],e=&quot;function&quot;==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,r=function(n,l){return n.__v.__b-l.__v.__b},$.__r=0,f=0,c=T(!1),s=T(!0),a=0,h={__proto__:null,render:q,hydrate:function n(l,t){q(l,t,n)},createElement:b,h:b,Fragment:C,createRef:function(){return{current:null}},isValidElement:u,Component:x,cloneElement:function(l,t,u){var i,o,e,r,f=g({},l.props);for(e in l.type&amp;&amp;l.type.defaultProps&amp;&amp;(r=l.type.defaultProps),t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:f[e]=void 0===t[e]&amp;&amp;void 0!==r?r[e]:t[e];return arguments.length&gt;2&amp;&amp;(f.children=arguments.length&gt;3?n.call(arguments,2):u),k(l.type,f,i||l.key,o||l.ref,null)},createContext:function(n,l){var t={__c:l=&quot;__cC&quot;+a++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var t,u;return this.getChildContext||(t=new Set,(u={})[l]=this,this.getChildContext=function(){return u},this.componentWillUnmount=function(){t=null},this.shouldComponentUpdate=function(n){this.props.value!==n.value&amp;&amp;t.forEach(function(n){n.__e=!0,P(n)})},this.sub=function(n){t.add(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){t&amp;&amp;t.delete(n),l&amp;&amp;l.call(n)}}),n.children}};return t.Provider.__=t.Consumer.contextType=t},toChildArray:function n(l,t){return t=t||[],null==l||&quot;boolean&quot;==typeof l||(_(l)?l.some(function(l){n(l,t)}):t.push(l)),t},options:l},typeof module&lt;&quot;u&quot;?module.exports=h:self.preact=h});
+//# sourceMappingURL=preact.min.umd.js.map
+&lt;/script&gt;
+&lt;script&gt;/* Runtime mini: menjalankan template .dc.html (sc-for, sc-if, {{lubang}}, onClick) tanpa editor kanvas. */
+(function () {
+  var h = preact.h;
+  var render = preact.render;
+
+  class DCLogic {
+    constructor(props) {
+      this.props = props || {};
+      this.state = {};
+      this.__render = null;
+    }
+    setState(p) {
+      var next = typeof p === &#x27;function&#x27; ? p(this.state, this.props) : p;
+      if (next == null) return;
+      this.state = Object.assign({}, this.state, next);
+      if (this.__render) this.__render();
+    }
+    forceUpdate() {
+      if (this.__render) this.__render();
+    }
+  }
+  window.DCLogic = DCLogic;
+
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+
+  function lookup(scope, path) {
+    if (path === &#x27;true&#x27;) return true;
+    if (path === &#x27;false&#x27;) return false;
+    if (path === &#x27;null&#x27;) return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split(&#x27;.&#x27;);
+    var cur = scope;
+    for (var i = 0; i &lt; parts.length; i++) {
+      if (cur == null) return undefined;
+      cur = cur[parts[i]];
+    }
+    return cur;
+  }
+
+  function evalAttr(value, scope) {
+    var m = WHOLE.exec(value);
+    if (m) return lookup(scope, m[1]);
+    return value.replace(HOLE, function (_, p) {
+      var v = lookup(scope, p);
+      return v == null ? &#x27;&#x27; : String(v);
+    });
+  }
+
+  function flatten(list, out) {
+    for (var i = 0; i &lt; list.length; i++) {
+      var c = list[i];
+      if (Array.isArray(c)) flatten(c, out);
+      else if (c !== null &amp;&amp; c !== undefined &amp;&amp; c !== false) out.push(c);
+    }
+    return out;
+  }
+
+  function buildChildren(node, scope) {
+    var out = [];
+    for (var i = 0; i &lt; node.childNodes.length; i++) {
+      out.push(build(node.childNodes[i], scope));
+    }
+    return flatten(out, []);
+  }
+
+  function build(node, scope) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      if (!t.trim() &amp;&amp; t.indexOf(&#x27;\n&#x27;) &gt;= 0) return null;
+      var m = WHOLE.exec(t);
+      if (m) {
+        var raw = lookup(scope, m[1]);
+        return raw == null ? &#x27;&#x27; : String(raw);
+      }
+      return t.replace(HOLE, function (_, p) {
+        var v = lookup(scope, p);
+        return v == null ? &#x27;&#x27; : String(v);
+      });
+    }
+    if (node.nodeType !== 1) return null;
+    var tag = node.localName;
+
+    if (tag === &#x27;sc-if&#x27;) {
+      var cond = evalAttr(node.getAttribute(&#x27;value&#x27;) || &#x27;&#x27;, scope);
+      return cond ? buildChildren(node, scope) : null;
+    }
+    if (tag === &#x27;sc-for&#x27;) {
+      var list = evalAttr(node.getAttribute(&#x27;list&#x27;) || &#x27;&#x27;, scope) || [];
+      var as = node.getAttribute(&#x27;as&#x27;) || &#x27;item&#x27;;
+      var out = [];
+      for (var i = 0; i &lt; list.length; i++) {
+        var sub = Object.create(scope);
+        sub[as] = list[i];
+        sub.$index = i;
+        out.push(buildChildren(node, sub));
+      }
+      return flatten(out, []);
+    }
+
+    var props = {};
+    for (var a = 0; a &lt; node.attributes.length; a++) {
+      var name = node.attributes[a].name;
+      var val = node.attributes[a].value;
+      if (name.indexOf(&#x27;hint-&#x27;) === 0) continue;
+      if (name.indexOf(&#x27;on&#x27;) === 0 &amp;&amp; name.length &gt; 2) {
+        var fn = evalAttr(val, scope);
+        if (typeof fn === &#x27;function&#x27;) {
+          var evt = name.toLowerCase();
+          if (evt === &#x27;onchange&#x27; &amp;&amp; tag === &#x27;input&#x27;) evt = &#x27;oninput&#x27;;
+          props[evt] = fn;
+        }
+        continue;
+      }
+      props[name] = evalAttr(val, scope);
+    }
+    return h.apply(null, [tag, props].concat(buildChildren(node, scope)));
+  }
+
+  window.DCMount = function (templateEl, mountEl, ComponentClass, size) {
+    var root = templateEl.content.firstElementChild;
+    var comp = new ComponentClass({});
+    function draw() {
+      var vals = comp.renderVals();
+      render(build(root, vals), mountEl);
+    }
+    comp.__render = draw;
+    draw();
+
+    var stage = mountEl;
+    function fit() {
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var s = Math.min(vw / size.w, vh / size.h, 2);
+      stage.style.width = size.w + &#x27;px&#x27;;
+      stage.style.height = size.h + &#x27;px&#x27;;
+      stage.style.transformOrigin = &#x27;0 0&#x27;;
+      stage.style.transform = &#x27;scale(&#x27; + s + &#x27;)&#x27;;
+      stage.style.left = Math.max(0, (vw - size.w * s) / 2) + &#x27;px&#x27;;
+      stage.style.top = Math.max(0, (vh - size.h * s) / 2) + &#x27;px&#x27;;
+    }
+    window.addEventListener(&#x27;resize&#x27;, fit);
+    fit();
+    return comp;
+  };
+})();
+&lt;/script&gt;
+&lt;script&gt;
+
+class Component extends DCLogic {
+  S(st) {
+    return Object.assign(this.D(), st || {});
+  }
+
+  fx(n) {
+    if (n === 0) return &#x27;fx0&#x27;;
+    return n % 2 === 1 ? &#x27;fxA&#x27; : &#x27;fxB&#x27;;
+  }
+
+  alt(prefix, n) {
+    if (n === 0) return &#x27;&#x27;;
+    return prefix + (n % 2 === 1 ? &#x27;A&#x27; : &#x27;B&#x27;);
+  }
+
+  burstParticles() {
+    const particles = [];
+    for (let i = 0; i &lt; 12; i++) {
+      particles.push({ cls: &#x27;arm r&#x27; + i + &#x27; c&#x27; + (i % 4) });
+    }
+    return particles;
+  }
+
+  D() {
+    return { S: 5, fx: 0 };
+  }
+
+  setS(S) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      if (S === cur.S) return null;
+      return { S: S, fx: cur.fx + 1 };
+    });
+  }
+
+  renderVals() {
+    const s = this.S(this.state);
+    const S = s.S;
+    const f = (n) =&gt; n.toFixed(1);
+    const P = (x, y) =&gt; f(x) + &#x27;,&#x27; + f(y);
+    const S2 = S * S;
+    const M = (S2 - 1) / 2;
+    const c = M + 1;
+
+    const u = Math.min(320 / S, 270 / M, 40);
+    const Bh = S * u;
+    const Av = M * u;
+    const x0 = (500 - Bh) / 2;
+    const y0 = 210 + Av / 2 + 10;
+    const rmS = Math.min(18, 0.4 * Math.min(Av, Bh));
+    const hl = Math.hypot(Av, Bh);
+    const mx = x0 + Bh / 2;
+    const my = y0 - Av / 2;
+    const nx = Av / hl;
+    const ny = -Bh / hl;
+
+    const alt = s.fx % 2 === 1 ? &#x27;riseA&#x27; : &#x27;riseB&#x27;;
+    const rise = (n) =&gt; (s.fx === 0 ? &#x27;&#x27; : alt + &#x27; d&#x27; + n);
+
+    const hy = nx &gt; 0.5 ? { x: mx + nx * 14, y: my + ny * 14 + 6, anc: &#x27;start&#x27; } : { x: mx + nx * 26, y: my + ny * 26 + 6, anc: &#x27;middle&#x27; };
+    const knowns = [{
+      label: &#x27;S&#x27;,
+      note: &#x27;sisi terpendek, ganjil &gt; 1&#x27;,
+      val: S,
+      decLabel: &#x27;Kurangi S&#x27;,
+      incLabel: &#x27;Tambah S&#x27;,
+      decDis: S &lt;= 3,
+      incDis: S &gt;= 15,
+      dec: () =&gt; this.setS(Math.max(3, S - 2)),
+      inc: () =&gt; this.setS(Math.min(15, S + 2))
+    }];
+    const quick = [3, 5, 7, 9].map((n) =&gt; ({
+      label: &#x27;S = &#x27; + n,
+      cls: &#x27;btn press&#x27; + (S === n ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.setS(n)
+    }));
+
+    const wM = 300 * M / c;
+    const wOne = Math.max(300 / c, 4);
+
+    return {
+      particles: this.burstParticles(),
+      fxCls: this.fx(s.fx),
+      tri: P(x0, y0) + &#x27; &#x27; + P(x0, y0 - Av) + &#x27; &#x27; + P(x0 + Bh, y0),
+      triAnim: s.fx === 0 ? &#x27;&#x27; : this.alt(&#x27;pop&#x27;, s.fx),
+      rm: P(x0 + rmS, y0) + &#x27; &#x27; + P(x0 + rmS, y0 - rmS) + &#x27; &#x27; + P(x0, y0 - rmS),
+      la: { x: f(x0 + Bh / 2), y: f(y0 + 30), t: &#x27;S = &#x27; + S, anc: &#x27;middle&#x27; },
+      lb: { x: f(x0 - 10), y: f(y0 - Av / 2 + 6), t: &#x27;M = &#x27; + M, anc: &#x27;end&#x27; },
+      lc: { x: f(hy.x), y: f(hy.y), t: &#x27;c = &#x27; + c, anc: hy.anc },
+      caption: &#x27;Segitiga siku-siku dengan sisi terpendek S = &#x27; + S,
+      knowns: knowns,
+      quick: quick,
+      rise1: rise(1),
+      rise2: rise(2),
+      rise3: rise(3),
+      rise4: rise(4),
+      t1: &#x27;M = (&#x27; + S + &#x27;² − 1) ÷ 2 = &#x27; + (S2 - 1) + &#x27; ÷ 2 = &#x27; + M,
+      t2: &#x27;c = M + 1 = &#x27; + M + &#x27; + 1 = &#x27; + c,
+      t3: &#x27;Triple Pythagoras: (&#x27; + S + &#x27;, &#x27; + M + &#x27;, &#x27; + c + &#x27;)&#x27;,
+      t4: S + &#x27;² + &#x27; + M + &#x27;² = &#x27; + c + &#x27;²  →  &#x27; + S2 + &#x27; + &#x27; + (M * M) + &#x27; = &#x27; + (c * c) + &#x27; ✓&#x27;,
+      wM: f(wM),
+      wOne: f(wOne),
+      tx: f(wM / 2),
+      lM: wM &gt;= 60 ? &#x27;M = &#x27; + M : &#x27;&#x27;,
+      lC: wM &gt;= 60 ? &#x27;c = &#x27; + c : &#x27;&#x27;
+    };
+  }
+}
+
+&lt;/script&gt;
+&lt;script&gt;
+DCMount(document.getElementById(&#x27;tpl&#x27;), document.getElementById(&#x27;stage&#x27;), Component, { w: 1000, h: 740 });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></section>
+</body>
+</html>
