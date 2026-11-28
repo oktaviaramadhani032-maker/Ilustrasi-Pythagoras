@@ -1,0 +1,2570 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ilustrasi Interaktif Teorema Pythagoras pada Bangun Ruang</title>
+<style>
+html { background: #3E6B4A; }
+body { margin: 0; padding: 16px 12px 32px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+section { width: 100%; max-width: 1000px; }
+iframe { display: block; width: 100%; aspect-ratio: 1000 / 740; border: 0; background: transparent; }
+</style>
+</head>
+<body>
+<section><iframe title="Ilustrasi 1: Diagonal bidang alas balok" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;id&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Ilustrasi Bangun Ruang 1 Diagonal bidang alas balok&lt;/title&gt;
+
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Lora:ital,wght@1,600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body { margin: 0; }
+button { font-family: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #C9822B; outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+.press { transition: transform .12s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }
+.press:hover:not(:disabled) { transform: translateY(-1px); }
+.press:active:not(:disabled) { transform: scale(.96); }
+.go { min-height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: #2F5D3A; color: #FBF3DC; font-weight: 800; font-size: 16px; }
+.go:hover:not(:disabled) { background: #244A2E; }
+.stp { width: 44px; height: 44px; flex: none; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-size: 22px; font-weight: 700; line-height: 1; padding: 0; }
+.stp:hover:not(:disabled) { background: #FFF6DC; border-color: #C98B3C; }
+.stp:disabled { opacity: .4; }
+.btn { min-height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-weight: 700; font-size: 15px; line-height: 20px; }
+.btn:hover:not(:disabled) { background: #FFF6DC; }
+.btn.on, .btn.on:hover:not(:disabled) { background: #2F5D3A; border-color: #2F5D3A; color: #FBF3DC; }
+.rowc { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 14px; padding: 3px 6px 3px 12px; }
+.off { display: none; }
+
+/* efek ledakan titik warna */
+.burst { position: absolute; width: 0; height: 0; pointer-events: none; }
+.arm { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.dot { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; opacity: 0; }
+.arm:nth-child(even) .dot { width: 7px; height: 7px; left: -3.5px; top: -3.5px; }
+.r0 { transform: rotate(0deg); }
+.r1 { transform: rotate(30deg); }
+.r2 { transform: rotate(60deg); }
+.r3 { transform: rotate(90deg); }
+.r4 { transform: rotate(120deg); }
+.r5 { transform: rotate(150deg); }
+.r6 { transform: rotate(180deg); }
+.r7 { transform: rotate(210deg); }
+.r8 { transform: rotate(240deg); }
+.r9 { transform: rotate(270deg); }
+.r10 { transform: rotate(300deg); }
+.r11 { transform: rotate(330deg); }
+.c0 .dot { background: #F2B01E; }
+.c1 .dot { background: #2F5D3A; }
+.c2 .dot { background: #B8520A; }
+.c3 .dot { background: #2A63A8; }
+.fxA .dot { animation: outA .85s ease-out both; }
+.fxB .dot { animation: outB .85s ease-out both; }
+@keyframes outA {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+@keyframes outB {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+.riseA { animation: riseA .4s ease both; }
+.riseB { animation: riseB .4s ease both; }
+@keyframes riseA {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes riseB {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+.d1 { animation-delay: .02s; }
+.d2 { animation-delay: .12s; }
+.d3 { animation-delay: .22s; }
+.d4 { animation-delay: .32s; }
+.popA { animation: popA .45s cubic-bezier(.2, 1.5, .4, 1); }
+.popB { animation: popB .45s cubic-bezier(.2, 1.5, .4, 1); }
+@keyframes popA {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+@keyframes popB {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.ang { fill: rgba(226, 169, 74, .4); stroke: #8A4B0F; transition: fill .25s ease, stroke .25s ease; }
+.ang.right { fill: rgba(47, 93, 58, .32); stroke: #2F5D3A; }
+.verdict { border-radius: 16px; padding: 10px 16px; border: 2px solid #D9C48F; background: #FFFFFF; display: flex; flex-direction: column; gap: 4px; }
+.verdict.right { background: #DDEBCF; border-color: #2F5D3A; }
+.verdict.wrong { background: #FFF1DA; border-color: #E2A94A; }
+.srow { display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 12px; padding: 0 12px; height: 32px; }
+.slab { width: 26px; flex: none; text-align: center; font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 28px; }
+.sval { min-width: 38px; flex: none; text-align: right; font-weight: 800; font-size: 18px; }
+.rng { flex: 1; min-width: 0; height: 24px; margin: 0; }
+.verdict { padding: 8px 16px; }
+.cD { color: #6A3590; }
+.cE { color: #B02A24; }
+.sA { accent-color: #2A63A8; }
+.sB { accent-color: #1F7A55; }
+.sD { accent-color: #6A3590; }
+.sE { accent-color: #B8520A; }
+.hl { background: #FFF1B8; border-radius: 6px; }
+.ln { padding: 0 6px; margin: 0 -6px; }
+.dash { stroke-dasharray: 9 7; animation: dashmove 1s linear infinite; }
+@keyframes dashmove {
+  to { stroke-dashoffset: -32; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash { animation: none !important; }
+}
+.cA { color: #1D4780; }
+.cB { color: #145A3B; }
+.cC { color: #8F3B04; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+#stage { position: absolute; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;/div&gt;
+&lt;template id=&quot;tpl&quot;&gt;
+
+&lt;div style=&quot;width: 1000px; height: 740px; box-sizing: border-box; border: 14px solid #C98B3C; border-radius: 28px; background: #3E6B4A; padding: 18px 24px 22px; display: flex; flex-direction: column; gap: 12px; font-family: &#x27;Nunito&#x27;, system-ui, sans-serif; color: #6E1B1B&quot;&gt;
+
+&lt;div style=&quot;display: flex; flex-direction: column; align-items: center; gap: 8px&quot;&gt;
+&lt;div style=&quot;background: #FBF3DC; border: 4px solid #E2A94A; border-radius: 999px; padding: 4px 44px; font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 30px; line-height: 40px; font-weight: 600; color: #2F5D3A&quot;&gt;Ilustrasi&lt;/div&gt;
+&lt;div style=&quot;color: #FBF3DC; font-size: 16px; line-height: 24px; font-weight: 700&quot;&gt;Ilustrasi 1 · Diagonal bidang alas balok&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-height: 0; background: #FBF3DC; border-radius: 18px; padding: 20px; box-sizing: border-box; display: flex; gap: 24px&quot;&gt;
+
+&lt;div style=&quot;flex: none; width: 506px; display: flex; flex-direction: column; gap: 8px&quot;&gt;
+&lt;div style=&quot;position: relative; width: 500px; height: 420px; box-sizing: content-box; background: linear-gradient(rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFF8E1 58%, #F3E6BD 100%); border: 3px solid #E2A94A; border-radius: 18px; overflow: hidden&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Balok ABCD.EFGH dengan segitiga siku-siku ABD pada alasnya. Diagonal alas BD dihitung dari panjang p dan lebar l.&quot; width=&quot;500&quot; height=&quot;420&quot; viewBox=&quot;0 0 500 420&quot; style=&quot;display: block&quot;&gt;
+&lt;polygon points=&quot;{{fBase}}&quot; fill=&quot;rgba(226, 169, 74, .22)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{fFront}}&quot; fill=&quot;rgba(42, 99, 168, .10)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{fRight}}&quot; fill=&quot;rgba(42, 99, 168, .17)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{fTop}}&quot; fill=&quot;rgba(42, 99, 168, .07)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;path d=&quot;{{hid}}&quot; stroke=&quot;#7B6A55&quot; stroke-width=&quot;2&quot; stroke-dasharray=&quot;6 5&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
+&lt;path d=&quot;{{vis}}&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;3.5&quot; stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
+&lt;polygon points=&quot;{{tri}}&quot; fill=&quot;rgba(226, 169, 74, .55)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;line class=&quot;dash&quot; x1=&quot;{{dg.x1}}&quot; y1=&quot;{{dg.y1}}&quot; x2=&quot;{{dg.x2}}&quot; y2=&quot;{{dg.y2}}&quot; stroke=&quot;#D0342C&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot;&gt;&lt;/line&gt;
+&lt;polyline points=&quot;{{rm}}&quot; fill=&quot;none&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;2.5&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Lora&#x27;, serif&quot; font-style=&quot;italic&quot; font-weight=&quot;600&quot; font-size=&quot;26&quot; text-anchor=&quot;middle&quot; fill=&quot;#6E1B1B&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;4&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{vA.x}}&quot; y=&quot;{{vA.y}}&quot;&gt;A&lt;/text&gt;
+&lt;text x=&quot;{{vB.x}}&quot; y=&quot;{{vB.y}}&quot;&gt;B&lt;/text&gt;
+&lt;text x=&quot;{{vC.x}}&quot; y=&quot;{{vC.y}}&quot;&gt;C&lt;/text&gt;
+&lt;text x=&quot;{{vD.x}}&quot; y=&quot;{{vD.y}}&quot;&gt;D&lt;/text&gt;
+&lt;text x=&quot;{{vE.x}}&quot; y=&quot;{{vE.y}}&quot;&gt;E&lt;/text&gt;
+&lt;text x=&quot;{{vF.x}}&quot; y=&quot;{{vF.y}}&quot;&gt;F&lt;/text&gt;
+&lt;text x=&quot;{{vG.x}}&quot; y=&quot;{{vG.y}}&quot;&gt;G&lt;/text&gt;
+&lt;text x=&quot;{{vH.x}}&quot; y=&quot;{{vH.y}}&quot;&gt;H&lt;/text&gt;
+&lt;/g&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;17&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;5&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{lp.x}}&quot; y=&quot;{{lp.y}}&quot; fill=&quot;{{lp.c}}&quot; text-anchor=&quot;{{lp.anc}}&quot; opacity=&quot;{{lp.o}}&quot;&gt;{{lp.t}}&lt;/text&gt;
+&lt;text x=&quot;{{ll.x}}&quot; y=&quot;{{ll.y}}&quot; fill=&quot;{{ll.c}}&quot; text-anchor=&quot;{{ll.anc}}&quot; opacity=&quot;{{ll.o}}&quot;&gt;{{ll.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lt.x}}&quot; y=&quot;{{lt.y}}&quot; fill=&quot;{{lt.c}}&quot; text-anchor=&quot;{{lt.anc}}&quot; opacity=&quot;{{lt.o}}&quot;&gt;{{lt.t}}&lt;/text&gt;
+&lt;text x=&quot;{{ld.x}}&quot; y=&quot;{{ld.y}}&quot; fill=&quot;{{ld.c}}&quot; text-anchor=&quot;{{ld.anc}}&quot; opacity=&quot;{{ld.o}}&quot;&gt;{{ld.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;burst {{fxCls}}&quot; style=&quot;left: 250px; top: 210px&quot;&gt;&lt;sc-for list=&quot;{{particles}}&quot; as=&quot;p&quot; hint-placeholder-count=&quot;12&quot;&gt;&lt;div class=&quot;{{p.cls}}&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/sc-for&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background: #FFF3C9; border: 2px solid #E8D58A; border-radius: 14px; padding: 8px 14px; display: flex; flex-direction: column; gap: 4px&quot;&gt;
+&lt;div style=&quot;display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap&quot;&gt;&lt;span style=&quot;font-size: 12px; line-height: 18px; font-weight: 800; color: #B8520A; letter-spacing: .06em&quot;&gt;INTINYA&lt;/span&gt;&lt;span style=&quot;font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; color: #2F5D3A&quot;&gt;{{keyF}}&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;font-size: 15px; line-height: 20px; font-weight: 700&quot;&gt;{{keyT}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px&quot;&gt;
+&lt;div style=&quot;font-size: 17px; line-height: 24px; font-weight: 800&quot;&gt;Atur p, l, t. BD tidak bergantung t.&lt;/div&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; gap: 4px&quot;&gt;
+&lt;sc-for list=&quot;{{sliders}}&quot; as=&quot;sl&quot; hint-placeholder-count=&quot;3&quot;&gt;
+&lt;div class=&quot;srow&quot;&gt;
+&lt;span class=&quot;slab {{sl.cls}}&quot;&gt;{{sl.label}}&lt;/span&gt;
+&lt;input type=&quot;range&quot; class=&quot;rng {{sl.rng}}&quot; min=&quot;{{sl.min}}&quot; max=&quot;{{sl.max}}&quot; step=&quot;1&quot; value=&quot;{{sl.val}}&quot; onChange=&quot;{{sl.set}}&quot; aria-label=&quot;{{sl.aria}}&quot;&gt;
+&lt;span class=&quot;sval&quot;&gt;{{sl.show}}&lt;/span&gt;
+&lt;/div&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div style=&quot;font-size: 13px; line-height: 17px; font-weight: 700; color: #6B4F33&quot;&gt;Ukuran alas yang diagonalnya bilangan bulat:&lt;/div&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{presets}}&quot; as=&quot;pr&quot; hint-placeholder-count=&quot;4&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{pr.cls}}&quot; aria-pressed=&quot;{{pr.pressed}}&quot; onClick=&quot;{{pr.pick}}&quot;&gt;{{pr.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div class=&quot;{{boxCls}}&quot; aria-live=&quot;polite&quot;&gt;
+&lt;div style=&quot;font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 24px; line-height: 30px; font-weight: 600; color: #2F5D3A&quot;&gt;{{big}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l1Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l1}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l2Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l2}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l3Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l3}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l4Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l4}}&lt;/div&gt;
+&lt;sc-if value=&quot;{{isBulat}}&quot; hint-placeholder-val=&quot;{{ false }}&quot;&gt;
+&lt;div style=&quot;font-size: 13px; line-height: 18px; font-weight: 800; color: #2F5D3A&quot;&gt;{{note}}&lt;/div&gt;
+&lt;/sc-if&gt;
+&lt;/div&gt;
+&lt;div class=&quot;verdict&quot; style=&quot;padding: 2px 8px&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Segitiga siku-siku yang dipakai pada langkah ini&quot; width=&quot;330&quot; height=&quot;88&quot; viewBox=&quot;0 0 330 88&quot; style=&quot;display: block&quot;&gt;
+&lt;text x=&quot;4&quot; y=&quot;13&quot; font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;12&quot; fill=&quot;#6B4F33&quot;&gt;{{inTitle}}&lt;/text&gt;
+&lt;polygon points=&quot;{{inPts}}&quot; fill=&quot;rgba(226, 169, 74, .30)&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;3&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/polygon&gt;
+&lt;polyline points=&quot;{{inRm}}&quot; fill=&quot;none&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;2&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;14&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFFFF&quot; stroke-width=&quot;3&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{inH.x}}&quot; y=&quot;{{inH.y}}&quot; fill=&quot;{{inH.c}}&quot;&gt;{{inH.t}}&lt;/text&gt;
+&lt;text x=&quot;{{inV.x}}&quot; y=&quot;{{inV.y}}&quot; fill=&quot;{{inV.c}}&quot; text-anchor=&quot;end&quot;&gt;{{inV.t}}&lt;/text&gt;
+&lt;text x=&quot;{{inY.x}}&quot; y=&quot;{{inY.y}}&quot; fill=&quot;{{inY.c}}&quot;&gt;{{inY.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;!function(n){&quot;function&quot;==typeof define&amp;&amp;define.amd?define(n):n()}(function(){var n,l,t,u,i,o,e,r,f,c,s,a,h,p=65536,v=1&lt;&lt;17,d={},y=[],w=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,_=Array.isArray;function g(n,l){for(var t in l)n[t]=l[t];return n}function m(n){n&amp;&amp;n.parentNode&amp;&amp;n.parentNode.removeChild(n)}function b(l,t,u){var i,o,e,r={};for(e in t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:r[e]=t[e];if(arguments.length&gt;2&amp;&amp;(r.children=arguments.length&gt;3?n.call(arguments,2):u),&quot;function&quot;==typeof l&amp;&amp;null!=l.defaultProps)for(e in l.defaultProps)void 0===r[e]&amp;&amp;(r[e]=l.defaultProps[e]);return k(l,r,i,o,null)}function k(n,u,i,o,e){var r={type:n,props:u,key:i,ref:o,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:null==e?++t:e,__i:-1,__u:0};return null==e&amp;&amp;null!=l.vnode&amp;&amp;l.vnode(r),r}function C(n){return n.children}function x(n,l){this.props=n,this.context=l}function S(n,l){if(null==l)return n.__?S(n.__,n.__i+1):null;for(var t;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e)return t.__e;return&quot;function&quot;==typeof n.type?S(n):null}function M(n){var l,t;if(null!=(n=n.__)&amp;&amp;null!=n.__c){for(n.__e=n.__c.base=null,l=0;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e){n.__e=n.__c.base=t.__e;break}return M(n)}}function P(n){(!n.__d&amp;&amp;(n.__d=!0)&amp;&amp;i.push(n)&amp;&amp;!$.__r++||o!==l.debounceRendering)&amp;&amp;((o=l.debounceRendering)||e)($)}function $(){var n,t,u,o,e,f,c,s;for(i.sort(r);n=i.shift();)n.__d&amp;&amp;(t=i.length,o=void 0,f=(e=(u=n).__v).__e,c=[],s=[],u.__P&amp;&amp;((o=g({},e)).__v=e.__v+1,l.vnode&amp;&amp;l.vnode(o),O(u.__P,o,e,u.__n,u.__P.namespaceURI,32&amp;e.__u?[f]:null,c,null==f?S(e):f,!!(32&amp;e.__u),s),o.__v=e.__v,o.__.__k[o.__i]=o,V(c,o,s),o.__e!=f&amp;&amp;M(o)),i.length&gt;t&amp;&amp;i.sort(r));$.__r=0}function I(n,l,t,u,i,o,e,r,f,c,s){var a,h,v,w,_,g=u&amp;&amp;u.__k||y,m=l.length;for(t.__d=f,A(t,l,g),f=t.__d,a=0;a&lt;m;a++)null!=(v=t.__k[a])&amp;&amp;(h=-1===v.__i?d:g[v.__i]||d,v.__i=a,O(n,v,h,i,o,e,r,f,c,s),w=v.__e,v.ref&amp;&amp;h.ref!=v.ref&amp;&amp;(h.ref&amp;&amp;z(h.ref,null,v),s.push(v.ref,v.__c||w,v)),null==_&amp;&amp;null!=w&amp;&amp;(_=w),v.__u&amp;p||h.__k===v.__k?f=E(v,f,n):&quot;function&quot;==typeof v.type&amp;&amp;void 0!==v.__d?f=v.__d:w&amp;&amp;(f=w.nextSibling),v.__d=void 0,v.__u&amp;=-196609);t.__d=f,t.__e=_}function A(n,l,t){var u,i,o,e,r,f=l.length,c=t.length,s=c,a=0;for(n.__k=[],u=0;u&lt;f;u++)null!=(i=l[u])&amp;&amp;&quot;boolean&quot;!=typeof i&amp;&amp;&quot;function&quot;!=typeof i?(e=u+a,(i=n.__k[u]=&quot;string&quot;==typeof i||&quot;number&quot;==typeof i||&quot;bigint&quot;==typeof i||i.constructor==String?k(null,i,null,null,null):_(i)?k(C,{children:i},null,null,null):void 0===i.constructor&amp;&amp;i.__b&gt;0?k(i.type,i.props,i.key,i.ref?i.ref:null,i.__v):i).__=n,i.__b=n.__b+1,o=null,-1!==(r=i.__i=F(i,t,e,s))&amp;&amp;(s--,(o=t[r])&amp;&amp;(o.__u|=v)),null==o||null===o.__v?(-1==r&amp;&amp;a--,&quot;function&quot;!=typeof i.type&amp;&amp;(i.__u|=p)):r!==e&amp;&amp;(r==e-1?a--:r==e+1?a++:(r&gt;e?a--:a++,i.__u|=p))):i=n.__k[u]=null;if(s)for(u=0;u&lt;c;u++)null!=(o=t[u])&amp;&amp;0==(o.__u&amp;v)&amp;&amp;(o.__e==n.__d&amp;&amp;(n.__d=S(o)),N(o,o))}function E(n,l,t){var u,i;if(&quot;function&quot;==typeof n.type){for(u=n.__k,i=0;u&amp;&amp;i&lt;u.length;i++)u[i]&amp;&amp;(u[i].__=n,l=E(u[i],l,t));return l}n.__e!=l&amp;&amp;(l&amp;&amp;n.type&amp;&amp;!t.contains(l)&amp;&amp;(l=S(n)),t.insertBefore(n.__e,l||null),l=n.__e);do{l=l&amp;&amp;l.nextSibling}while(null!=l&amp;&amp;8===l.nodeType);return l}function F(n,l,t,u){var i=n.key,o=n.type,e=t-1,r=t+1,f=l[t];if(null===f||f&amp;&amp;i==f.key&amp;&amp;o===f.type&amp;&amp;0==(f.__u&amp;v))return t;if(u&gt;(null!=f&amp;&amp;0==(f.__u&amp;v)?1:0))for(;e&gt;=0||r&lt;l.length;){if(e&gt;=0){if((f=l[e])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return e;e--}if(r&lt;l.length){if((f=l[r])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return r;r++}}return-1}function H(n,l,t){&quot;-&quot;===l[0]?n.setProperty(l,null==t?&quot;&quot;:t):n[l]=null==t?&quot;&quot;:&quot;number&quot;!=typeof t||w.test(l)?t:t+&quot;px&quot;}function L(n,l,t,u,i){var o;n:if(&quot;style&quot;===l)if(&quot;string&quot;==typeof t)n.style.cssText=t;else{if(&quot;string&quot;==typeof u&amp;&amp;(n.style.cssText=u=&quot;&quot;),u)for(l in u)t&amp;&amp;l in t||H(n.style,l,&quot;&quot;);if(t)for(l in t)u&amp;&amp;t[l]===u[l]||H(n.style,l,t[l])}else if(&quot;o&quot;===l[0]&amp;&amp;&quot;n&quot;===l[1])o=l!==(l=l.replace(/(PointerCapture)$|Capture$/i,&quot;$1&quot;)),l=l.toLowerCase()in n||&quot;onFocusOut&quot;===l||&quot;onFocusIn&quot;===l?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+o]=t,t?u?t.t=u.t:(t.t=f,n.addEventListener(l,o?s:c,o)):n.removeEventListener(l,o?s:c,o);else{if(&quot;http://www.w3.org/2000/svg&quot;==i)l=l.replace(/xlink(H|:h)/,&quot;h&quot;).replace(/sName$/,&quot;s&quot;);else if(&quot;width&quot;!=l&amp;&amp;&quot;height&quot;!=l&amp;&amp;&quot;href&quot;!=l&amp;&amp;&quot;list&quot;!=l&amp;&amp;&quot;form&quot;!=l&amp;&amp;&quot;tabIndex&quot;!=l&amp;&amp;&quot;download&quot;!=l&amp;&amp;&quot;rowSpan&quot;!=l&amp;&amp;&quot;colSpan&quot;!=l&amp;&amp;&quot;role&quot;!=l&amp;&amp;&quot;popover&quot;!=l&amp;&amp;l in n)try{n[l]=null==t?&quot;&quot;:t;break n}catch(n){}&quot;function&quot;==typeof t||(null==t||!1===t&amp;&amp;&quot;-&quot;!==l[4]?n.removeAttribute(l):n.setAttribute(l,&quot;popover&quot;==l&amp;&amp;1==t?&quot;&quot;:t))}}function T(n){return function(t){if(this.l){var u=this.l[t.type+n];if(null==t.u)t.u=f++;else if(t.u&lt;u.t)return;return u(l.event?l.event(t):t)}}}function O(n,t,u,i,o,e,r,f,c,s){var a,h,p,v,d,y,w,m,b,k,S,M,P,$,A,E,F=t.type;if(void 0!==t.constructor)return null;128&amp;u.__u&amp;&amp;(c=!!(32&amp;u.__u),e=[f=t.__e=u.__e]),(a=l.__b)&amp;&amp;a(t);n:if(&quot;function&quot;==typeof F)try{if(m=t.props,b=&quot;prototype&quot;in F&amp;&amp;F.prototype.render,k=(a=F.contextType)&amp;&amp;i[a.__c],S=a?k?k.props.value:a.__:i,u.__c?w=(h=t.__c=u.__c).__=h.__E:(b?t.__c=h=new F(m,S):(t.__c=h=new x(m,S),h.constructor=F,h.render=R),k&amp;&amp;k.sub(h),h.props=m,h.state||(h.state={}),h.context=S,h.__n=i,p=h.__d=!0,h.__h=[],h._sb=[]),b&amp;&amp;null==h.__s&amp;&amp;(h.__s=h.state),b&amp;&amp;null!=F.getDerivedStateFromProps&amp;&amp;(h.__s==h.state&amp;&amp;(h.__s=g({},h.__s)),g(h.__s,F.getDerivedStateFromProps(m,h.__s))),v=h.props,d=h.state,h.__v=t,p)b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;null!=h.componentWillMount&amp;&amp;h.componentWillMount(),b&amp;&amp;null!=h.componentDidMount&amp;&amp;h.__h.push(h.componentDidMount);else{if(b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;m!==v&amp;&amp;null!=h.componentWillReceiveProps&amp;&amp;h.componentWillReceiveProps(m,S),!h.__e&amp;&amp;(null!=h.shouldComponentUpdate&amp;&amp;!1===h.shouldComponentUpdate(m,h.__s,S)||t.__v===u.__v)){for(t.__v!==u.__v&amp;&amp;(h.props=m,h.state=h.__s,h.__d=!1),t.__e=u.__e,t.__k=u.__k,t.__k.some(function(n){n&amp;&amp;(n.__=t)}),M=0;M&lt;h._sb.length;M++)h.__h.push(h._sb[M]);h._sb=[],h.__h.length&amp;&amp;r.push(h);break n}null!=h.componentWillUpdate&amp;&amp;h.componentWillUpdate(m,h.__s,S),b&amp;&amp;null!=h.componentDidUpdate&amp;&amp;h.__h.push(function(){h.componentDidUpdate(v,d,y)})}if(h.context=S,h.props=m,h.__P=n,h.__e=!1,P=l.__r,$=0,b){for(h.state=h.__s,h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),A=0;A&lt;h._sb.length;A++)h.__h.push(h._sb[A]);h._sb=[]}else do{h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),h.state=h.__s}while(h.__d&amp;&amp;++$&lt;25);h.state=h.__s,null!=h.getChildContext&amp;&amp;(i=g(g({},i),h.getChildContext())),b&amp;&amp;!p&amp;&amp;null!=h.getSnapshotBeforeUpdate&amp;&amp;(y=h.getSnapshotBeforeUpdate(v,d)),I(n,_(E=null!=a&amp;&amp;a.type===C&amp;&amp;null==a.key?a.props.children:a)?E:[E],t,u,i,o,e,r,f,c,s),h.base=t.__e,t.__u&amp;=-161,h.__h.length&amp;&amp;r.push(h),w&amp;&amp;(h.__E=h.__=null)}catch(n){if(t.__v=null,c||null!=e){for(t.__u|=c?160:128;f&amp;&amp;8===f.nodeType&amp;&amp;f.nextSibling;)f=f.nextSibling;e[e.indexOf(f)]=null,t.__e=f}else t.__e=u.__e,t.__k=u.__k;l.__e(n,t,u)}else null==e&amp;&amp;t.__v===u.__v?(t.__k=u.__k,t.__e=u.__e):t.__e=j(u.__e,t,u,i,o,e,r,c,s);(a=l.diffed)&amp;&amp;a(t)}function V(n,t,u){t.__d=void 0;for(var i=0;i&lt;u.length;i++)z(u[i],u[++i],u[++i]);l.__c&amp;&amp;l.__c(t,n),n.some(function(t){try{n=t.__h,t.__h=[],n.some(function(n){n.call(t)})}catch(n){l.__e(n,t.__v)}})}function j(t,u,i,o,e,r,f,c,s){var a,h,p,v,y,w,g,b=i.props,k=u.props,C=u.type;if(&quot;svg&quot;===C?e=&quot;http://www.w3.org/2000/svg&quot;:&quot;math&quot;===C?e=&quot;http://www.w3.org/1998/Math/MathML&quot;:e||(e=&quot;http://www.w3.org/1999/xhtml&quot;),null!=r)for(a=0;a&lt;r.length;a++)if((y=r[a])&amp;&amp;&quot;setAttribute&quot;in y==!!C&amp;&amp;(C?y.localName===C:3===y.nodeType)){t=y,r[a]=null;break}if(null==t){if(null===C)return document.createTextNode(k);t=document.createElementNS(e,C,k.is&amp;&amp;k),c&amp;&amp;(l.__m&amp;&amp;l.__m(u,r),c=!1),r=null}if(null===C)b===k||c&amp;&amp;t.data===k||(t.data=k);else{if(r=r&amp;&amp;n.call(t.childNodes),b=i.props||d,!c&amp;&amp;null!=r)for(b={},a=0;a&lt;t.attributes.length;a++)b[(y=t.attributes[a]).name]=y.value;for(a in b)if(y=b[a],&quot;children&quot;==a);else if(&quot;dangerouslySetInnerHTML&quot;==a)p=y;else if(!(a in k)){if(&quot;value&quot;==a&amp;&amp;&quot;defaultValue&quot;in k||&quot;checked&quot;==a&amp;&amp;&quot;defaultChecked&quot;in k)continue;L(t,a,null,y,e)}for(a in k)y=k[a],&quot;children&quot;==a?v=y:&quot;dangerouslySetInnerHTML&quot;==a?h=y:&quot;value&quot;==a?w=y:&quot;checked&quot;==a?g=y:c&amp;&amp;&quot;function&quot;!=typeof y||b[a]===y||L(t,a,y,b[a],e);if(h)c||p&amp;&amp;(h.__html===p.__html||h.__html===t.innerHTML)||(t.innerHTML=h.__html),u.__k=[];else if(p&amp;&amp;(t.innerHTML=&quot;&quot;),I(t,_(v)?v:[v],u,i,o,&quot;foreignObject&quot;===C?&quot;http://www.w3.org/1999/xhtml&quot;:e,r,f,r?r[0]:i.__k&amp;&amp;S(i,0),c,s),null!=r)for(a=r.length;a--;)m(r[a]);c||(a=&quot;value&quot;,&quot;progress&quot;===C&amp;&amp;null==w?t.removeAttribute(&quot;value&quot;):void 0!==w&amp;&amp;(w!==t[a]||&quot;progress&quot;===C&amp;&amp;!w||&quot;option&quot;===C&amp;&amp;w!==b[a])&amp;&amp;L(t,a,w,b[a],e),a=&quot;checked&quot;,void 0!==g&amp;&amp;g!==t[a]&amp;&amp;L(t,a,g,b[a],e))}return t}function z(n,t,u){try{if(&quot;function&quot;==typeof n){var i=&quot;function&quot;==typeof n.__u;i&amp;&amp;n.__u(),i&amp;&amp;null==t||(n.__u=n(t))}else n.current=t}catch(n){l.__e(n,u)}}function N(n,t,u){var i,o;if(l.unmount&amp;&amp;l.unmount(n),(i=n.ref)&amp;&amp;(i.current&amp;&amp;i.current!==n.__e||z(i,null,t)),null!=(i=n.__c)){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(n){l.__e(n,t)}i.base=i.__P=null}if(i=n.__k)for(o=0;o&lt;i.length;o++)i[o]&amp;&amp;N(i[o],t,u||&quot;function&quot;!=typeof n.type);u||m(n.__e),n.__c=n.__=n.__e=n.__d=void 0}function R(n,l,t){return this.constructor(n,t)}function q(t,u,i){var o,e,r,f;l.__&amp;&amp;l.__(t,u),e=(o=&quot;function&quot;==typeof i)?null:i&amp;&amp;i.__k||u.__k,r=[],f=[],O(u,t=(!o&amp;&amp;i||u).__k=b(C,null,[t]),e||d,d,u.namespaceURI,!o&amp;&amp;i?[i]:e?null:u.firstChild?n.call(u.childNodes):null,r,!o&amp;&amp;i?i:e?e.__e:u.firstChild,o,f),V(r,t,f)}n=y.slice,l={__e:function(n,l,t,u){for(var i,o,e;l=l.__;)if((i=l.__c)&amp;&amp;!i.__)try{if((o=i.constructor)&amp;&amp;null!=o.getDerivedStateFromError&amp;&amp;(i.setState(o.getDerivedStateFromError(n)),e=i.__d),null!=i.componentDidCatch&amp;&amp;(i.componentDidCatch(n,u||{}),e=i.__d),e)return i.__E=i}catch(l){n=l}throw n}},t=0,u=function(n){return null!=n&amp;&amp;null==n.constructor},x.prototype.setState=function(n,l){var t;t=null!=this.__s&amp;&amp;this.__s!==this.state?this.__s:this.__s=g({},this.state),&quot;function&quot;==typeof n&amp;&amp;(n=n(g({},t),this.props)),n&amp;&amp;g(t,n),null!=n&amp;&amp;this.__v&amp;&amp;(l&amp;&amp;this._sb.push(l),P(this))},x.prototype.forceUpdate=function(n){this.__v&amp;&amp;(this.__e=!0,n&amp;&amp;this.__h.push(n),P(this))},x.prototype.render=C,i=[],e=&quot;function&quot;==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,r=function(n,l){return n.__v.__b-l.__v.__b},$.__r=0,f=0,c=T(!1),s=T(!0),a=0,h={__proto__:null,render:q,hydrate:function n(l,t){q(l,t,n)},createElement:b,h:b,Fragment:C,createRef:function(){return{current:null}},isValidElement:u,Component:x,cloneElement:function(l,t,u){var i,o,e,r,f=g({},l.props);for(e in l.type&amp;&amp;l.type.defaultProps&amp;&amp;(r=l.type.defaultProps),t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:f[e]=void 0===t[e]&amp;&amp;void 0!==r?r[e]:t[e];return arguments.length&gt;2&amp;&amp;(f.children=arguments.length&gt;3?n.call(arguments,2):u),k(l.type,f,i||l.key,o||l.ref,null)},createContext:function(n,l){var t={__c:l=&quot;__cC&quot;+a++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var t,u;return this.getChildContext||(t=new Set,(u={})[l]=this,this.getChildContext=function(){return u},this.componentWillUnmount=function(){t=null},this.shouldComponentUpdate=function(n){this.props.value!==n.value&amp;&amp;t.forEach(function(n){n.__e=!0,P(n)})},this.sub=function(n){t.add(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){t&amp;&amp;t.delete(n),l&amp;&amp;l.call(n)}}),n.children}};return t.Provider.__=t.Consumer.contextType=t},toChildArray:function n(l,t){return t=t||[],null==l||&quot;boolean&quot;==typeof l||(_(l)?l.some(function(l){n(l,t)}):t.push(l)),t},options:l},typeof module&lt;&quot;u&quot;?module.exports=h:self.preact=h});
+//# sourceMappingURL=preact.min.umd.js.map
+&lt;/script&gt;
+&lt;script&gt;/* Runtime mini: menjalankan template .dc.html (sc-for, sc-if, {{lubang}}, onClick) tanpa editor kanvas. */
+(function () {
+  var h = preact.h;
+  var render = preact.render;
+
+  class DCLogic {
+    constructor(props) {
+      this.props = props || {};
+      this.state = {};
+      this.__render = null;
+    }
+    setState(p) {
+      var next = typeof p === &#x27;function&#x27; ? p(this.state, this.props) : p;
+      if (next == null) return;
+      this.state = Object.assign({}, this.state, next);
+      if (this.__render) this.__render();
+    }
+    forceUpdate() {
+      if (this.__render) this.__render();
+    }
+  }
+  window.DCLogic = DCLogic;
+
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+
+  function lookup(scope, path) {
+    if (path === &#x27;true&#x27;) return true;
+    if (path === &#x27;false&#x27;) return false;
+    if (path === &#x27;null&#x27;) return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split(&#x27;.&#x27;);
+    var cur = scope;
+    for (var i = 0; i &lt; parts.length; i++) {
+      if (cur == null) return undefined;
+      cur = cur[parts[i]];
+    }
+    return cur;
+  }
+
+  function evalAttr(value, scope) {
+    var m = WHOLE.exec(value);
+    if (m) return lookup(scope, m[1]);
+    return value.replace(HOLE, function (_, p) {
+      var v = lookup(scope, p);
+      return v == null ? &#x27;&#x27; : String(v);
+    });
+  }
+
+  function flatten(list, out) {
+    for (var i = 0; i &lt; list.length; i++) {
+      var c = list[i];
+      if (Array.isArray(c)) flatten(c, out);
+      else if (c !== null &amp;&amp; c !== undefined &amp;&amp; c !== false) out.push(c);
+    }
+    return out;
+  }
+
+  function buildChildren(node, scope) {
+    var out = [];
+    for (var i = 0; i &lt; node.childNodes.length; i++) {
+      out.push(build(node.childNodes[i], scope));
+    }
+    return flatten(out, []);
+  }
+
+  function build(node, scope) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      if (!t.trim() &amp;&amp; t.indexOf(&#x27;\n&#x27;) &gt;= 0) return null;
+      var m = WHOLE.exec(t);
+      if (m) {
+        var raw = lookup(scope, m[1]);
+        return raw == null ? &#x27;&#x27; : String(raw);
+      }
+      return t.replace(HOLE, function (_, p) {
+        var v = lookup(scope, p);
+        return v == null ? &#x27;&#x27; : String(v);
+      });
+    }
+    if (node.nodeType !== 1) return null;
+    var tag = node.localName;
+
+    if (tag === &#x27;sc-if&#x27;) {
+      var cond = evalAttr(node.getAttribute(&#x27;value&#x27;) || &#x27;&#x27;, scope);
+      return cond ? buildChildren(node, scope) : null;
+    }
+    if (tag === &#x27;sc-for&#x27;) {
+      var list = evalAttr(node.getAttribute(&#x27;list&#x27;) || &#x27;&#x27;, scope) || [];
+      var as = node.getAttribute(&#x27;as&#x27;) || &#x27;item&#x27;;
+      var out = [];
+      for (var i = 0; i &lt; list.length; i++) {
+        var sub = Object.create(scope);
+        sub[as] = list[i];
+        sub.$index = i;
+        out.push(buildChildren(node, sub));
+      }
+      return flatten(out, []);
+    }
+
+    var props = {};
+    for (var a = 0; a &lt; node.attributes.length; a++) {
+      var name = node.attributes[a].name;
+      var val = node.attributes[a].value;
+      if (name.indexOf(&#x27;hint-&#x27;) === 0) continue;
+      if (name.indexOf(&#x27;on&#x27;) === 0 &amp;&amp; name.length &gt; 2) {
+        var fn = evalAttr(val, scope);
+        if (typeof fn === &#x27;function&#x27;) {
+          var evt = name.toLowerCase();
+          if (evt === &#x27;onchange&#x27; &amp;&amp; tag === &#x27;input&#x27;) evt = &#x27;oninput&#x27;;
+          props[evt] = fn;
+        }
+        continue;
+      }
+      props[name] = evalAttr(val, scope);
+    }
+    return h.apply(null, [tag, props].concat(buildChildren(node, scope)));
+  }
+
+  window.DCMount = function (templateEl, mountEl, ComponentClass, size) {
+    var root = templateEl.content.firstElementChild;
+    var comp = new ComponentClass({});
+    function draw() {
+      var vals = comp.renderVals();
+      render(build(root, vals), mountEl);
+    }
+    comp.__render = draw;
+    draw();
+
+    var stage = mountEl;
+    function fit() {
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var s = Math.min(vw / size.w, vh / size.h, 2);
+      stage.style.width = size.w + &#x27;px&#x27;;
+      stage.style.height = size.h + &#x27;px&#x27;;
+      stage.style.transformOrigin = &#x27;0 0&#x27;;
+      stage.style.transform = &#x27;scale(&#x27; + s + &#x27;)&#x27;;
+      stage.style.left = Math.max(0, (vw - size.w * s) / 2) + &#x27;px&#x27;;
+      stage.style.top = Math.max(0, (vh - size.h * s) / 2) + &#x27;px&#x27;;
+    }
+    window.addEventListener(&#x27;resize&#x27;, fit);
+    fit();
+    return comp;
+  };
+})();
+&lt;/script&gt;
+&lt;script&gt;
+
+class Component extends DCLogic {
+  S(st) {
+    return Object.assign(this.D(), st || {});
+  }
+
+  fx(n) {
+    if (n === 0) return &#x27;fx0&#x27;;
+    return n % 2 === 1 ? &#x27;fxA&#x27; : &#x27;fxB&#x27;;
+  }
+
+  alt(prefix, n) {
+    if (n === 0) return &#x27;&#x27;;
+    return prefix + (n % 2 === 1 ? &#x27;A&#x27; : &#x27;B&#x27;);
+  }
+
+  burstParticles() {
+    const particles = [];
+    for (let i = 0; i &lt; 12; i++) {
+      particles.push({ cls: &#x27;arm r&#x27; + i + &#x27; c&#x27; + (i % 4) });
+    }
+    return particles;
+  }
+
+  nf(x) {
+    if (Math.abs(x - Math.round(x)) &lt; 1e-9) return String(Math.round(x));
+    return x.toFixed(2).replace(&#x27;.&#x27;, &#x27;,&#x27;);
+  }
+
+  isInt(x) {
+    return Math.abs(x - Math.round(x)) &lt; 1e-9;
+  }
+
+  commit(patch) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      const nxt = Object.assign({}, cur, patch);
+      const out = Object.assign({}, patch);
+      if (this.isBulat(nxt) &amp;&amp; !this.isBulat(cur)) out.fx = cur.fx + 1;
+      return out;
+    });
+  }
+
+  setNum(key, raw, min, max) {
+    let v = Math.round(Number(raw));
+    if (isNaN(v)) return;
+    v = Math.max(min, Math.min(max, v));
+    const patch = {};
+    patch[key] = v;
+    this.commit(patch);
+  }
+
+  pt(P) {
+    return P[0].toFixed(1) + &#x27;,&#x27; + P[1].toFixed(1);
+  }
+
+  ps(P) {
+    return P[0].toFixed(1) + &#x27; &#x27; + P[1].toFixed(1);
+  }
+
+  poly() {
+    const a = Array.prototype.slice.call(arguments);
+    return a.map((P) =&gt; this.pt(P)).join(&#x27; &#x27;);
+  }
+
+  unit(P, Q) {
+    const dx = Q[0] - P[0];
+    const dy = Q[1] - P[1];
+    const L = Math.hypot(dx, dy) || 1;
+    return [dx / L, dy / L];
+  }
+
+  rmark(V, P1, P2, s) {
+    const u1 = this.unit(V, P1);
+    const u2 = this.unit(V, P2);
+    const a = [V[0] + s * u1[0], V[1] + s * u1[1]];
+    const b = [V[0] + s * (u1[0] + u2[0]), V[1] + s * (u1[1] + u2[1])];
+    const c = [V[0] + s * u2[0], V[1] + s * u2[1]];
+    return this.poly(a, b, c);
+  }
+
+  mid(P, Q) {
+    return [(P[0] + Q[0]) / 2, (P[1] + Q[1]) / 2];
+  }
+
+  geo(p, l, t, pyr) {
+    const kx = 0.46;
+    const ky = 0.30;
+    const hu = pyr ? Math.max(t + l * ky / 2, l * ky) : t + l * ky;
+    const u = Math.min(340 / (p + l * kx), 265 / hu, 46);
+    const w = (p + l * kx) * u;
+    const hh = hu * u;
+    const ox = (500 - w) / 2;
+    const oy = 212 + hh / 2 + 10;
+    const pr = (x, y, z) =&gt; [ox + (x + y * kx) * u, oy - (z + y * ky) * u];
+    return { u: u, pr: pr };
+  }
+
+  lab(P, dx, dy, t, c, anc, o) {
+    return { x: (P[0] + dx).toFixed(1), y: (P[1] + dy).toFixed(1), t: t, c: c, anc: anc || &#x27;middle&#x27;, o: o === undefined ? &#x27;1&#x27; : o };
+  }
+
+  vl(P, dx, dy) {
+    return { x: (P[0] + dx).toFixed(1), y: (P[1] + dy).toFixed(1) };
+  }
+
+  inset(legH, legV, tH, tV, tY, cH, cV, cY) {
+    const s = Math.min(190 / legH, 40 / legV);
+    const W = legH * s;
+    const Hv = legV * s;
+    const x0 = Math.max(78, (330 - W) / 2 + 24);
+    const y0 = 68;
+    const O = [x0, y0];
+    const Hh = [x0 + W, y0];
+    const V = [x0, y0 - Hv];
+    const L = Math.hypot(W, Hv) || 1;
+    const rs = Math.max(5, Math.min(12, W * 0.3, Hv * 0.3));
+    const m = this.mid(V, Hh);
+    return {
+      pts: this.poly(O, Hh, V),
+      rm: this.poly([x0 + rs, y0], [x0 + rs, y0 - rs], [x0, y0 - rs]),
+      h: { x: (x0 + W / 2).toFixed(1), y: (y0 + 16).toFixed(1), t: tH, c: cH },
+      v: { x: (x0 - 8).toFixed(1), y: (y0 - Hv / 2 + 5).toFixed(1), t: tV, c: cV },
+      y: { x: (m[0] + Hv / L * 18).toFixed(1), y: (m[1] - W / L * 18 + 5).toFixed(1), t: tY, c: cY }
+    };
+  }
+
+  sliderRow(key, label, cls, rng, min, max, val, show, aria, setter) {
+    return { label: label, cls: cls, rng: rng, min: min, max: max, val: val, show: show, aria: aria, set: setter };
+  }
+
+  D() {
+    return { p: 4, l: 3, t: 3, fx: 0 };
+  }
+
+  res(s) {
+    return Math.sqrt(s.p * s.p + s.l * s.l);
+  }
+
+  isBulat(s) {
+    return this.isInt(this.res(s));
+  }
+
+  renderVals() {
+    const s = this.S(this.state);
+    const p = s.p;
+    const l = s.l;
+    const t = s.t;
+    const g = this.geo(p, l, t, false);
+    const pr = g.pr;
+    const A = pr(0, 0, 0);
+    const B = pr(p, 0, 0);
+    const C = pr(p, l, 0);
+    const D = pr(0, l, 0);
+    const E = pr(0, 0, t);
+    const F = pr(p, 0, t);
+    const G = pr(p, l, t);
+    const H = pr(0, l, t);
+    const ps = (P) =&gt; this.ps(P);
+    const vis = &#x27;M&#x27; + ps(A) + &#x27; L&#x27; + ps(B) + &#x27; L&#x27; + ps(F) + &#x27; L&#x27; + ps(E) + &#x27; Z M&#x27; + ps(B) + &#x27; L&#x27; + ps(C) + &#x27; L&#x27; + ps(G) + &#x27; L&#x27; + ps(F) + &#x27; M&#x27; + ps(E) + &#x27; L&#x27; + ps(H) + &#x27; L&#x27; + ps(G);
+    const hid = &#x27;M&#x27; + ps(D) + &#x27; L&#x27; + ps(A) + &#x27; M&#x27; + ps(D) + &#x27; L&#x27; + ps(C) + &#x27; M&#x27; + ps(D) + &#x27; L&#x27; + ps(H);
+
+    const sum = p * p + l * l;
+    const bd = Math.sqrt(sum);
+    const bulat = this.isInt(bd);
+    const mBD = this.mid(B, D);
+    const mAB = this.mid(A, B);
+    const mBC = this.mid(B, C);
+    const mEA = this.mid(E, A);
+
+    const sliders = [
+      this.sliderRow(&#x27;p&#x27;, &#x27;p&#x27;, &#x27;cA&#x27;, &#x27;sA&#x27;, 1, 12, p, p, &#x27;Panjang p&#x27;, (e) =&gt; this.setNum(&#x27;p&#x27;, e.target.value, 1, 12)),
+      this.sliderRow(&#x27;l&#x27;, &#x27;l&#x27;, &#x27;cB&#x27;, &#x27;sB&#x27;, 1, 12, l, l, &#x27;Lebar l&#x27;, (e) =&gt; this.setNum(&#x27;l&#x27;, e.target.value, 1, 12)),
+      this.sliderRow(&#x27;t&#x27;, &#x27;t&#x27;, &#x27;cD&#x27;, &#x27;sD&#x27;, 1, 12, t, t, &#x27;Tinggi t&#x27;, (e) =&gt; this.setNum(&#x27;t&#x27;, e.target.value, 1, 12))
+    ];
+    const presets = [[3, 4], [6, 8], [5, 12], [8, 15]].map((q) =&gt; ({
+      label: q[0] + &#x27; &amp; &#x27; + q[1],
+      pressed: p === q[0] &amp;&amp; l === q[1],
+      cls: &#x27;btn press&#x27; + (p === q[0] &amp;&amp; l === q[1] ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.commit({ p: q[0], l: q[1] })
+    }));
+
+    const ins = this.inset(p, l, &#x27;p = &#x27; + p, &#x27;l = &#x27; + l, &#x27;BD = &#x27; + this.nf(bd), &#x27;#1D4780&#x27;, &#x27;#145A3B&#x27;, &#x27;#B02A24&#x27;);
+    const tup = [p, l].sort((x, y) =&gt; x - y);
+    return {
+      particles: this.burstParticles(),
+      fxCls: this.fx(s.fx),
+      fBase: this.poly(A, B, C, D),
+      fFront: this.poly(A, B, F, E),
+      fRight: this.poly(B, C, G, F),
+      fTop: this.poly(E, F, G, H),
+      vis: vis,
+      hid: hid,
+      tri: this.poly(A, B, D),
+      dg: { x1: B[0].toFixed(1), y1: B[1].toFixed(1), x2: D[0].toFixed(1), y2: D[1].toFixed(1) },
+      rm: this.rmark(A, B, D, 15),
+      vA: this.vl(A, -16, 24),
+      vB: this.vl(B, 14, 24),
+      vC: this.vl(C, 18, 8),
+      vD: this.vl(D, -16, 2),
+      vE: this.vl(E, -18, 4),
+      vF: this.vl(F, -4, 26),
+      vG: this.vl(G, 18, -4),
+      vH: this.vl(H, -14, -8),
+      lp: this.lab(mAB, 0, 52, &#x27;p = &#x27; + p, &#x27;#1D4780&#x27;),
+      ll: this.lab(mBC, 14, 8, &#x27;l = &#x27; + l, &#x27;#145A3B&#x27;, &#x27;start&#x27;),
+      lt: this.lab(mEA, -12, 5, &#x27;t = &#x27; + t, &#x27;#6A3590&#x27;, &#x27;end&#x27;),
+      ld: this.lab(mBD, -6, -14, &#x27;BD = &#x27; + this.nf(bd), &#x27;#B02A24&#x27;),
+      caption: &#x27;Balok ABCD.EFGH dengan p = &#x27; + p + &#x27;, l = &#x27; + l + &#x27;, t = &#x27; + t,
+      sliders: sliders,
+      presets: presets,
+      keyF: &#x27;BD = √(p² + l²)&#x27;,
+      keyT: &#x27;Diagonal bidang alas balok diperoleh dari akar jumlah kuadrat panjang dan lebarnya.&#x27;,
+      boxCls: bulat ? &#x27;verdict right &#x27; + this.alt(&#x27;pop&#x27;, s.fx) : &#x27;verdict&#x27;,
+      big: bulat ? &#x27;BD = &#x27; + this.nf(bd) : &#x27;BD ≈ &#x27; + this.nf(bd),
+      l1: &#x27;Segitiga ABD siku-siku di A&#x27;,
+      l2: &#x27;BD² = AB² + AD² = p² + l²&#x27;,
+      l3: &#x27;BD² = &#x27; + p + &#x27;² + &#x27; + l + &#x27;² = &#x27; + (p * p) + &#x27; + &#x27; + (l * l) + &#x27; = &#x27; + sum,
+      l4: bulat ? &#x27;BD = √&#x27; + sum + &#x27; = &#x27; + this.nf(bd) : &#x27;BD = √&#x27; + sum + &#x27; ≈ &#x27; + this.nf(bd),
+      l1Cls: &#x27;&#x27;, l2Cls: &#x27;&#x27;, l3Cls: &#x27;&#x27;, l4Cls: &#x27;&#x27;,
+      isBulat: bulat,
+      note: &#x27;Bilangan bulat! (&#x27; + tup[0] + &#x27;, &#x27; + tup[1] + &#x27;, &#x27; + this.nf(bd) + &#x27;) adalah triple Pythagoras.&#x27;,
+      inTitle: &#x27;Segitiga ABD (siku-siku di A)&#x27;,
+      inPts: ins.pts, inRm: ins.rm, inH: ins.h, inV: ins.v, inY: ins.y
+    };
+  }
+}
+
+&lt;/script&gt;
+&lt;script&gt;
+DCMount(document.getElementById(&#x27;tpl&#x27;), document.getElementById(&#x27;stage&#x27;), Component, { w: 1000, h: 740 });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></section>
+<section><iframe title="Ilustrasi 2: Diagonal ruang balok" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;id&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Ilustrasi Bangun Ruang 2 Diagonal ruang balok&lt;/title&gt;
+
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Lora:ital,wght@1,600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body { margin: 0; }
+button { font-family: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #C9822B; outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+.press { transition: transform .12s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }
+.press:hover:not(:disabled) { transform: translateY(-1px); }
+.press:active:not(:disabled) { transform: scale(.96); }
+.go { min-height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: #2F5D3A; color: #FBF3DC; font-weight: 800; font-size: 16px; }
+.go:hover:not(:disabled) { background: #244A2E; }
+.stp { width: 44px; height: 44px; flex: none; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-size: 22px; font-weight: 700; line-height: 1; padding: 0; }
+.stp:hover:not(:disabled) { background: #FFF6DC; border-color: #C98B3C; }
+.stp:disabled { opacity: .4; }
+.btn { min-height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-weight: 700; font-size: 15px; line-height: 20px; }
+.btn:hover:not(:disabled) { background: #FFF6DC; }
+.btn.on, .btn.on:hover:not(:disabled) { background: #2F5D3A; border-color: #2F5D3A; color: #FBF3DC; }
+.rowc { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 14px; padding: 3px 6px 3px 12px; }
+.off { display: none; }
+
+/* efek ledakan titik warna */
+.burst { position: absolute; width: 0; height: 0; pointer-events: none; }
+.arm { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.dot { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; opacity: 0; }
+.arm:nth-child(even) .dot { width: 7px; height: 7px; left: -3.5px; top: -3.5px; }
+.r0 { transform: rotate(0deg); }
+.r1 { transform: rotate(30deg); }
+.r2 { transform: rotate(60deg); }
+.r3 { transform: rotate(90deg); }
+.r4 { transform: rotate(120deg); }
+.r5 { transform: rotate(150deg); }
+.r6 { transform: rotate(180deg); }
+.r7 { transform: rotate(210deg); }
+.r8 { transform: rotate(240deg); }
+.r9 { transform: rotate(270deg); }
+.r10 { transform: rotate(300deg); }
+.r11 { transform: rotate(330deg); }
+.c0 .dot { background: #F2B01E; }
+.c1 .dot { background: #2F5D3A; }
+.c2 .dot { background: #B8520A; }
+.c3 .dot { background: #2A63A8; }
+.fxA .dot { animation: outA .85s ease-out both; }
+.fxB .dot { animation: outB .85s ease-out both; }
+@keyframes outA {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+@keyframes outB {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+.riseA { animation: riseA .4s ease both; }
+.riseB { animation: riseB .4s ease both; }
+@keyframes riseA {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes riseB {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+.d1 { animation-delay: .02s; }
+.d2 { animation-delay: .12s; }
+.d3 { animation-delay: .22s; }
+.d4 { animation-delay: .32s; }
+.popA { animation: popA .45s cubic-bezier(.2, 1.5, .4, 1); }
+.popB { animation: popB .45s cubic-bezier(.2, 1.5, .4, 1); }
+@keyframes popA {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+@keyframes popB {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.ang { fill: rgba(226, 169, 74, .4); stroke: #8A4B0F; transition: fill .25s ease, stroke .25s ease; }
+.ang.right { fill: rgba(47, 93, 58, .32); stroke: #2F5D3A; }
+.verdict { border-radius: 16px; padding: 10px 16px; border: 2px solid #D9C48F; background: #FFFFFF; display: flex; flex-direction: column; gap: 4px; }
+.verdict.right { background: #DDEBCF; border-color: #2F5D3A; }
+.verdict.wrong { background: #FFF1DA; border-color: #E2A94A; }
+.srow { display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 12px; padding: 0 12px; height: 32px; }
+.slab { width: 26px; flex: none; text-align: center; font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 28px; }
+.sval { min-width: 38px; flex: none; text-align: right; font-weight: 800; font-size: 18px; }
+.rng { flex: 1; min-width: 0; height: 24px; margin: 0; }
+.verdict { padding: 8px 16px; }
+.cD { color: #6A3590; }
+.cE { color: #B02A24; }
+.sA { accent-color: #2A63A8; }
+.sB { accent-color: #1F7A55; }
+.sD { accent-color: #6A3590; }
+.sE { accent-color: #B8520A; }
+.hl { background: #FFF1B8; border-radius: 6px; }
+.ln { padding: 0 6px; margin: 0 -6px; }
+.dash { stroke-dasharray: 9 7; animation: dashmove 1s linear infinite; }
+@keyframes dashmove {
+  to { stroke-dashoffset: -32; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash { animation: none !important; }
+}
+.cA { color: #1D4780; }
+.cB { color: #145A3B; }
+.cC { color: #8F3B04; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+#stage { position: absolute; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;/div&gt;
+&lt;template id=&quot;tpl&quot;&gt;
+
+&lt;div style=&quot;width: 1000px; height: 740px; box-sizing: border-box; border: 14px solid #C98B3C; border-radius: 28px; background: #3E6B4A; padding: 18px 24px 22px; display: flex; flex-direction: column; gap: 12px; font-family: &#x27;Nunito&#x27;, system-ui, sans-serif; color: #6E1B1B&quot;&gt;
+
+&lt;div style=&quot;display: flex; flex-direction: column; align-items: center; gap: 8px&quot;&gt;
+&lt;div style=&quot;background: #FBF3DC; border: 4px solid #E2A94A; border-radius: 999px; padding: 4px 44px; font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 30px; line-height: 40px; font-weight: 600; color: #2F5D3A&quot;&gt;Ilustrasi&lt;/div&gt;
+&lt;div style=&quot;color: #FBF3DC; font-size: 16px; line-height: 24px; font-weight: 700&quot;&gt;Ilustrasi 2 · Diagonal ruang balok&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-height: 0; background: #FBF3DC; border-radius: 18px; padding: 20px; box-sizing: border-box; display: flex; gap: 24px&quot;&gt;
+
+&lt;div style=&quot;flex: none; width: 506px; display: flex; flex-direction: column; gap: 8px&quot;&gt;
+&lt;div style=&quot;position: relative; width: 500px; height: 420px; box-sizing: content-box; background: linear-gradient(rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFF8E1 58%, #F3E6BD 100%); border: 3px solid #E2A94A; border-radius: 18px; overflow: hidden&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Balok ABCD.EFGH. Segitiga BDH siku-siku di D menghasilkan diagonal ruang HB dari p, l, dan t.&quot; width=&quot;500&quot; height=&quot;420&quot; viewBox=&quot;0 0 500 420&quot; style=&quot;display: block&quot;&gt;
+&lt;polygon points=&quot;{{fBase}}&quot; fill=&quot;rgba(226, 169, 74, .20)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{fFront}}&quot; fill=&quot;rgba(42, 99, 168, .10)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{fRight}}&quot; fill=&quot;rgba(42, 99, 168, .17)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{fTop}}&quot; fill=&quot;rgba(42, 99, 168, .07)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;path d=&quot;{{hid}}&quot; stroke=&quot;#7B6A55&quot; stroke-width=&quot;2&quot; stroke-dasharray=&quot;6 5&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
+&lt;path d=&quot;{{vis}}&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;3.5&quot; stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
+&lt;polygon points=&quot;{{tri1}}&quot; fill=&quot;rgba(226, 169, 74, .50)&quot; stroke=&quot;none&quot; opacity=&quot;{{o1}}&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{tri2}}&quot; fill=&quot;rgba(42, 99, 168, .32)&quot; stroke=&quot;none&quot; opacity=&quot;{{o2}}&quot;&gt;&lt;/polygon&gt;
+&lt;line class=&quot;{{bdCls}}&quot; x1=&quot;{{bd.x1}}&quot; y1=&quot;{{bd.y1}}&quot; x2=&quot;{{bd.x2}}&quot; y2=&quot;{{bd.y2}}&quot; stroke=&quot;{{bdC}}&quot; stroke-width=&quot;{{bdW}}&quot; stroke-linecap=&quot;round&quot;&gt;&lt;/line&gt;
+&lt;line class=&quot;{{hbCls}}&quot; x1=&quot;{{hb.x1}}&quot; y1=&quot;{{hb.y1}}&quot; x2=&quot;{{hb.x2}}&quot; y2=&quot;{{hb.y2}}&quot; stroke=&quot;#D0342C&quot; stroke-width=&quot;{{hbW}}&quot; stroke-linecap=&quot;round&quot;&gt;&lt;/line&gt;
+&lt;polyline points=&quot;{{rm1}}&quot; fill=&quot;none&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;2.5&quot; opacity=&quot;{{o1}}&quot;&gt;&lt;/polyline&gt;
+&lt;polyline points=&quot;{{rm2}}&quot; fill=&quot;none&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;2.5&quot; opacity=&quot;{{o2}}&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Lora&#x27;, serif&quot; font-style=&quot;italic&quot; font-weight=&quot;600&quot; font-size=&quot;26&quot; text-anchor=&quot;middle&quot; fill=&quot;#6E1B1B&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;4&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{vA.x}}&quot; y=&quot;{{vA.y}}&quot;&gt;A&lt;/text&gt;
+&lt;text x=&quot;{{vB.x}}&quot; y=&quot;{{vB.y}}&quot;&gt;B&lt;/text&gt;
+&lt;text x=&quot;{{vC.x}}&quot; y=&quot;{{vC.y}}&quot;&gt;C&lt;/text&gt;
+&lt;text x=&quot;{{vD.x}}&quot; y=&quot;{{vD.y}}&quot;&gt;D&lt;/text&gt;
+&lt;text x=&quot;{{vE.x}}&quot; y=&quot;{{vE.y}}&quot;&gt;E&lt;/text&gt;
+&lt;text x=&quot;{{vF.x}}&quot; y=&quot;{{vF.y}}&quot;&gt;F&lt;/text&gt;
+&lt;text x=&quot;{{vG.x}}&quot; y=&quot;{{vG.y}}&quot;&gt;G&lt;/text&gt;
+&lt;text x=&quot;{{vH.x}}&quot; y=&quot;{{vH.y}}&quot;&gt;H&lt;/text&gt;
+&lt;/g&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;17&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;5&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{lp.x}}&quot; y=&quot;{{lp.y}}&quot; fill=&quot;{{lp.c}}&quot; text-anchor=&quot;{{lp.anc}}&quot; opacity=&quot;{{lp.o}}&quot;&gt;{{lp.t}}&lt;/text&gt;
+&lt;text x=&quot;{{ll.x}}&quot; y=&quot;{{ll.y}}&quot; fill=&quot;{{ll.c}}&quot; text-anchor=&quot;{{ll.anc}}&quot; opacity=&quot;{{ll.o}}&quot;&gt;{{ll.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lt.x}}&quot; y=&quot;{{lt.y}}&quot; fill=&quot;{{lt.c}}&quot; text-anchor=&quot;{{lt.anc}}&quot; opacity=&quot;{{lt.o}}&quot;&gt;{{lt.t}}&lt;/text&gt;
+&lt;text x=&quot;{{ld.x}}&quot; y=&quot;{{ld.y}}&quot; fill=&quot;{{ld.c}}&quot; text-anchor=&quot;{{ld.anc}}&quot; opacity=&quot;{{ld.o}}&quot;&gt;{{ld.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lh.x}}&quot; y=&quot;{{lh.y}}&quot; fill=&quot;{{lh.c}}&quot; text-anchor=&quot;{{lh.anc}}&quot; opacity=&quot;{{lh.o}}&quot;&gt;{{lh.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;burst {{fxCls}}&quot; style=&quot;left: 250px; top: 210px&quot;&gt;&lt;sc-for list=&quot;{{particles}}&quot; as=&quot;p&quot; hint-placeholder-count=&quot;12&quot;&gt;&lt;div class=&quot;{{p.cls}}&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/sc-for&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background: #FFF3C9; border: 2px solid #E8D58A; border-radius: 14px; padding: 8px 14px; display: flex; flex-direction: column; gap: 4px&quot;&gt;
+&lt;div style=&quot;display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap&quot;&gt;&lt;span style=&quot;font-size: 12px; line-height: 18px; font-weight: 800; color: #B8520A; letter-spacing: .06em&quot;&gt;INTINYA&lt;/span&gt;&lt;span style=&quot;font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; color: #2F5D3A&quot;&gt;{{keyF}}&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;font-size: 15px; line-height: 20px; font-weight: 700&quot;&gt;{{keyT}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px&quot;&gt;
+&lt;div style=&quot;font-size: 17px; line-height: 24px; font-weight: 800&quot;&gt;Atur p, l, t, lalu pilih langkahnya.&lt;/div&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; gap: 4px&quot;&gt;
+&lt;sc-for list=&quot;{{sliders}}&quot; as=&quot;sl&quot; hint-placeholder-count=&quot;3&quot;&gt;
+&lt;div class=&quot;srow&quot;&gt;
+&lt;span class=&quot;slab {{sl.cls}}&quot;&gt;{{sl.label}}&lt;/span&gt;
+&lt;input type=&quot;range&quot; class=&quot;rng {{sl.rng}}&quot; min=&quot;{{sl.min}}&quot; max=&quot;{{sl.max}}&quot; step=&quot;1&quot; value=&quot;{{sl.val}}&quot; onChange=&quot;{{sl.set}}&quot; aria-label=&quot;{{sl.aria}}&quot;&gt;
+&lt;span class=&quot;sval&quot;&gt;{{sl.show}}&lt;/span&gt;
+&lt;/div&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{steps}}&quot; as=&quot;st&quot; hint-placeholder-count=&quot;2&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{st.cls}}&quot; aria-pressed=&quot;{{st.pressed}}&quot; onClick=&quot;{{st.pick}}&quot;&gt;{{st.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div style=&quot;font-size: 13px; line-height: 17px; font-weight: 700; color: #6B4F33&quot;&gt;Ukuran (p, l, t) dengan diagonal ruang bulat:&lt;/div&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{presets}}&quot; as=&quot;pr&quot; hint-placeholder-count=&quot;4&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{pr.cls}}&quot; aria-pressed=&quot;{{pr.pressed}}&quot; onClick=&quot;{{pr.pick}}&quot;&gt;{{pr.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div class=&quot;{{boxCls}}&quot; aria-live=&quot;polite&quot;&gt;
+&lt;div style=&quot;font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 24px; line-height: 30px; font-weight: 600; color: #2F5D3A&quot;&gt;{{big}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l1Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l1}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l2Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l2}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l3Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l3}}&lt;/div&gt;
+&lt;sc-if value=&quot;{{isBulat}}&quot; hint-placeholder-val=&quot;{{ false }}&quot;&gt;
+&lt;div style=&quot;font-size: 13px; line-height: 18px; font-weight: 800; color: #2F5D3A&quot;&gt;{{note}}&lt;/div&gt;
+&lt;/sc-if&gt;
+&lt;/div&gt;
+&lt;div class=&quot;verdict&quot; style=&quot;padding: 2px 8px&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Segitiga siku-siku yang dipakai pada langkah ini&quot; width=&quot;330&quot; height=&quot;88&quot; viewBox=&quot;0 0 330 88&quot; style=&quot;display: block&quot;&gt;
+&lt;text x=&quot;4&quot; y=&quot;13&quot; font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;12&quot; fill=&quot;#6B4F33&quot;&gt;{{inTitle}}&lt;/text&gt;
+&lt;polygon points=&quot;{{inPts}}&quot; fill=&quot;rgba(226, 169, 74, .30)&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;3&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/polygon&gt;
+&lt;polyline points=&quot;{{inRm}}&quot; fill=&quot;none&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;2&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;14&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFFFF&quot; stroke-width=&quot;3&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{inH.x}}&quot; y=&quot;{{inH.y}}&quot; fill=&quot;{{inH.c}}&quot;&gt;{{inH.t}}&lt;/text&gt;
+&lt;text x=&quot;{{inV.x}}&quot; y=&quot;{{inV.y}}&quot; fill=&quot;{{inV.c}}&quot; text-anchor=&quot;end&quot;&gt;{{inV.t}}&lt;/text&gt;
+&lt;text x=&quot;{{inY.x}}&quot; y=&quot;{{inY.y}}&quot; fill=&quot;{{inY.c}}&quot;&gt;{{inY.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;!function(n){&quot;function&quot;==typeof define&amp;&amp;define.amd?define(n):n()}(function(){var n,l,t,u,i,o,e,r,f,c,s,a,h,p=65536,v=1&lt;&lt;17,d={},y=[],w=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,_=Array.isArray;function g(n,l){for(var t in l)n[t]=l[t];return n}function m(n){n&amp;&amp;n.parentNode&amp;&amp;n.parentNode.removeChild(n)}function b(l,t,u){var i,o,e,r={};for(e in t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:r[e]=t[e];if(arguments.length&gt;2&amp;&amp;(r.children=arguments.length&gt;3?n.call(arguments,2):u),&quot;function&quot;==typeof l&amp;&amp;null!=l.defaultProps)for(e in l.defaultProps)void 0===r[e]&amp;&amp;(r[e]=l.defaultProps[e]);return k(l,r,i,o,null)}function k(n,u,i,o,e){var r={type:n,props:u,key:i,ref:o,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:null==e?++t:e,__i:-1,__u:0};return null==e&amp;&amp;null!=l.vnode&amp;&amp;l.vnode(r),r}function C(n){return n.children}function x(n,l){this.props=n,this.context=l}function S(n,l){if(null==l)return n.__?S(n.__,n.__i+1):null;for(var t;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e)return t.__e;return&quot;function&quot;==typeof n.type?S(n):null}function M(n){var l,t;if(null!=(n=n.__)&amp;&amp;null!=n.__c){for(n.__e=n.__c.base=null,l=0;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e){n.__e=n.__c.base=t.__e;break}return M(n)}}function P(n){(!n.__d&amp;&amp;(n.__d=!0)&amp;&amp;i.push(n)&amp;&amp;!$.__r++||o!==l.debounceRendering)&amp;&amp;((o=l.debounceRendering)||e)($)}function $(){var n,t,u,o,e,f,c,s;for(i.sort(r);n=i.shift();)n.__d&amp;&amp;(t=i.length,o=void 0,f=(e=(u=n).__v).__e,c=[],s=[],u.__P&amp;&amp;((o=g({},e)).__v=e.__v+1,l.vnode&amp;&amp;l.vnode(o),O(u.__P,o,e,u.__n,u.__P.namespaceURI,32&amp;e.__u?[f]:null,c,null==f?S(e):f,!!(32&amp;e.__u),s),o.__v=e.__v,o.__.__k[o.__i]=o,V(c,o,s),o.__e!=f&amp;&amp;M(o)),i.length&gt;t&amp;&amp;i.sort(r));$.__r=0}function I(n,l,t,u,i,o,e,r,f,c,s){var a,h,v,w,_,g=u&amp;&amp;u.__k||y,m=l.length;for(t.__d=f,A(t,l,g),f=t.__d,a=0;a&lt;m;a++)null!=(v=t.__k[a])&amp;&amp;(h=-1===v.__i?d:g[v.__i]||d,v.__i=a,O(n,v,h,i,o,e,r,f,c,s),w=v.__e,v.ref&amp;&amp;h.ref!=v.ref&amp;&amp;(h.ref&amp;&amp;z(h.ref,null,v),s.push(v.ref,v.__c||w,v)),null==_&amp;&amp;null!=w&amp;&amp;(_=w),v.__u&amp;p||h.__k===v.__k?f=E(v,f,n):&quot;function&quot;==typeof v.type&amp;&amp;void 0!==v.__d?f=v.__d:w&amp;&amp;(f=w.nextSibling),v.__d=void 0,v.__u&amp;=-196609);t.__d=f,t.__e=_}function A(n,l,t){var u,i,o,e,r,f=l.length,c=t.length,s=c,a=0;for(n.__k=[],u=0;u&lt;f;u++)null!=(i=l[u])&amp;&amp;&quot;boolean&quot;!=typeof i&amp;&amp;&quot;function&quot;!=typeof i?(e=u+a,(i=n.__k[u]=&quot;string&quot;==typeof i||&quot;number&quot;==typeof i||&quot;bigint&quot;==typeof i||i.constructor==String?k(null,i,null,null,null):_(i)?k(C,{children:i},null,null,null):void 0===i.constructor&amp;&amp;i.__b&gt;0?k(i.type,i.props,i.key,i.ref?i.ref:null,i.__v):i).__=n,i.__b=n.__b+1,o=null,-1!==(r=i.__i=F(i,t,e,s))&amp;&amp;(s--,(o=t[r])&amp;&amp;(o.__u|=v)),null==o||null===o.__v?(-1==r&amp;&amp;a--,&quot;function&quot;!=typeof i.type&amp;&amp;(i.__u|=p)):r!==e&amp;&amp;(r==e-1?a--:r==e+1?a++:(r&gt;e?a--:a++,i.__u|=p))):i=n.__k[u]=null;if(s)for(u=0;u&lt;c;u++)null!=(o=t[u])&amp;&amp;0==(o.__u&amp;v)&amp;&amp;(o.__e==n.__d&amp;&amp;(n.__d=S(o)),N(o,o))}function E(n,l,t){var u,i;if(&quot;function&quot;==typeof n.type){for(u=n.__k,i=0;u&amp;&amp;i&lt;u.length;i++)u[i]&amp;&amp;(u[i].__=n,l=E(u[i],l,t));return l}n.__e!=l&amp;&amp;(l&amp;&amp;n.type&amp;&amp;!t.contains(l)&amp;&amp;(l=S(n)),t.insertBefore(n.__e,l||null),l=n.__e);do{l=l&amp;&amp;l.nextSibling}while(null!=l&amp;&amp;8===l.nodeType);return l}function F(n,l,t,u){var i=n.key,o=n.type,e=t-1,r=t+1,f=l[t];if(null===f||f&amp;&amp;i==f.key&amp;&amp;o===f.type&amp;&amp;0==(f.__u&amp;v))return t;if(u&gt;(null!=f&amp;&amp;0==(f.__u&amp;v)?1:0))for(;e&gt;=0||r&lt;l.length;){if(e&gt;=0){if((f=l[e])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return e;e--}if(r&lt;l.length){if((f=l[r])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return r;r++}}return-1}function H(n,l,t){&quot;-&quot;===l[0]?n.setProperty(l,null==t?&quot;&quot;:t):n[l]=null==t?&quot;&quot;:&quot;number&quot;!=typeof t||w.test(l)?t:t+&quot;px&quot;}function L(n,l,t,u,i){var o;n:if(&quot;style&quot;===l)if(&quot;string&quot;==typeof t)n.style.cssText=t;else{if(&quot;string&quot;==typeof u&amp;&amp;(n.style.cssText=u=&quot;&quot;),u)for(l in u)t&amp;&amp;l in t||H(n.style,l,&quot;&quot;);if(t)for(l in t)u&amp;&amp;t[l]===u[l]||H(n.style,l,t[l])}else if(&quot;o&quot;===l[0]&amp;&amp;&quot;n&quot;===l[1])o=l!==(l=l.replace(/(PointerCapture)$|Capture$/i,&quot;$1&quot;)),l=l.toLowerCase()in n||&quot;onFocusOut&quot;===l||&quot;onFocusIn&quot;===l?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+o]=t,t?u?t.t=u.t:(t.t=f,n.addEventListener(l,o?s:c,o)):n.removeEventListener(l,o?s:c,o);else{if(&quot;http://www.w3.org/2000/svg&quot;==i)l=l.replace(/xlink(H|:h)/,&quot;h&quot;).replace(/sName$/,&quot;s&quot;);else if(&quot;width&quot;!=l&amp;&amp;&quot;height&quot;!=l&amp;&amp;&quot;href&quot;!=l&amp;&amp;&quot;list&quot;!=l&amp;&amp;&quot;form&quot;!=l&amp;&amp;&quot;tabIndex&quot;!=l&amp;&amp;&quot;download&quot;!=l&amp;&amp;&quot;rowSpan&quot;!=l&amp;&amp;&quot;colSpan&quot;!=l&amp;&amp;&quot;role&quot;!=l&amp;&amp;&quot;popover&quot;!=l&amp;&amp;l in n)try{n[l]=null==t?&quot;&quot;:t;break n}catch(n){}&quot;function&quot;==typeof t||(null==t||!1===t&amp;&amp;&quot;-&quot;!==l[4]?n.removeAttribute(l):n.setAttribute(l,&quot;popover&quot;==l&amp;&amp;1==t?&quot;&quot;:t))}}function T(n){return function(t){if(this.l){var u=this.l[t.type+n];if(null==t.u)t.u=f++;else if(t.u&lt;u.t)return;return u(l.event?l.event(t):t)}}}function O(n,t,u,i,o,e,r,f,c,s){var a,h,p,v,d,y,w,m,b,k,S,M,P,$,A,E,F=t.type;if(void 0!==t.constructor)return null;128&amp;u.__u&amp;&amp;(c=!!(32&amp;u.__u),e=[f=t.__e=u.__e]),(a=l.__b)&amp;&amp;a(t);n:if(&quot;function&quot;==typeof F)try{if(m=t.props,b=&quot;prototype&quot;in F&amp;&amp;F.prototype.render,k=(a=F.contextType)&amp;&amp;i[a.__c],S=a?k?k.props.value:a.__:i,u.__c?w=(h=t.__c=u.__c).__=h.__E:(b?t.__c=h=new F(m,S):(t.__c=h=new x(m,S),h.constructor=F,h.render=R),k&amp;&amp;k.sub(h),h.props=m,h.state||(h.state={}),h.context=S,h.__n=i,p=h.__d=!0,h.__h=[],h._sb=[]),b&amp;&amp;null==h.__s&amp;&amp;(h.__s=h.state),b&amp;&amp;null!=F.getDerivedStateFromProps&amp;&amp;(h.__s==h.state&amp;&amp;(h.__s=g({},h.__s)),g(h.__s,F.getDerivedStateFromProps(m,h.__s))),v=h.props,d=h.state,h.__v=t,p)b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;null!=h.componentWillMount&amp;&amp;h.componentWillMount(),b&amp;&amp;null!=h.componentDidMount&amp;&amp;h.__h.push(h.componentDidMount);else{if(b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;m!==v&amp;&amp;null!=h.componentWillReceiveProps&amp;&amp;h.componentWillReceiveProps(m,S),!h.__e&amp;&amp;(null!=h.shouldComponentUpdate&amp;&amp;!1===h.shouldComponentUpdate(m,h.__s,S)||t.__v===u.__v)){for(t.__v!==u.__v&amp;&amp;(h.props=m,h.state=h.__s,h.__d=!1),t.__e=u.__e,t.__k=u.__k,t.__k.some(function(n){n&amp;&amp;(n.__=t)}),M=0;M&lt;h._sb.length;M++)h.__h.push(h._sb[M]);h._sb=[],h.__h.length&amp;&amp;r.push(h);break n}null!=h.componentWillUpdate&amp;&amp;h.componentWillUpdate(m,h.__s,S),b&amp;&amp;null!=h.componentDidUpdate&amp;&amp;h.__h.push(function(){h.componentDidUpdate(v,d,y)})}if(h.context=S,h.props=m,h.__P=n,h.__e=!1,P=l.__r,$=0,b){for(h.state=h.__s,h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),A=0;A&lt;h._sb.length;A++)h.__h.push(h._sb[A]);h._sb=[]}else do{h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),h.state=h.__s}while(h.__d&amp;&amp;++$&lt;25);h.state=h.__s,null!=h.getChildContext&amp;&amp;(i=g(g({},i),h.getChildContext())),b&amp;&amp;!p&amp;&amp;null!=h.getSnapshotBeforeUpdate&amp;&amp;(y=h.getSnapshotBeforeUpdate(v,d)),I(n,_(E=null!=a&amp;&amp;a.type===C&amp;&amp;null==a.key?a.props.children:a)?E:[E],t,u,i,o,e,r,f,c,s),h.base=t.__e,t.__u&amp;=-161,h.__h.length&amp;&amp;r.push(h),w&amp;&amp;(h.__E=h.__=null)}catch(n){if(t.__v=null,c||null!=e){for(t.__u|=c?160:128;f&amp;&amp;8===f.nodeType&amp;&amp;f.nextSibling;)f=f.nextSibling;e[e.indexOf(f)]=null,t.__e=f}else t.__e=u.__e,t.__k=u.__k;l.__e(n,t,u)}else null==e&amp;&amp;t.__v===u.__v?(t.__k=u.__k,t.__e=u.__e):t.__e=j(u.__e,t,u,i,o,e,r,c,s);(a=l.diffed)&amp;&amp;a(t)}function V(n,t,u){t.__d=void 0;for(var i=0;i&lt;u.length;i++)z(u[i],u[++i],u[++i]);l.__c&amp;&amp;l.__c(t,n),n.some(function(t){try{n=t.__h,t.__h=[],n.some(function(n){n.call(t)})}catch(n){l.__e(n,t.__v)}})}function j(t,u,i,o,e,r,f,c,s){var a,h,p,v,y,w,g,b=i.props,k=u.props,C=u.type;if(&quot;svg&quot;===C?e=&quot;http://www.w3.org/2000/svg&quot;:&quot;math&quot;===C?e=&quot;http://www.w3.org/1998/Math/MathML&quot;:e||(e=&quot;http://www.w3.org/1999/xhtml&quot;),null!=r)for(a=0;a&lt;r.length;a++)if((y=r[a])&amp;&amp;&quot;setAttribute&quot;in y==!!C&amp;&amp;(C?y.localName===C:3===y.nodeType)){t=y,r[a]=null;break}if(null==t){if(null===C)return document.createTextNode(k);t=document.createElementNS(e,C,k.is&amp;&amp;k),c&amp;&amp;(l.__m&amp;&amp;l.__m(u,r),c=!1),r=null}if(null===C)b===k||c&amp;&amp;t.data===k||(t.data=k);else{if(r=r&amp;&amp;n.call(t.childNodes),b=i.props||d,!c&amp;&amp;null!=r)for(b={},a=0;a&lt;t.attributes.length;a++)b[(y=t.attributes[a]).name]=y.value;for(a in b)if(y=b[a],&quot;children&quot;==a);else if(&quot;dangerouslySetInnerHTML&quot;==a)p=y;else if(!(a in k)){if(&quot;value&quot;==a&amp;&amp;&quot;defaultValue&quot;in k||&quot;checked&quot;==a&amp;&amp;&quot;defaultChecked&quot;in k)continue;L(t,a,null,y,e)}for(a in k)y=k[a],&quot;children&quot;==a?v=y:&quot;dangerouslySetInnerHTML&quot;==a?h=y:&quot;value&quot;==a?w=y:&quot;checked&quot;==a?g=y:c&amp;&amp;&quot;function&quot;!=typeof y||b[a]===y||L(t,a,y,b[a],e);if(h)c||p&amp;&amp;(h.__html===p.__html||h.__html===t.innerHTML)||(t.innerHTML=h.__html),u.__k=[];else if(p&amp;&amp;(t.innerHTML=&quot;&quot;),I(t,_(v)?v:[v],u,i,o,&quot;foreignObject&quot;===C?&quot;http://www.w3.org/1999/xhtml&quot;:e,r,f,r?r[0]:i.__k&amp;&amp;S(i,0),c,s),null!=r)for(a=r.length;a--;)m(r[a]);c||(a=&quot;value&quot;,&quot;progress&quot;===C&amp;&amp;null==w?t.removeAttribute(&quot;value&quot;):void 0!==w&amp;&amp;(w!==t[a]||&quot;progress&quot;===C&amp;&amp;!w||&quot;option&quot;===C&amp;&amp;w!==b[a])&amp;&amp;L(t,a,w,b[a],e),a=&quot;checked&quot;,void 0!==g&amp;&amp;g!==t[a]&amp;&amp;L(t,a,g,b[a],e))}return t}function z(n,t,u){try{if(&quot;function&quot;==typeof n){var i=&quot;function&quot;==typeof n.__u;i&amp;&amp;n.__u(),i&amp;&amp;null==t||(n.__u=n(t))}else n.current=t}catch(n){l.__e(n,u)}}function N(n,t,u){var i,o;if(l.unmount&amp;&amp;l.unmount(n),(i=n.ref)&amp;&amp;(i.current&amp;&amp;i.current!==n.__e||z(i,null,t)),null!=(i=n.__c)){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(n){l.__e(n,t)}i.base=i.__P=null}if(i=n.__k)for(o=0;o&lt;i.length;o++)i[o]&amp;&amp;N(i[o],t,u||&quot;function&quot;!=typeof n.type);u||m(n.__e),n.__c=n.__=n.__e=n.__d=void 0}function R(n,l,t){return this.constructor(n,t)}function q(t,u,i){var o,e,r,f;l.__&amp;&amp;l.__(t,u),e=(o=&quot;function&quot;==typeof i)?null:i&amp;&amp;i.__k||u.__k,r=[],f=[],O(u,t=(!o&amp;&amp;i||u).__k=b(C,null,[t]),e||d,d,u.namespaceURI,!o&amp;&amp;i?[i]:e?null:u.firstChild?n.call(u.childNodes):null,r,!o&amp;&amp;i?i:e?e.__e:u.firstChild,o,f),V(r,t,f)}n=y.slice,l={__e:function(n,l,t,u){for(var i,o,e;l=l.__;)if((i=l.__c)&amp;&amp;!i.__)try{if((o=i.constructor)&amp;&amp;null!=o.getDerivedStateFromError&amp;&amp;(i.setState(o.getDerivedStateFromError(n)),e=i.__d),null!=i.componentDidCatch&amp;&amp;(i.componentDidCatch(n,u||{}),e=i.__d),e)return i.__E=i}catch(l){n=l}throw n}},t=0,u=function(n){return null!=n&amp;&amp;null==n.constructor},x.prototype.setState=function(n,l){var t;t=null!=this.__s&amp;&amp;this.__s!==this.state?this.__s:this.__s=g({},this.state),&quot;function&quot;==typeof n&amp;&amp;(n=n(g({},t),this.props)),n&amp;&amp;g(t,n),null!=n&amp;&amp;this.__v&amp;&amp;(l&amp;&amp;this._sb.push(l),P(this))},x.prototype.forceUpdate=function(n){this.__v&amp;&amp;(this.__e=!0,n&amp;&amp;this.__h.push(n),P(this))},x.prototype.render=C,i=[],e=&quot;function&quot;==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,r=function(n,l){return n.__v.__b-l.__v.__b},$.__r=0,f=0,c=T(!1),s=T(!0),a=0,h={__proto__:null,render:q,hydrate:function n(l,t){q(l,t,n)},createElement:b,h:b,Fragment:C,createRef:function(){return{current:null}},isValidElement:u,Component:x,cloneElement:function(l,t,u){var i,o,e,r,f=g({},l.props);for(e in l.type&amp;&amp;l.type.defaultProps&amp;&amp;(r=l.type.defaultProps),t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:f[e]=void 0===t[e]&amp;&amp;void 0!==r?r[e]:t[e];return arguments.length&gt;2&amp;&amp;(f.children=arguments.length&gt;3?n.call(arguments,2):u),k(l.type,f,i||l.key,o||l.ref,null)},createContext:function(n,l){var t={__c:l=&quot;__cC&quot;+a++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var t,u;return this.getChildContext||(t=new Set,(u={})[l]=this,this.getChildContext=function(){return u},this.componentWillUnmount=function(){t=null},this.shouldComponentUpdate=function(n){this.props.value!==n.value&amp;&amp;t.forEach(function(n){n.__e=!0,P(n)})},this.sub=function(n){t.add(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){t&amp;&amp;t.delete(n),l&amp;&amp;l.call(n)}}),n.children}};return t.Provider.__=t.Consumer.contextType=t},toChildArray:function n(l,t){return t=t||[],null==l||&quot;boolean&quot;==typeof l||(_(l)?l.some(function(l){n(l,t)}):t.push(l)),t},options:l},typeof module&lt;&quot;u&quot;?module.exports=h:self.preact=h});
+//# sourceMappingURL=preact.min.umd.js.map
+&lt;/script&gt;
+&lt;script&gt;/* Runtime mini: menjalankan template .dc.html (sc-for, sc-if, {{lubang}}, onClick) tanpa editor kanvas. */
+(function () {
+  var h = preact.h;
+  var render = preact.render;
+
+  class DCLogic {
+    constructor(props) {
+      this.props = props || {};
+      this.state = {};
+      this.__render = null;
+    }
+    setState(p) {
+      var next = typeof p === &#x27;function&#x27; ? p(this.state, this.props) : p;
+      if (next == null) return;
+      this.state = Object.assign({}, this.state, next);
+      if (this.__render) this.__render();
+    }
+    forceUpdate() {
+      if (this.__render) this.__render();
+    }
+  }
+  window.DCLogic = DCLogic;
+
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+
+  function lookup(scope, path) {
+    if (path === &#x27;true&#x27;) return true;
+    if (path === &#x27;false&#x27;) return false;
+    if (path === &#x27;null&#x27;) return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split(&#x27;.&#x27;);
+    var cur = scope;
+    for (var i = 0; i &lt; parts.length; i++) {
+      if (cur == null) return undefined;
+      cur = cur[parts[i]];
+    }
+    return cur;
+  }
+
+  function evalAttr(value, scope) {
+    var m = WHOLE.exec(value);
+    if (m) return lookup(scope, m[1]);
+    return value.replace(HOLE, function (_, p) {
+      var v = lookup(scope, p);
+      return v == null ? &#x27;&#x27; : String(v);
+    });
+  }
+
+  function flatten(list, out) {
+    for (var i = 0; i &lt; list.length; i++) {
+      var c = list[i];
+      if (Array.isArray(c)) flatten(c, out);
+      else if (c !== null &amp;&amp; c !== undefined &amp;&amp; c !== false) out.push(c);
+    }
+    return out;
+  }
+
+  function buildChildren(node, scope) {
+    var out = [];
+    for (var i = 0; i &lt; node.childNodes.length; i++) {
+      out.push(build(node.childNodes[i], scope));
+    }
+    return flatten(out, []);
+  }
+
+  function build(node, scope) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      if (!t.trim() &amp;&amp; t.indexOf(&#x27;\n&#x27;) &gt;= 0) return null;
+      var m = WHOLE.exec(t);
+      if (m) {
+        var raw = lookup(scope, m[1]);
+        return raw == null ? &#x27;&#x27; : String(raw);
+      }
+      return t.replace(HOLE, function (_, p) {
+        var v = lookup(scope, p);
+        return v == null ? &#x27;&#x27; : String(v);
+      });
+    }
+    if (node.nodeType !== 1) return null;
+    var tag = node.localName;
+
+    if (tag === &#x27;sc-if&#x27;) {
+      var cond = evalAttr(node.getAttribute(&#x27;value&#x27;) || &#x27;&#x27;, scope);
+      return cond ? buildChildren(node, scope) : null;
+    }
+    if (tag === &#x27;sc-for&#x27;) {
+      var list = evalAttr(node.getAttribute(&#x27;list&#x27;) || &#x27;&#x27;, scope) || [];
+      var as = node.getAttribute(&#x27;as&#x27;) || &#x27;item&#x27;;
+      var out = [];
+      for (var i = 0; i &lt; list.length; i++) {
+        var sub = Object.create(scope);
+        sub[as] = list[i];
+        sub.$index = i;
+        out.push(buildChildren(node, sub));
+      }
+      return flatten(out, []);
+    }
+
+    var props = {};
+    for (var a = 0; a &lt; node.attributes.length; a++) {
+      var name = node.attributes[a].name;
+      var val = node.attributes[a].value;
+      if (name.indexOf(&#x27;hint-&#x27;) === 0) continue;
+      if (name.indexOf(&#x27;on&#x27;) === 0 &amp;&amp; name.length &gt; 2) {
+        var fn = evalAttr(val, scope);
+        if (typeof fn === &#x27;function&#x27;) {
+          var evt = name.toLowerCase();
+          if (evt === &#x27;onchange&#x27; &amp;&amp; tag === &#x27;input&#x27;) evt = &#x27;oninput&#x27;;
+          props[evt] = fn;
+        }
+        continue;
+      }
+      props[name] = evalAttr(val, scope);
+    }
+    return h.apply(null, [tag, props].concat(buildChildren(node, scope)));
+  }
+
+  window.DCMount = function (templateEl, mountEl, ComponentClass, size) {
+    var root = templateEl.content.firstElementChild;
+    var comp = new ComponentClass({});
+    function draw() {
+      var vals = comp.renderVals();
+      render(build(root, vals), mountEl);
+    }
+    comp.__render = draw;
+    draw();
+
+    var stage = mountEl;
+    function fit() {
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var s = Math.min(vw / size.w, vh / size.h, 2);
+      stage.style.width = size.w + &#x27;px&#x27;;
+      stage.style.height = size.h + &#x27;px&#x27;;
+      stage.style.transformOrigin = &#x27;0 0&#x27;;
+      stage.style.transform = &#x27;scale(&#x27; + s + &#x27;)&#x27;;
+      stage.style.left = Math.max(0, (vw - size.w * s) / 2) + &#x27;px&#x27;;
+      stage.style.top = Math.max(0, (vh - size.h * s) / 2) + &#x27;px&#x27;;
+    }
+    window.addEventListener(&#x27;resize&#x27;, fit);
+    fit();
+    return comp;
+  };
+})();
+&lt;/script&gt;
+&lt;script&gt;
+
+class Component extends DCLogic {
+  S(st) {
+    return Object.assign(this.D(), st || {});
+  }
+
+  fx(n) {
+    if (n === 0) return &#x27;fx0&#x27;;
+    return n % 2 === 1 ? &#x27;fxA&#x27; : &#x27;fxB&#x27;;
+  }
+
+  alt(prefix, n) {
+    if (n === 0) return &#x27;&#x27;;
+    return prefix + (n % 2 === 1 ? &#x27;A&#x27; : &#x27;B&#x27;);
+  }
+
+  burstParticles() {
+    const particles = [];
+    for (let i = 0; i &lt; 12; i++) {
+      particles.push({ cls: &#x27;arm r&#x27; + i + &#x27; c&#x27; + (i % 4) });
+    }
+    return particles;
+  }
+
+  nf(x) {
+    if (Math.abs(x - Math.round(x)) &lt; 1e-9) return String(Math.round(x));
+    return x.toFixed(2).replace(&#x27;.&#x27;, &#x27;,&#x27;);
+  }
+
+  isInt(x) {
+    return Math.abs(x - Math.round(x)) &lt; 1e-9;
+  }
+
+  commit(patch) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      const nxt = Object.assign({}, cur, patch);
+      const out = Object.assign({}, patch);
+      if (this.isBulat(nxt) &amp;&amp; !this.isBulat(cur)) out.fx = cur.fx + 1;
+      return out;
+    });
+  }
+
+  setNum(key, raw, min, max) {
+    let v = Math.round(Number(raw));
+    if (isNaN(v)) return;
+    v = Math.max(min, Math.min(max, v));
+    const patch = {};
+    patch[key] = v;
+    this.commit(patch);
+  }
+
+  pt(P) {
+    return P[0].toFixed(1) + &#x27;,&#x27; + P[1].toFixed(1);
+  }
+
+  ps(P) {
+    return P[0].toFixed(1) + &#x27; &#x27; + P[1].toFixed(1);
+  }
+
+  poly() {
+    const a = Array.prototype.slice.call(arguments);
+    return a.map((P) =&gt; this.pt(P)).join(&#x27; &#x27;);
+  }
+
+  unit(P, Q) {
+    const dx = Q[0] - P[0];
+    const dy = Q[1] - P[1];
+    const L = Math.hypot(dx, dy) || 1;
+    return [dx / L, dy / L];
+  }
+
+  rmark(V, P1, P2, s) {
+    const u1 = this.unit(V, P1);
+    const u2 = this.unit(V, P2);
+    const a = [V[0] + s * u1[0], V[1] + s * u1[1]];
+    const b = [V[0] + s * (u1[0] + u2[0]), V[1] + s * (u1[1] + u2[1])];
+    const c = [V[0] + s * u2[0], V[1] + s * u2[1]];
+    return this.poly(a, b, c);
+  }
+
+  mid(P, Q) {
+    return [(P[0] + Q[0]) / 2, (P[1] + Q[1]) / 2];
+  }
+
+  geo(p, l, t, pyr) {
+    const kx = 0.46;
+    const ky = 0.30;
+    const hu = pyr ? Math.max(t + l * ky / 2, l * ky) : t + l * ky;
+    const u = Math.min(340 / (p + l * kx), 265 / hu, 46);
+    const w = (p + l * kx) * u;
+    const hh = hu * u;
+    const ox = (500 - w) / 2;
+    const oy = 212 + hh / 2 + 10;
+    const pr = (x, y, z) =&gt; [ox + (x + y * kx) * u, oy - (z + y * ky) * u];
+    return { u: u, pr: pr };
+  }
+
+  lab(P, dx, dy, t, c, anc, o) {
+    return { x: (P[0] + dx).toFixed(1), y: (P[1] + dy).toFixed(1), t: t, c: c, anc: anc || &#x27;middle&#x27;, o: o === undefined ? &#x27;1&#x27; : o };
+  }
+
+  vl(P, dx, dy) {
+    return { x: (P[0] + dx).toFixed(1), y: (P[1] + dy).toFixed(1) };
+  }
+
+  inset(legH, legV, tH, tV, tY, cH, cV, cY) {
+    const s = Math.min(190 / legH, 40 / legV);
+    const W = legH * s;
+    const Hv = legV * s;
+    const x0 = Math.max(78, (330 - W) / 2 + 24);
+    const y0 = 68;
+    const O = [x0, y0];
+    const Hh = [x0 + W, y0];
+    const V = [x0, y0 - Hv];
+    const L = Math.hypot(W, Hv) || 1;
+    const rs = Math.max(5, Math.min(12, W * 0.3, Hv * 0.3));
+    const m = this.mid(V, Hh);
+    return {
+      pts: this.poly(O, Hh, V),
+      rm: this.poly([x0 + rs, y0], [x0 + rs, y0 - rs], [x0, y0 - rs]),
+      h: { x: (x0 + W / 2).toFixed(1), y: (y0 + 16).toFixed(1), t: tH, c: cH },
+      v: { x: (x0 - 8).toFixed(1), y: (y0 - Hv / 2 + 5).toFixed(1), t: tV, c: cV },
+      y: { x: (m[0] + Hv / L * 18).toFixed(1), y: (m[1] - W / L * 18 + 5).toFixed(1), t: tY, c: cY }
+    };
+  }
+
+  sliderRow(key, label, cls, rng, min, max, val, show, aria, setter) {
+    return { label: label, cls: cls, rng: rng, min: min, max: max, val: val, show: show, aria: aria, set: setter };
+  }
+
+  D() {
+    return { p: 4, l: 4, t: 7, step: 1, fx: 0 };
+  }
+
+  res(s) {
+    return Math.sqrt(s.p * s.p + s.l * s.l + s.t * s.t);
+  }
+
+  isBulat(s) {
+    return this.isInt(this.res(s));
+  }
+
+  renderVals() {
+    const s = this.S(this.state);
+    const p = s.p;
+    const l = s.l;
+    const t = s.t;
+    const step = s.step;
+    const g = this.geo(p, l, t, false);
+    const pr = g.pr;
+    const A = pr(0, 0, 0);
+    const B = pr(p, 0, 0);
+    const C = pr(p, l, 0);
+    const D = pr(0, l, 0);
+    const E = pr(0, 0, t);
+    const F = pr(p, 0, t);
+    const G = pr(p, l, t);
+    const H = pr(0, l, t);
+    const ps = (P) =&gt; this.ps(P);
+    const vis = &#x27;M&#x27; + ps(A) + &#x27; L&#x27; + ps(B) + &#x27; L&#x27; + ps(F) + &#x27; L&#x27; + ps(E) + &#x27; Z M&#x27; + ps(B) + &#x27; L&#x27; + ps(C) + &#x27; L&#x27; + ps(G) + &#x27; L&#x27; + ps(F) + &#x27; M&#x27; + ps(E) + &#x27; L&#x27; + ps(H) + &#x27; L&#x27; + ps(G);
+    const hid = &#x27;M&#x27; + ps(D) + &#x27; L&#x27; + ps(A) + &#x27; M&#x27; + ps(D) + &#x27; L&#x27; + ps(C) + &#x27; M&#x27; + ps(D) + &#x27; L&#x27; + ps(H);
+
+    const bd2 = p * p + l * l;
+    const bd = Math.sqrt(bd2);
+    const hb2 = bd2 + t * t;
+    const hb = Math.sqrt(hb2);
+    const bulat = this.isInt(hb);
+    const s1 = step === 1;
+    const seg = (P, Q) =&gt; ({ x1: P[0].toFixed(1), y1: P[1].toFixed(1), x2: Q[0].toFixed(1), y2: Q[1].toFixed(1) });
+
+    const sliders = [
+      this.sliderRow(&#x27;p&#x27;, &#x27;p&#x27;, &#x27;cA&#x27;, &#x27;sA&#x27;, 1, 12, p, p, &#x27;Panjang p&#x27;, (e) =&gt; this.setNum(&#x27;p&#x27;, e.target.value, 1, 12)),
+      this.sliderRow(&#x27;l&#x27;, &#x27;l&#x27;, &#x27;cB&#x27;, &#x27;sB&#x27;, 1, 12, l, l, &#x27;Lebar l&#x27;, (e) =&gt; this.setNum(&#x27;l&#x27;, e.target.value, 1, 12)),
+      this.sliderRow(&#x27;t&#x27;, &#x27;t&#x27;, &#x27;cD&#x27;, &#x27;sD&#x27;, 1, 12, t, t, &#x27;Tinggi t&#x27;, (e) =&gt; this.setNum(&#x27;t&#x27;, e.target.value, 1, 12))
+    ];
+    const steps = [
+      { n: 1, label: &#x27;Langkah 1: BD&#x27; },
+      { n: 2, label: &#x27;Langkah 2: HB&#x27; }
+    ].map((q) =&gt; ({
+      label: q.label,
+      pressed: step === q.n,
+      cls: &#x27;btn press&#x27; + (step === q.n ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.setState({ step: q.n })
+    }));
+    const presets = [[2, 3, 6], [1, 2, 2], [2, 4, 4], [4, 4, 7]].map((q) =&gt; ({
+      label: q[0] + &#x27;, &#x27; + q[1] + &#x27;, &#x27; + q[2],
+      pressed: p === q[0] &amp;&amp; l === q[1] &amp;&amp; t === q[2],
+      cls: &#x27;btn press&#x27; + (p === q[0] &amp;&amp; l === q[1] &amp;&amp; t === q[2] ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.commit({ p: q[0], l: q[1], t: q[2] })
+    }));
+
+    const ins = s1
+      ? this.inset(p, l, &#x27;p = &#x27; + p, &#x27;l = &#x27; + l, &#x27;BD = &#x27; + this.nf(bd), &#x27;#1D4780&#x27;, &#x27;#145A3B&#x27;, &#x27;#B8520A&#x27;)
+      : this.inset(bd, t, &#x27;BD = &#x27; + this.nf(bd), &#x27;t = &#x27; + t, &#x27;HB = &#x27; + this.nf(hb), &#x27;#B8520A&#x27;, &#x27;#6A3590&#x27;, &#x27;#B02A24&#x27;);
+
+    return {
+      particles: this.burstParticles(),
+      fxCls: this.fx(s.fx),
+      fBase: this.poly(A, B, C, D),
+      fFront: this.poly(A, B, F, E),
+      fRight: this.poly(B, C, G, F),
+      fTop: this.poly(E, F, G, H),
+      vis: vis,
+      hid: hid,
+      tri1: this.poly(A, B, D),
+      tri2: this.poly(B, D, H),
+      o1: s1 ? &#x27;1&#x27; : &#x27;0&#x27;,
+      o2: s1 ? &#x27;0&#x27; : &#x27;1&#x27;,
+      bd: seg(B, D),
+      bdC: s1 ? &#x27;#D0342C&#x27; : &#x27;#B8520A&#x27;,
+      bdW: s1 ? &#x27;5&#x27; : &#x27;4&#x27;,
+      bdCls: s1 ? &#x27;dash&#x27; : &#x27;&#x27;,
+      hb: seg(H, B),
+      hbCls: s1 ? &#x27;&#x27; : &#x27;dash&#x27;,
+      hbW: s1 ? &#x27;4&#x27; : &#x27;5&#x27;,
+      rm1: this.rmark(A, B, D, 15),
+      rm2: this.rmark(D, B, H, 15),
+      vA: this.vl(A, -16, 24),
+      vB: this.vl(B, 14, 24),
+      vC: this.vl(C, 18, 8),
+      vD: this.vl(D, -16, 2),
+      vE: this.vl(E, -18, 4),
+      vF: this.vl(F, -4, 26),
+      vG: this.vl(G, 18, -4),
+      vH: this.vl(H, -14, -8),
+      lp: this.lab(this.mid(A, B), 0, 52, &#x27;p = &#x27; + p, &#x27;#1D4780&#x27;),
+      ll: this.lab(this.mid(B, C), 14, 8, &#x27;l = &#x27; + l, &#x27;#145A3B&#x27;, &#x27;start&#x27;),
+      lt: this.lab(this.mid(E, A), -12, 5, &#x27;t = &#x27; + t, &#x27;#6A3590&#x27;, &#x27;end&#x27;),
+      ld: this.lab(this.mid(B, D), -6, 22, &#x27;BD = &#x27; + this.nf(bd), &#x27;#B8520A&#x27;),
+      lh: this.lab(this.mid(H, B), 18, -8, &#x27;HB = &#x27; + this.nf(hb), &#x27;#B02A24&#x27;, &#x27;start&#x27;, &#x27;1&#x27;),
+      caption: &#x27;Balok ABCD.EFGH dengan p = &#x27; + p + &#x27;, l = &#x27; + l + &#x27;, t = &#x27; + t,
+      sliders: sliders,
+      steps: steps,
+      keyF: &#x27;d = √(p² + l² + t²)&#x27;,
+      keyT: &#x27;Diagonal ruang balok diperoleh dengan menggabungkan kuadrat panjang, lebar, dan tinggi balok, lalu diakarkan.&#x27;,
+      presets: presets,
+      boxCls: bulat ? &#x27;verdict right &#x27; + this.alt(&#x27;pop&#x27;, s.fx) : &#x27;verdict&#x27;,
+      big: bulat ? &#x27;HB = &#x27; + this.nf(hb) : &#x27;HB ≈ &#x27; + this.nf(hb),
+      l1: &#x27;BD² = p² + l² = &#x27; + (p * p) + &#x27; + &#x27; + (l * l) + &#x27; = &#x27; + bd2,
+      l2: &#x27;HB² = BD² + DH² = &#x27; + bd2 + &#x27; + &#x27; + (t * t) + &#x27; = &#x27; + hb2,
+      l3: bulat ? &#x27;HB = √&#x27; + hb2 + &#x27; = &#x27; + this.nf(hb) : &#x27;HB = √&#x27; + hb2 + &#x27; ≈ &#x27; + this.nf(hb),
+      l1Cls: s1 ? &#x27;hl&#x27; : &#x27;&#x27;,
+      l2Cls: s1 ? &#x27;&#x27; : &#x27;hl&#x27;,
+      l3Cls: s1 ? &#x27;&#x27; : &#x27;hl&#x27;,
+      isBulat: bulat,
+      note: &#x27;Rumus: d = √(p² + l² + t²). Hasilnya bulat!&#x27;,
+      inTitle: s1 ? &#x27;Segitiga ABD (siku-siku di A)&#x27; : &#x27;Segitiga BDH (siku-siku di D)&#x27;,
+      inPts: ins.pts, inRm: ins.rm, inH: ins.h, inV: ins.v, inY: ins.y
+    };
+  }
+}
+
+&lt;/script&gt;
+&lt;script&gt;
+DCMount(document.getElementById(&#x27;tpl&#x27;), document.getElementById(&#x27;stage&#x27;), Component, { w: 1000, h: 740 });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></section>
+<section><iframe title="Ilustrasi 3: Rusuk tegak limas persegi panjang" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;id&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Ilustrasi Bangun Ruang 3 Rusuk tegak limas&lt;/title&gt;
+
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Lora:ital,wght@1,600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body { margin: 0; }
+button { font-family: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #C9822B; outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+.press { transition: transform .12s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }
+.press:hover:not(:disabled) { transform: translateY(-1px); }
+.press:active:not(:disabled) { transform: scale(.96); }
+.go { min-height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: #2F5D3A; color: #FBF3DC; font-weight: 800; font-size: 16px; }
+.go:hover:not(:disabled) { background: #244A2E; }
+.stp { width: 44px; height: 44px; flex: none; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-size: 22px; font-weight: 700; line-height: 1; padding: 0; }
+.stp:hover:not(:disabled) { background: #FFF6DC; border-color: #C98B3C; }
+.stp:disabled { opacity: .4; }
+.btn { min-height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-weight: 700; font-size: 15px; line-height: 20px; }
+.btn:hover:not(:disabled) { background: #FFF6DC; }
+.btn.on, .btn.on:hover:not(:disabled) { background: #2F5D3A; border-color: #2F5D3A; color: #FBF3DC; }
+.rowc { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 14px; padding: 3px 6px 3px 12px; }
+.off { display: none; }
+
+/* efek ledakan titik warna */
+.burst { position: absolute; width: 0; height: 0; pointer-events: none; }
+.arm { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.dot { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; opacity: 0; }
+.arm:nth-child(even) .dot { width: 7px; height: 7px; left: -3.5px; top: -3.5px; }
+.r0 { transform: rotate(0deg); }
+.r1 { transform: rotate(30deg); }
+.r2 { transform: rotate(60deg); }
+.r3 { transform: rotate(90deg); }
+.r4 { transform: rotate(120deg); }
+.r5 { transform: rotate(150deg); }
+.r6 { transform: rotate(180deg); }
+.r7 { transform: rotate(210deg); }
+.r8 { transform: rotate(240deg); }
+.r9 { transform: rotate(270deg); }
+.r10 { transform: rotate(300deg); }
+.r11 { transform: rotate(330deg); }
+.c0 .dot { background: #F2B01E; }
+.c1 .dot { background: #2F5D3A; }
+.c2 .dot { background: #B8520A; }
+.c3 .dot { background: #2A63A8; }
+.fxA .dot { animation: outA .85s ease-out both; }
+.fxB .dot { animation: outB .85s ease-out both; }
+@keyframes outA {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+@keyframes outB {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+.riseA { animation: riseA .4s ease both; }
+.riseB { animation: riseB .4s ease both; }
+@keyframes riseA {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes riseB {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+.d1 { animation-delay: .02s; }
+.d2 { animation-delay: .12s; }
+.d3 { animation-delay: .22s; }
+.d4 { animation-delay: .32s; }
+.popA { animation: popA .45s cubic-bezier(.2, 1.5, .4, 1); }
+.popB { animation: popB .45s cubic-bezier(.2, 1.5, .4, 1); }
+@keyframes popA {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+@keyframes popB {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.ang { fill: rgba(226, 169, 74, .4); stroke: #8A4B0F; transition: fill .25s ease, stroke .25s ease; }
+.ang.right { fill: rgba(47, 93, 58, .32); stroke: #2F5D3A; }
+.verdict { border-radius: 16px; padding: 10px 16px; border: 2px solid #D9C48F; background: #FFFFFF; display: flex; flex-direction: column; gap: 4px; }
+.verdict.right { background: #DDEBCF; border-color: #2F5D3A; }
+.verdict.wrong { background: #FFF1DA; border-color: #E2A94A; }
+.srow { display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 12px; padding: 0 12px; height: 32px; }
+.slab { width: 26px; flex: none; text-align: center; font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 28px; }
+.sval { min-width: 38px; flex: none; text-align: right; font-weight: 800; font-size: 18px; }
+.rng { flex: 1; min-width: 0; height: 24px; margin: 0; }
+.verdict { padding: 8px 16px; }
+.cD { color: #6A3590; }
+.cE { color: #B02A24; }
+.sA { accent-color: #2A63A8; }
+.sB { accent-color: #1F7A55; }
+.sD { accent-color: #6A3590; }
+.sE { accent-color: #B8520A; }
+.hl { background: #FFF1B8; border-radius: 6px; }
+.ln { padding: 0 6px; margin: 0 -6px; }
+.dash { stroke-dasharray: 9 7; animation: dashmove 1s linear infinite; }
+@keyframes dashmove {
+  to { stroke-dashoffset: -32; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash { animation: none !important; }
+}
+.cA { color: #1D4780; }
+.cB { color: #145A3B; }
+.cC { color: #8F3B04; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+#stage { position: absolute; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;/div&gt;
+&lt;template id=&quot;tpl&quot;&gt;
+
+&lt;div style=&quot;width: 1000px; height: 740px; box-sizing: border-box; border: 14px solid #C98B3C; border-radius: 28px; background: #3E6B4A; padding: 18px 24px 22px; display: flex; flex-direction: column; gap: 12px; font-family: &#x27;Nunito&#x27;, system-ui, sans-serif; color: #6E1B1B&quot;&gt;
+
+&lt;div style=&quot;display: flex; flex-direction: column; align-items: center; gap: 8px&quot;&gt;
+&lt;div style=&quot;background: #FBF3DC; border: 4px solid #E2A94A; border-radius: 999px; padding: 4px 44px; font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 30px; line-height: 40px; font-weight: 600; color: #2F5D3A&quot;&gt;Ilustrasi&lt;/div&gt;
+&lt;div style=&quot;color: #FBF3DC; font-size: 16px; line-height: 24px; font-weight: 700&quot;&gt;Ilustrasi 3 · Rusuk tegak limas persegi panjang&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-height: 0; background: #FBF3DC; border-radius: 18px; padding: 20px; box-sizing: border-box; display: flex; gap: 24px&quot;&gt;
+
+&lt;div style=&quot;flex: none; width: 506px; display: flex; flex-direction: column; gap: 8px&quot;&gt;
+&lt;div style=&quot;position: relative; width: 500px; height: 420px; box-sizing: content-box; background: linear-gradient(rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFF8E1 58%, #F3E6BD 100%); border: 3px solid #E2A94A; border-radius: 18px; overflow: hidden&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Limas T.ABCD beralas persegi panjang. Rusuk tegak TB dihitung dari tinggi t dan setengah diagonal alas BE.&quot; width=&quot;500&quot; height=&quot;420&quot; viewBox=&quot;0 0 500 420&quot; style=&quot;display: block&quot;&gt;
+&lt;polygon points=&quot;{{fBase}}&quot; fill=&quot;rgba(226, 169, 74, .16)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;path d=&quot;{{hid}}&quot; stroke=&quot;#7B6A55&quot; stroke-width=&quot;2&quot; stroke-dasharray=&quot;6 5&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
+&lt;polygon points=&quot;{{fFront}}&quot; fill=&quot;rgba(245, 150, 40, .55)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{fRight}}&quot; fill=&quot;rgba(232, 118, 20, .62)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{tri1}}&quot; fill=&quot;rgba(42, 99, 168, .30)&quot; stroke=&quot;none&quot; opacity=&quot;{{o1}}&quot;&gt;&lt;/polygon&gt;
+&lt;polygon points=&quot;{{tri3}}&quot; fill=&quot;rgba(42, 99, 168, .30)&quot; stroke=&quot;none&quot; opacity=&quot;{{o3}}&quot;&gt;&lt;/polygon&gt;
+&lt;path d=&quot;{{vis}}&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;3.5&quot; stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
+&lt;line x1=&quot;{{te.x1}}&quot; y1=&quot;{{te.y1}}&quot; x2=&quot;{{te.x2}}&quot; y2=&quot;{{te.y2}}&quot; stroke=&quot;#145A3B&quot; stroke-width=&quot;{{teW}}&quot; stroke-dasharray=&quot;7 5&quot;&gt;&lt;/line&gt;
+&lt;line class=&quot;{{bdCls}}&quot; x1=&quot;{{bd.x1}}&quot; y1=&quot;{{bd.y1}}&quot; x2=&quot;{{bd.x2}}&quot; y2=&quot;{{bd.y2}}&quot; stroke=&quot;{{bdC}}&quot; stroke-width=&quot;{{bdW}}&quot; stroke-linecap=&quot;round&quot;&gt;&lt;/line&gt;
+&lt;line x1=&quot;{{be.x1}}&quot; y1=&quot;{{be.y1}}&quot; x2=&quot;{{be.x2}}&quot; y2=&quot;{{be.y2}}&quot; stroke=&quot;#B8520A&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot; opacity=&quot;{{o23}}&quot;&gt;&lt;/line&gt;
+&lt;line class=&quot;dash&quot; x1=&quot;{{tb.x1}}&quot; y1=&quot;{{tb.y1}}&quot; x2=&quot;{{tb.x2}}&quot; y2=&quot;{{tb.y2}}&quot; stroke=&quot;#D0342C&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot; opacity=&quot;{{o3}}&quot;&gt;&lt;/line&gt;
+&lt;circle cx=&quot;{{eDot.x}}&quot; cy=&quot;{{eDot.y}}&quot; r=&quot;5.5&quot; fill=&quot;#B8520A&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;2&quot;&gt;&lt;/circle&gt;
+&lt;polyline points=&quot;{{rm1}}&quot; fill=&quot;none&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;2.5&quot; opacity=&quot;{{o1}}&quot;&gt;&lt;/polyline&gt;
+&lt;polyline points=&quot;{{rm3}}&quot; fill=&quot;none&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;2.5&quot; opacity=&quot;{{o3}}&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Lora&#x27;, serif&quot; font-style=&quot;italic&quot; font-weight=&quot;600&quot; font-size=&quot;26&quot; text-anchor=&quot;middle&quot; fill=&quot;#6E1B1B&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;4&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{vA.x}}&quot; y=&quot;{{vA.y}}&quot;&gt;A&lt;/text&gt;
+&lt;text x=&quot;{{vB.x}}&quot; y=&quot;{{vB.y}}&quot;&gt;B&lt;/text&gt;
+&lt;text x=&quot;{{vC.x}}&quot; y=&quot;{{vC.y}}&quot;&gt;C&lt;/text&gt;
+&lt;text x=&quot;{{vD.x}}&quot; y=&quot;{{vD.y}}&quot;&gt;D&lt;/text&gt;
+&lt;text x=&quot;{{vE.x}}&quot; y=&quot;{{vE.y}}&quot;&gt;E&lt;/text&gt;
+&lt;text x=&quot;{{vT.x}}&quot; y=&quot;{{vT.y}}&quot;&gt;T&lt;/text&gt;
+&lt;/g&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;17&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;5&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{lp.x}}&quot; y=&quot;{{lp.y}}&quot; fill=&quot;{{lp.c}}&quot; text-anchor=&quot;{{lp.anc}}&quot; opacity=&quot;{{lp.o}}&quot;&gt;{{lp.t}}&lt;/text&gt;
+&lt;text x=&quot;{{ll.x}}&quot; y=&quot;{{ll.y}}&quot; fill=&quot;{{ll.c}}&quot; text-anchor=&quot;{{ll.anc}}&quot; opacity=&quot;{{ll.o}}&quot;&gt;{{ll.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lbd.x}}&quot; y=&quot;{{lbd.y}}&quot; fill=&quot;{{lbd.c}}&quot; text-anchor=&quot;{{lbd.anc}}&quot; opacity=&quot;{{lbd.o}}&quot;&gt;{{lbd.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lbe.x}}&quot; y=&quot;{{lbe.y}}&quot; fill=&quot;{{lbe.c}}&quot; text-anchor=&quot;{{lbe.anc}}&quot; opacity=&quot;{{lbe.o}}&quot;&gt;{{lbe.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lte.x}}&quot; y=&quot;{{lte.y}}&quot; fill=&quot;{{lte.c}}&quot; text-anchor=&quot;{{lte.anc}}&quot; opacity=&quot;{{lte.o}}&quot;&gt;{{lte.t}}&lt;/text&gt;
+&lt;text x=&quot;{{ltb.x}}&quot; y=&quot;{{ltb.y}}&quot; fill=&quot;{{ltb.c}}&quot; text-anchor=&quot;{{ltb.anc}}&quot; opacity=&quot;{{ltb.o}}&quot;&gt;{{ltb.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;burst {{fxCls}}&quot; style=&quot;left: 250px; top: 210px&quot;&gt;&lt;sc-for list=&quot;{{particles}}&quot; as=&quot;p&quot; hint-placeholder-count=&quot;12&quot;&gt;&lt;div class=&quot;{{p.cls}}&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/sc-for&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background: #FFF3C9; border: 2px solid #E8D58A; border-radius: 14px; padding: 8px 14px; display: flex; flex-direction: column; gap: 4px&quot;&gt;
+&lt;div style=&quot;display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap&quot;&gt;&lt;span style=&quot;font-size: 12px; line-height: 18px; font-weight: 800; color: #B8520A; letter-spacing: .06em&quot;&gt;INTINYA&lt;/span&gt;&lt;span style=&quot;font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; color: #2F5D3A&quot;&gt;{{keyF}}&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;font-size: 15px; line-height: 20px; font-weight: 700&quot;&gt;{{keyT}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px&quot;&gt;
+&lt;div style=&quot;font-size: 17px; line-height: 24px; font-weight: 800&quot;&gt;Atur p, l, t, lalu ikuti 3 langkah.&lt;/div&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; gap: 4px&quot;&gt;
+&lt;sc-for list=&quot;{{sliders}}&quot; as=&quot;sl&quot; hint-placeholder-count=&quot;3&quot;&gt;
+&lt;div class=&quot;srow&quot;&gt;
+&lt;span class=&quot;slab {{sl.cls}}&quot;&gt;{{sl.label}}&lt;/span&gt;
+&lt;input type=&quot;range&quot; class=&quot;rng {{sl.rng}}&quot; min=&quot;{{sl.min}}&quot; max=&quot;{{sl.max}}&quot; step=&quot;1&quot; value=&quot;{{sl.val}}&quot; onChange=&quot;{{sl.set}}&quot; aria-label=&quot;{{sl.aria}}&quot;&gt;
+&lt;span class=&quot;sval&quot;&gt;{{sl.show}}&lt;/span&gt;
+&lt;/div&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{steps}}&quot; as=&quot;st&quot; hint-placeholder-count=&quot;3&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{st.cls}}&quot; aria-pressed=&quot;{{st.pressed}}&quot; onClick=&quot;{{st.pick}}&quot;&gt;{{st.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{presets}}&quot; as=&quot;pr&quot; hint-placeholder-count=&quot;3&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{pr.cls}}&quot; aria-pressed=&quot;{{pr.pressed}}&quot; onClick=&quot;{{pr.pick}}&quot;&gt;{{pr.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div class=&quot;{{boxCls}}&quot; aria-live=&quot;polite&quot;&gt;
+&lt;div style=&quot;font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 24px; line-height: 30px; font-weight: 600; color: #2F5D3A&quot;&gt;{{big}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l1Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l1}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l2Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l2}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l3Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l3}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l4Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l4}}&lt;/div&gt;
+&lt;sc-if value=&quot;{{isBulat}}&quot; hint-placeholder-val=&quot;{{ false }}&quot;&gt;
+&lt;div style=&quot;font-size: 13px; line-height: 18px; font-weight: 800; color: #2F5D3A&quot;&gt;{{note}}&lt;/div&gt;
+&lt;/sc-if&gt;
+&lt;/div&gt;
+&lt;div class=&quot;verdict&quot; style=&quot;padding: 2px 8px&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Segitiga siku-siku yang dipakai pada langkah ini&quot; width=&quot;330&quot; height=&quot;88&quot; viewBox=&quot;0 0 330 88&quot; style=&quot;display: block&quot;&gt;
+&lt;text x=&quot;4&quot; y=&quot;13&quot; font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;12&quot; fill=&quot;#6B4F33&quot;&gt;{{inTitle}}&lt;/text&gt;
+&lt;polygon points=&quot;{{inPts}}&quot; fill=&quot;rgba(226, 169, 74, .30)&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;3&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/polygon&gt;
+&lt;polyline points=&quot;{{inRm}}&quot; fill=&quot;none&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;2&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;14&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFFFF&quot; stroke-width=&quot;3&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{inH.x}}&quot; y=&quot;{{inH.y}}&quot; fill=&quot;{{inH.c}}&quot;&gt;{{inH.t}}&lt;/text&gt;
+&lt;text x=&quot;{{inV.x}}&quot; y=&quot;{{inV.y}}&quot; fill=&quot;{{inV.c}}&quot; text-anchor=&quot;end&quot;&gt;{{inV.t}}&lt;/text&gt;
+&lt;text x=&quot;{{inY.x}}&quot; y=&quot;{{inY.y}}&quot; fill=&quot;{{inY.c}}&quot;&gt;{{inY.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;!function(n){&quot;function&quot;==typeof define&amp;&amp;define.amd?define(n):n()}(function(){var n,l,t,u,i,o,e,r,f,c,s,a,h,p=65536,v=1&lt;&lt;17,d={},y=[],w=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,_=Array.isArray;function g(n,l){for(var t in l)n[t]=l[t];return n}function m(n){n&amp;&amp;n.parentNode&amp;&amp;n.parentNode.removeChild(n)}function b(l,t,u){var i,o,e,r={};for(e in t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:r[e]=t[e];if(arguments.length&gt;2&amp;&amp;(r.children=arguments.length&gt;3?n.call(arguments,2):u),&quot;function&quot;==typeof l&amp;&amp;null!=l.defaultProps)for(e in l.defaultProps)void 0===r[e]&amp;&amp;(r[e]=l.defaultProps[e]);return k(l,r,i,o,null)}function k(n,u,i,o,e){var r={type:n,props:u,key:i,ref:o,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:null==e?++t:e,__i:-1,__u:0};return null==e&amp;&amp;null!=l.vnode&amp;&amp;l.vnode(r),r}function C(n){return n.children}function x(n,l){this.props=n,this.context=l}function S(n,l){if(null==l)return n.__?S(n.__,n.__i+1):null;for(var t;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e)return t.__e;return&quot;function&quot;==typeof n.type?S(n):null}function M(n){var l,t;if(null!=(n=n.__)&amp;&amp;null!=n.__c){for(n.__e=n.__c.base=null,l=0;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e){n.__e=n.__c.base=t.__e;break}return M(n)}}function P(n){(!n.__d&amp;&amp;(n.__d=!0)&amp;&amp;i.push(n)&amp;&amp;!$.__r++||o!==l.debounceRendering)&amp;&amp;((o=l.debounceRendering)||e)($)}function $(){var n,t,u,o,e,f,c,s;for(i.sort(r);n=i.shift();)n.__d&amp;&amp;(t=i.length,o=void 0,f=(e=(u=n).__v).__e,c=[],s=[],u.__P&amp;&amp;((o=g({},e)).__v=e.__v+1,l.vnode&amp;&amp;l.vnode(o),O(u.__P,o,e,u.__n,u.__P.namespaceURI,32&amp;e.__u?[f]:null,c,null==f?S(e):f,!!(32&amp;e.__u),s),o.__v=e.__v,o.__.__k[o.__i]=o,V(c,o,s),o.__e!=f&amp;&amp;M(o)),i.length&gt;t&amp;&amp;i.sort(r));$.__r=0}function I(n,l,t,u,i,o,e,r,f,c,s){var a,h,v,w,_,g=u&amp;&amp;u.__k||y,m=l.length;for(t.__d=f,A(t,l,g),f=t.__d,a=0;a&lt;m;a++)null!=(v=t.__k[a])&amp;&amp;(h=-1===v.__i?d:g[v.__i]||d,v.__i=a,O(n,v,h,i,o,e,r,f,c,s),w=v.__e,v.ref&amp;&amp;h.ref!=v.ref&amp;&amp;(h.ref&amp;&amp;z(h.ref,null,v),s.push(v.ref,v.__c||w,v)),null==_&amp;&amp;null!=w&amp;&amp;(_=w),v.__u&amp;p||h.__k===v.__k?f=E(v,f,n):&quot;function&quot;==typeof v.type&amp;&amp;void 0!==v.__d?f=v.__d:w&amp;&amp;(f=w.nextSibling),v.__d=void 0,v.__u&amp;=-196609);t.__d=f,t.__e=_}function A(n,l,t){var u,i,o,e,r,f=l.length,c=t.length,s=c,a=0;for(n.__k=[],u=0;u&lt;f;u++)null!=(i=l[u])&amp;&amp;&quot;boolean&quot;!=typeof i&amp;&amp;&quot;function&quot;!=typeof i?(e=u+a,(i=n.__k[u]=&quot;string&quot;==typeof i||&quot;number&quot;==typeof i||&quot;bigint&quot;==typeof i||i.constructor==String?k(null,i,null,null,null):_(i)?k(C,{children:i},null,null,null):void 0===i.constructor&amp;&amp;i.__b&gt;0?k(i.type,i.props,i.key,i.ref?i.ref:null,i.__v):i).__=n,i.__b=n.__b+1,o=null,-1!==(r=i.__i=F(i,t,e,s))&amp;&amp;(s--,(o=t[r])&amp;&amp;(o.__u|=v)),null==o||null===o.__v?(-1==r&amp;&amp;a--,&quot;function&quot;!=typeof i.type&amp;&amp;(i.__u|=p)):r!==e&amp;&amp;(r==e-1?a--:r==e+1?a++:(r&gt;e?a--:a++,i.__u|=p))):i=n.__k[u]=null;if(s)for(u=0;u&lt;c;u++)null!=(o=t[u])&amp;&amp;0==(o.__u&amp;v)&amp;&amp;(o.__e==n.__d&amp;&amp;(n.__d=S(o)),N(o,o))}function E(n,l,t){var u,i;if(&quot;function&quot;==typeof n.type){for(u=n.__k,i=0;u&amp;&amp;i&lt;u.length;i++)u[i]&amp;&amp;(u[i].__=n,l=E(u[i],l,t));return l}n.__e!=l&amp;&amp;(l&amp;&amp;n.type&amp;&amp;!t.contains(l)&amp;&amp;(l=S(n)),t.insertBefore(n.__e,l||null),l=n.__e);do{l=l&amp;&amp;l.nextSibling}while(null!=l&amp;&amp;8===l.nodeType);return l}function F(n,l,t,u){var i=n.key,o=n.type,e=t-1,r=t+1,f=l[t];if(null===f||f&amp;&amp;i==f.key&amp;&amp;o===f.type&amp;&amp;0==(f.__u&amp;v))return t;if(u&gt;(null!=f&amp;&amp;0==(f.__u&amp;v)?1:0))for(;e&gt;=0||r&lt;l.length;){if(e&gt;=0){if((f=l[e])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return e;e--}if(r&lt;l.length){if((f=l[r])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return r;r++}}return-1}function H(n,l,t){&quot;-&quot;===l[0]?n.setProperty(l,null==t?&quot;&quot;:t):n[l]=null==t?&quot;&quot;:&quot;number&quot;!=typeof t||w.test(l)?t:t+&quot;px&quot;}function L(n,l,t,u,i){var o;n:if(&quot;style&quot;===l)if(&quot;string&quot;==typeof t)n.style.cssText=t;else{if(&quot;string&quot;==typeof u&amp;&amp;(n.style.cssText=u=&quot;&quot;),u)for(l in u)t&amp;&amp;l in t||H(n.style,l,&quot;&quot;);if(t)for(l in t)u&amp;&amp;t[l]===u[l]||H(n.style,l,t[l])}else if(&quot;o&quot;===l[0]&amp;&amp;&quot;n&quot;===l[1])o=l!==(l=l.replace(/(PointerCapture)$|Capture$/i,&quot;$1&quot;)),l=l.toLowerCase()in n||&quot;onFocusOut&quot;===l||&quot;onFocusIn&quot;===l?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+o]=t,t?u?t.t=u.t:(t.t=f,n.addEventListener(l,o?s:c,o)):n.removeEventListener(l,o?s:c,o);else{if(&quot;http://www.w3.org/2000/svg&quot;==i)l=l.replace(/xlink(H|:h)/,&quot;h&quot;).replace(/sName$/,&quot;s&quot;);else if(&quot;width&quot;!=l&amp;&amp;&quot;height&quot;!=l&amp;&amp;&quot;href&quot;!=l&amp;&amp;&quot;list&quot;!=l&amp;&amp;&quot;form&quot;!=l&amp;&amp;&quot;tabIndex&quot;!=l&amp;&amp;&quot;download&quot;!=l&amp;&amp;&quot;rowSpan&quot;!=l&amp;&amp;&quot;colSpan&quot;!=l&amp;&amp;&quot;role&quot;!=l&amp;&amp;&quot;popover&quot;!=l&amp;&amp;l in n)try{n[l]=null==t?&quot;&quot;:t;break n}catch(n){}&quot;function&quot;==typeof t||(null==t||!1===t&amp;&amp;&quot;-&quot;!==l[4]?n.removeAttribute(l):n.setAttribute(l,&quot;popover&quot;==l&amp;&amp;1==t?&quot;&quot;:t))}}function T(n){return function(t){if(this.l){var u=this.l[t.type+n];if(null==t.u)t.u=f++;else if(t.u&lt;u.t)return;return u(l.event?l.event(t):t)}}}function O(n,t,u,i,o,e,r,f,c,s){var a,h,p,v,d,y,w,m,b,k,S,M,P,$,A,E,F=t.type;if(void 0!==t.constructor)return null;128&amp;u.__u&amp;&amp;(c=!!(32&amp;u.__u),e=[f=t.__e=u.__e]),(a=l.__b)&amp;&amp;a(t);n:if(&quot;function&quot;==typeof F)try{if(m=t.props,b=&quot;prototype&quot;in F&amp;&amp;F.prototype.render,k=(a=F.contextType)&amp;&amp;i[a.__c],S=a?k?k.props.value:a.__:i,u.__c?w=(h=t.__c=u.__c).__=h.__E:(b?t.__c=h=new F(m,S):(t.__c=h=new x(m,S),h.constructor=F,h.render=R),k&amp;&amp;k.sub(h),h.props=m,h.state||(h.state={}),h.context=S,h.__n=i,p=h.__d=!0,h.__h=[],h._sb=[]),b&amp;&amp;null==h.__s&amp;&amp;(h.__s=h.state),b&amp;&amp;null!=F.getDerivedStateFromProps&amp;&amp;(h.__s==h.state&amp;&amp;(h.__s=g({},h.__s)),g(h.__s,F.getDerivedStateFromProps(m,h.__s))),v=h.props,d=h.state,h.__v=t,p)b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;null!=h.componentWillMount&amp;&amp;h.componentWillMount(),b&amp;&amp;null!=h.componentDidMount&amp;&amp;h.__h.push(h.componentDidMount);else{if(b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;m!==v&amp;&amp;null!=h.componentWillReceiveProps&amp;&amp;h.componentWillReceiveProps(m,S),!h.__e&amp;&amp;(null!=h.shouldComponentUpdate&amp;&amp;!1===h.shouldComponentUpdate(m,h.__s,S)||t.__v===u.__v)){for(t.__v!==u.__v&amp;&amp;(h.props=m,h.state=h.__s,h.__d=!1),t.__e=u.__e,t.__k=u.__k,t.__k.some(function(n){n&amp;&amp;(n.__=t)}),M=0;M&lt;h._sb.length;M++)h.__h.push(h._sb[M]);h._sb=[],h.__h.length&amp;&amp;r.push(h);break n}null!=h.componentWillUpdate&amp;&amp;h.componentWillUpdate(m,h.__s,S),b&amp;&amp;null!=h.componentDidUpdate&amp;&amp;h.__h.push(function(){h.componentDidUpdate(v,d,y)})}if(h.context=S,h.props=m,h.__P=n,h.__e=!1,P=l.__r,$=0,b){for(h.state=h.__s,h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),A=0;A&lt;h._sb.length;A++)h.__h.push(h._sb[A]);h._sb=[]}else do{h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),h.state=h.__s}while(h.__d&amp;&amp;++$&lt;25);h.state=h.__s,null!=h.getChildContext&amp;&amp;(i=g(g({},i),h.getChildContext())),b&amp;&amp;!p&amp;&amp;null!=h.getSnapshotBeforeUpdate&amp;&amp;(y=h.getSnapshotBeforeUpdate(v,d)),I(n,_(E=null!=a&amp;&amp;a.type===C&amp;&amp;null==a.key?a.props.children:a)?E:[E],t,u,i,o,e,r,f,c,s),h.base=t.__e,t.__u&amp;=-161,h.__h.length&amp;&amp;r.push(h),w&amp;&amp;(h.__E=h.__=null)}catch(n){if(t.__v=null,c||null!=e){for(t.__u|=c?160:128;f&amp;&amp;8===f.nodeType&amp;&amp;f.nextSibling;)f=f.nextSibling;e[e.indexOf(f)]=null,t.__e=f}else t.__e=u.__e,t.__k=u.__k;l.__e(n,t,u)}else null==e&amp;&amp;t.__v===u.__v?(t.__k=u.__k,t.__e=u.__e):t.__e=j(u.__e,t,u,i,o,e,r,c,s);(a=l.diffed)&amp;&amp;a(t)}function V(n,t,u){t.__d=void 0;for(var i=0;i&lt;u.length;i++)z(u[i],u[++i],u[++i]);l.__c&amp;&amp;l.__c(t,n),n.some(function(t){try{n=t.__h,t.__h=[],n.some(function(n){n.call(t)})}catch(n){l.__e(n,t.__v)}})}function j(t,u,i,o,e,r,f,c,s){var a,h,p,v,y,w,g,b=i.props,k=u.props,C=u.type;if(&quot;svg&quot;===C?e=&quot;http://www.w3.org/2000/svg&quot;:&quot;math&quot;===C?e=&quot;http://www.w3.org/1998/Math/MathML&quot;:e||(e=&quot;http://www.w3.org/1999/xhtml&quot;),null!=r)for(a=0;a&lt;r.length;a++)if((y=r[a])&amp;&amp;&quot;setAttribute&quot;in y==!!C&amp;&amp;(C?y.localName===C:3===y.nodeType)){t=y,r[a]=null;break}if(null==t){if(null===C)return document.createTextNode(k);t=document.createElementNS(e,C,k.is&amp;&amp;k),c&amp;&amp;(l.__m&amp;&amp;l.__m(u,r),c=!1),r=null}if(null===C)b===k||c&amp;&amp;t.data===k||(t.data=k);else{if(r=r&amp;&amp;n.call(t.childNodes),b=i.props||d,!c&amp;&amp;null!=r)for(b={},a=0;a&lt;t.attributes.length;a++)b[(y=t.attributes[a]).name]=y.value;for(a in b)if(y=b[a],&quot;children&quot;==a);else if(&quot;dangerouslySetInnerHTML&quot;==a)p=y;else if(!(a in k)){if(&quot;value&quot;==a&amp;&amp;&quot;defaultValue&quot;in k||&quot;checked&quot;==a&amp;&amp;&quot;defaultChecked&quot;in k)continue;L(t,a,null,y,e)}for(a in k)y=k[a],&quot;children&quot;==a?v=y:&quot;dangerouslySetInnerHTML&quot;==a?h=y:&quot;value&quot;==a?w=y:&quot;checked&quot;==a?g=y:c&amp;&amp;&quot;function&quot;!=typeof y||b[a]===y||L(t,a,y,b[a],e);if(h)c||p&amp;&amp;(h.__html===p.__html||h.__html===t.innerHTML)||(t.innerHTML=h.__html),u.__k=[];else if(p&amp;&amp;(t.innerHTML=&quot;&quot;),I(t,_(v)?v:[v],u,i,o,&quot;foreignObject&quot;===C?&quot;http://www.w3.org/1999/xhtml&quot;:e,r,f,r?r[0]:i.__k&amp;&amp;S(i,0),c,s),null!=r)for(a=r.length;a--;)m(r[a]);c||(a=&quot;value&quot;,&quot;progress&quot;===C&amp;&amp;null==w?t.removeAttribute(&quot;value&quot;):void 0!==w&amp;&amp;(w!==t[a]||&quot;progress&quot;===C&amp;&amp;!w||&quot;option&quot;===C&amp;&amp;w!==b[a])&amp;&amp;L(t,a,w,b[a],e),a=&quot;checked&quot;,void 0!==g&amp;&amp;g!==t[a]&amp;&amp;L(t,a,g,b[a],e))}return t}function z(n,t,u){try{if(&quot;function&quot;==typeof n){var i=&quot;function&quot;==typeof n.__u;i&amp;&amp;n.__u(),i&amp;&amp;null==t||(n.__u=n(t))}else n.current=t}catch(n){l.__e(n,u)}}function N(n,t,u){var i,o;if(l.unmount&amp;&amp;l.unmount(n),(i=n.ref)&amp;&amp;(i.current&amp;&amp;i.current!==n.__e||z(i,null,t)),null!=(i=n.__c)){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(n){l.__e(n,t)}i.base=i.__P=null}if(i=n.__k)for(o=0;o&lt;i.length;o++)i[o]&amp;&amp;N(i[o],t,u||&quot;function&quot;!=typeof n.type);u||m(n.__e),n.__c=n.__=n.__e=n.__d=void 0}function R(n,l,t){return this.constructor(n,t)}function q(t,u,i){var o,e,r,f;l.__&amp;&amp;l.__(t,u),e=(o=&quot;function&quot;==typeof i)?null:i&amp;&amp;i.__k||u.__k,r=[],f=[],O(u,t=(!o&amp;&amp;i||u).__k=b(C,null,[t]),e||d,d,u.namespaceURI,!o&amp;&amp;i?[i]:e?null:u.firstChild?n.call(u.childNodes):null,r,!o&amp;&amp;i?i:e?e.__e:u.firstChild,o,f),V(r,t,f)}n=y.slice,l={__e:function(n,l,t,u){for(var i,o,e;l=l.__;)if((i=l.__c)&amp;&amp;!i.__)try{if((o=i.constructor)&amp;&amp;null!=o.getDerivedStateFromError&amp;&amp;(i.setState(o.getDerivedStateFromError(n)),e=i.__d),null!=i.componentDidCatch&amp;&amp;(i.componentDidCatch(n,u||{}),e=i.__d),e)return i.__E=i}catch(l){n=l}throw n}},t=0,u=function(n){return null!=n&amp;&amp;null==n.constructor},x.prototype.setState=function(n,l){var t;t=null!=this.__s&amp;&amp;this.__s!==this.state?this.__s:this.__s=g({},this.state),&quot;function&quot;==typeof n&amp;&amp;(n=n(g({},t),this.props)),n&amp;&amp;g(t,n),null!=n&amp;&amp;this.__v&amp;&amp;(l&amp;&amp;this._sb.push(l),P(this))},x.prototype.forceUpdate=function(n){this.__v&amp;&amp;(this.__e=!0,n&amp;&amp;this.__h.push(n),P(this))},x.prototype.render=C,i=[],e=&quot;function&quot;==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,r=function(n,l){return n.__v.__b-l.__v.__b},$.__r=0,f=0,c=T(!1),s=T(!0),a=0,h={__proto__:null,render:q,hydrate:function n(l,t){q(l,t,n)},createElement:b,h:b,Fragment:C,createRef:function(){return{current:null}},isValidElement:u,Component:x,cloneElement:function(l,t,u){var i,o,e,r,f=g({},l.props);for(e in l.type&amp;&amp;l.type.defaultProps&amp;&amp;(r=l.type.defaultProps),t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:f[e]=void 0===t[e]&amp;&amp;void 0!==r?r[e]:t[e];return arguments.length&gt;2&amp;&amp;(f.children=arguments.length&gt;3?n.call(arguments,2):u),k(l.type,f,i||l.key,o||l.ref,null)},createContext:function(n,l){var t={__c:l=&quot;__cC&quot;+a++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var t,u;return this.getChildContext||(t=new Set,(u={})[l]=this,this.getChildContext=function(){return u},this.componentWillUnmount=function(){t=null},this.shouldComponentUpdate=function(n){this.props.value!==n.value&amp;&amp;t.forEach(function(n){n.__e=!0,P(n)})},this.sub=function(n){t.add(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){t&amp;&amp;t.delete(n),l&amp;&amp;l.call(n)}}),n.children}};return t.Provider.__=t.Consumer.contextType=t},toChildArray:function n(l,t){return t=t||[],null==l||&quot;boolean&quot;==typeof l||(_(l)?l.some(function(l){n(l,t)}):t.push(l)),t},options:l},typeof module&lt;&quot;u&quot;?module.exports=h:self.preact=h});
+//# sourceMappingURL=preact.min.umd.js.map
+&lt;/script&gt;
+&lt;script&gt;/* Runtime mini: menjalankan template .dc.html (sc-for, sc-if, {{lubang}}, onClick) tanpa editor kanvas. */
+(function () {
+  var h = preact.h;
+  var render = preact.render;
+
+  class DCLogic {
+    constructor(props) {
+      this.props = props || {};
+      this.state = {};
+      this.__render = null;
+    }
+    setState(p) {
+      var next = typeof p === &#x27;function&#x27; ? p(this.state, this.props) : p;
+      if (next == null) return;
+      this.state = Object.assign({}, this.state, next);
+      if (this.__render) this.__render();
+    }
+    forceUpdate() {
+      if (this.__render) this.__render();
+    }
+  }
+  window.DCLogic = DCLogic;
+
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+
+  function lookup(scope, path) {
+    if (path === &#x27;true&#x27;) return true;
+    if (path === &#x27;false&#x27;) return false;
+    if (path === &#x27;null&#x27;) return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split(&#x27;.&#x27;);
+    var cur = scope;
+    for (var i = 0; i &lt; parts.length; i++) {
+      if (cur == null) return undefined;
+      cur = cur[parts[i]];
+    }
+    return cur;
+  }
+
+  function evalAttr(value, scope) {
+    var m = WHOLE.exec(value);
+    if (m) return lookup(scope, m[1]);
+    return value.replace(HOLE, function (_, p) {
+      var v = lookup(scope, p);
+      return v == null ? &#x27;&#x27; : String(v);
+    });
+  }
+
+  function flatten(list, out) {
+    for (var i = 0; i &lt; list.length; i++) {
+      var c = list[i];
+      if (Array.isArray(c)) flatten(c, out);
+      else if (c !== null &amp;&amp; c !== undefined &amp;&amp; c !== false) out.push(c);
+    }
+    return out;
+  }
+
+  function buildChildren(node, scope) {
+    var out = [];
+    for (var i = 0; i &lt; node.childNodes.length; i++) {
+      out.push(build(node.childNodes[i], scope));
+    }
+    return flatten(out, []);
+  }
+
+  function build(node, scope) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      if (!t.trim() &amp;&amp; t.indexOf(&#x27;\n&#x27;) &gt;= 0) return null;
+      var m = WHOLE.exec(t);
+      if (m) {
+        var raw = lookup(scope, m[1]);
+        return raw == null ? &#x27;&#x27; : String(raw);
+      }
+      return t.replace(HOLE, function (_, p) {
+        var v = lookup(scope, p);
+        return v == null ? &#x27;&#x27; : String(v);
+      });
+    }
+    if (node.nodeType !== 1) return null;
+    var tag = node.localName;
+
+    if (tag === &#x27;sc-if&#x27;) {
+      var cond = evalAttr(node.getAttribute(&#x27;value&#x27;) || &#x27;&#x27;, scope);
+      return cond ? buildChildren(node, scope) : null;
+    }
+    if (tag === &#x27;sc-for&#x27;) {
+      var list = evalAttr(node.getAttribute(&#x27;list&#x27;) || &#x27;&#x27;, scope) || [];
+      var as = node.getAttribute(&#x27;as&#x27;) || &#x27;item&#x27;;
+      var out = [];
+      for (var i = 0; i &lt; list.length; i++) {
+        var sub = Object.create(scope);
+        sub[as] = list[i];
+        sub.$index = i;
+        out.push(buildChildren(node, sub));
+      }
+      return flatten(out, []);
+    }
+
+    var props = {};
+    for (var a = 0; a &lt; node.attributes.length; a++) {
+      var name = node.attributes[a].name;
+      var val = node.attributes[a].value;
+      if (name.indexOf(&#x27;hint-&#x27;) === 0) continue;
+      if (name.indexOf(&#x27;on&#x27;) === 0 &amp;&amp; name.length &gt; 2) {
+        var fn = evalAttr(val, scope);
+        if (typeof fn === &#x27;function&#x27;) {
+          var evt = name.toLowerCase();
+          if (evt === &#x27;onchange&#x27; &amp;&amp; tag === &#x27;input&#x27;) evt = &#x27;oninput&#x27;;
+          props[evt] = fn;
+        }
+        continue;
+      }
+      props[name] = evalAttr(val, scope);
+    }
+    return h.apply(null, [tag, props].concat(buildChildren(node, scope)));
+  }
+
+  window.DCMount = function (templateEl, mountEl, ComponentClass, size) {
+    var root = templateEl.content.firstElementChild;
+    var comp = new ComponentClass({});
+    function draw() {
+      var vals = comp.renderVals();
+      render(build(root, vals), mountEl);
+    }
+    comp.__render = draw;
+    draw();
+
+    var stage = mountEl;
+    function fit() {
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var s = Math.min(vw / size.w, vh / size.h, 2);
+      stage.style.width = size.w + &#x27;px&#x27;;
+      stage.style.height = size.h + &#x27;px&#x27;;
+      stage.style.transformOrigin = &#x27;0 0&#x27;;
+      stage.style.transform = &#x27;scale(&#x27; + s + &#x27;)&#x27;;
+      stage.style.left = Math.max(0, (vw - size.w * s) / 2) + &#x27;px&#x27;;
+      stage.style.top = Math.max(0, (vh - size.h * s) / 2) + &#x27;px&#x27;;
+    }
+    window.addEventListener(&#x27;resize&#x27;, fit);
+    fit();
+    return comp;
+  };
+})();
+&lt;/script&gt;
+&lt;script&gt;
+
+class Component extends DCLogic {
+  S(st) {
+    return Object.assign(this.D(), st || {});
+  }
+
+  fx(n) {
+    if (n === 0) return &#x27;fx0&#x27;;
+    return n % 2 === 1 ? &#x27;fxA&#x27; : &#x27;fxB&#x27;;
+  }
+
+  alt(prefix, n) {
+    if (n === 0) return &#x27;&#x27;;
+    return prefix + (n % 2 === 1 ? &#x27;A&#x27; : &#x27;B&#x27;);
+  }
+
+  burstParticles() {
+    const particles = [];
+    for (let i = 0; i &lt; 12; i++) {
+      particles.push({ cls: &#x27;arm r&#x27; + i + &#x27; c&#x27; + (i % 4) });
+    }
+    return particles;
+  }
+
+  nf(x) {
+    if (Math.abs(x - Math.round(x)) &lt; 1e-9) return String(Math.round(x));
+    return x.toFixed(2).replace(&#x27;.&#x27;, &#x27;,&#x27;);
+  }
+
+  isInt(x) {
+    return Math.abs(x - Math.round(x)) &lt; 1e-9;
+  }
+
+  commit(patch) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      const nxt = Object.assign({}, cur, patch);
+      const out = Object.assign({}, patch);
+      if (this.isBulat(nxt) &amp;&amp; !this.isBulat(cur)) out.fx = cur.fx + 1;
+      return out;
+    });
+  }
+
+  setNum(key, raw, min, max) {
+    let v = Math.round(Number(raw));
+    if (isNaN(v)) return;
+    v = Math.max(min, Math.min(max, v));
+    const patch = {};
+    patch[key] = v;
+    this.commit(patch);
+  }
+
+  pt(P) {
+    return P[0].toFixed(1) + &#x27;,&#x27; + P[1].toFixed(1);
+  }
+
+  ps(P) {
+    return P[0].toFixed(1) + &#x27; &#x27; + P[1].toFixed(1);
+  }
+
+  poly() {
+    const a = Array.prototype.slice.call(arguments);
+    return a.map((P) =&gt; this.pt(P)).join(&#x27; &#x27;);
+  }
+
+  unit(P, Q) {
+    const dx = Q[0] - P[0];
+    const dy = Q[1] - P[1];
+    const L = Math.hypot(dx, dy) || 1;
+    return [dx / L, dy / L];
+  }
+
+  rmark(V, P1, P2, s) {
+    const u1 = this.unit(V, P1);
+    const u2 = this.unit(V, P2);
+    const a = [V[0] + s * u1[0], V[1] + s * u1[1]];
+    const b = [V[0] + s * (u1[0] + u2[0]), V[1] + s * (u1[1] + u2[1])];
+    const c = [V[0] + s * u2[0], V[1] + s * u2[1]];
+    return this.poly(a, b, c);
+  }
+
+  mid(P, Q) {
+    return [(P[0] + Q[0]) / 2, (P[1] + Q[1]) / 2];
+  }
+
+  geo(p, l, t, pyr) {
+    const kx = 0.46;
+    const ky = 0.30;
+    const hu = pyr ? Math.max(t + l * ky / 2, l * ky) : t + l * ky;
+    const u = Math.min(340 / (p + l * kx), 265 / hu, 46);
+    const w = (p + l * kx) * u;
+    const hh = hu * u;
+    const ox = (500 - w) / 2;
+    const oy = 212 + hh / 2 + 10;
+    const pr = (x, y, z) =&gt; [ox + (x + y * kx) * u, oy - (z + y * ky) * u];
+    return { u: u, pr: pr };
+  }
+
+  lab(P, dx, dy, t, c, anc, o) {
+    return { x: (P[0] + dx).toFixed(1), y: (P[1] + dy).toFixed(1), t: t, c: c, anc: anc || &#x27;middle&#x27;, o: o === undefined ? &#x27;1&#x27; : o };
+  }
+
+  vl(P, dx, dy) {
+    return { x: (P[0] + dx).toFixed(1), y: (P[1] + dy).toFixed(1) };
+  }
+
+  inset(legH, legV, tH, tV, tY, cH, cV, cY) {
+    const s = Math.min(190 / legH, 40 / legV);
+    const W = legH * s;
+    const Hv = legV * s;
+    const x0 = Math.max(78, (330 - W) / 2 + 24);
+    const y0 = 68;
+    const O = [x0, y0];
+    const Hh = [x0 + W, y0];
+    const V = [x0, y0 - Hv];
+    const L = Math.hypot(W, Hv) || 1;
+    const rs = Math.max(5, Math.min(12, W * 0.3, Hv * 0.3));
+    const m = this.mid(V, Hh);
+    return {
+      pts: this.poly(O, Hh, V),
+      rm: this.poly([x0 + rs, y0], [x0 + rs, y0 - rs], [x0, y0 - rs]),
+      h: { x: (x0 + W / 2).toFixed(1), y: (y0 + 16).toFixed(1), t: tH, c: cH },
+      v: { x: (x0 - 8).toFixed(1), y: (y0 - Hv / 2 + 5).toFixed(1), t: tV, c: cV },
+      y: { x: (m[0] + Hv / L * 18).toFixed(1), y: (m[1] - W / L * 18 + 5).toFixed(1), t: tY, c: cY }
+    };
+  }
+
+  sliderRow(key, label, cls, rng, min, max, val, show, aria, setter) {
+    return { label: label, cls: cls, rng: rng, min: min, max: max, val: val, show: show, aria: aria, set: setter };
+  }
+
+  D() {
+    return { p: 6, l: 8, t: 12, step: 3, fx: 0 };
+  }
+
+  res(s) {
+    return Math.sqrt(s.t * s.t + (s.p * s.p + s.l * s.l) / 4);
+  }
+
+  isBulat(s) {
+    return this.isInt(this.res(s));
+  }
+
+  renderVals() {
+    const s = this.S(this.state);
+    const p = s.p;
+    const l = s.l;
+    const t = s.t;
+    const step = s.step;
+    const g = this.geo(p, l, t, true);
+    const pr = g.pr;
+    const A = pr(0, 0, 0);
+    const B = pr(p, 0, 0);
+    const C = pr(p, l, 0);
+    const D = pr(0, l, 0);
+    const E = pr(p / 2, l / 2, 0);
+    const T = pr(p / 2, l / 2, t);
+    const ps = (P) =&gt; this.ps(P);
+    const vis = &#x27;M&#x27; + ps(A) + &#x27; L&#x27; + ps(B) + &#x27; L&#x27; + ps(C) + &#x27; M&#x27; + ps(T) + &#x27; L&#x27; + ps(A) + &#x27; M&#x27; + ps(T) + &#x27; L&#x27; + ps(B) + &#x27; M&#x27; + ps(T) + &#x27; L&#x27; + ps(C);
+    const hid = &#x27;M&#x27; + ps(A) + &#x27; L&#x27; + ps(D) + &#x27; L&#x27; + ps(C) + &#x27; M&#x27; + ps(D) + &#x27; L&#x27; + ps(T);
+    const seg = (P, Q) =&gt; ({ x1: P[0].toFixed(1), y1: P[1].toFixed(1), x2: Q[0].toFixed(1), y2: Q[1].toFixed(1) });
+
+    const bd2 = p * p + l * l;
+    const bd = Math.sqrt(bd2);
+    const be = bd / 2;
+    const be2 = bd2 / 4;
+    const tb2 = t * t + be2;
+    const tb = Math.sqrt(tb2);
+    const bulat = this.isInt(tb);
+
+    const sliders = [
+      this.sliderRow(&#x27;p&#x27;, &#x27;p&#x27;, &#x27;cA&#x27;, &#x27;sA&#x27;, 1, 12, p, p, &#x27;Panjang alas p&#x27;, (e) =&gt; this.setNum(&#x27;p&#x27;, e.target.value, 1, 12)),
+      this.sliderRow(&#x27;l&#x27;, &#x27;l&#x27;, &#x27;cB&#x27;, &#x27;sB&#x27;, 1, 12, l, l, &#x27;Lebar alas l&#x27;, (e) =&gt; this.setNum(&#x27;l&#x27;, e.target.value, 1, 12)),
+      this.sliderRow(&#x27;t&#x27;, &#x27;t&#x27;, &#x27;cD&#x27;, &#x27;sD&#x27;, 1, 12, t, t, &#x27;Tinggi limas t&#x27;, (e) =&gt; this.setNum(&#x27;t&#x27;, e.target.value, 1, 12))
+    ];
+    const steps = [
+      { n: 1, label: &#x27;1 · BD&#x27; },
+      { n: 2, label: &#x27;2 · BE&#x27; },
+      { n: 3, label: &#x27;3 · TB&#x27; }
+    ].map((q) =&gt; ({
+      label: q.label,
+      pressed: step === q.n,
+      cls: &#x27;btn press&#x27; + (step === q.n ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.setState({ step: q.n })
+    }));
+    const presets = [
+      { v: [4, 4, 5], label: &#x27;Persegi&#x27; },
+      { v: [6, 8, 12], label: &#x27;Hasil bulat&#x27; },
+      { v: [10, 3, 2], label: &#x27;Pendek&#x27; }
+    ].map((q) =&gt; ({
+      label: q.label,
+      pressed: p === q.v[0] &amp;&amp; l === q.v[1] &amp;&amp; t === q.v[2],
+      cls: &#x27;btn press&#x27; + (p === q.v[0] &amp;&amp; l === q.v[1] &amp;&amp; t === q.v[2] ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.commit({ p: q.v[0], l: q.v[1], t: q.v[2] })
+    }));
+
+    let ins;
+    let inTitle;
+    if (step === 1) {
+      ins = this.inset(p, l, &#x27;p = &#x27; + p, &#x27;l = &#x27; + l, &#x27;BD = &#x27; + this.nf(bd), &#x27;#1D4780&#x27;, &#x27;#145A3B&#x27;, &#x27;#B8520A&#x27;);
+      inTitle = &#x27;Segitiga ABD (siku-siku di A)&#x27;;
+    } else if (step === 2) {
+      ins = this.inset(p, l, &#x27;p = &#x27; + p, &#x27;l = &#x27; + l, &#x27;BD = &#x27; + this.nf(bd), &#x27;#1D4780&#x27;, &#x27;#145A3B&#x27;, &#x27;#B8520A&#x27;);
+      inTitle = &#x27;E titik tengah BD, jadi BE = ½ × BD = &#x27; + this.nf(be);
+    } else {
+      ins = this.inset(be, t, &#x27;BE = &#x27; + this.nf(be), &#x27;TE = t = &#x27; + t, &#x27;TB = &#x27; + this.nf(tb), &#x27;#B8520A&#x27;, &#x27;#6A3590&#x27;, &#x27;#B02A24&#x27;);
+      inTitle = &#x27;Segitiga TEB (siku-siku di E)&#x27;;
+    }
+    const o = (on) =&gt; (on ? &#x27;1&#x27; : &#x27;0&#x27;);
+    const eV = this.unit(E, B);
+    const eUp = [E[0], E[1] - 40];
+
+    return {
+      particles: this.burstParticles(),
+      fxCls: this.fx(s.fx),
+      fBase: this.poly(A, B, C, D),
+      fFront: this.poly(T, A, B),
+      fRight: this.poly(T, B, C),
+      vis: vis,
+      hid: hid,
+      tri1: this.poly(A, B, D),
+      tri3: this.poly(T, E, B),
+      o1: o(step === 1),
+      o3: o(step === 3),
+      o23: o(step &gt;= 2),
+      te: seg(T, E),
+      teW: step === 3 ? &#x27;5&#x27; : &#x27;3&#x27;,
+      bd: seg(B, D),
+      bdC: step === 1 ? &#x27;#D0342C&#x27; : &#x27;#B8520A&#x27;,
+      bdW: step === 1 ? &#x27;5&#x27; : &#x27;2.5&#x27;,
+      bdCls: step === 1 ? &#x27;dash&#x27; : &#x27;&#x27;,
+      be: seg(B, E),
+      tb: seg(T, B),
+      eDot: { x: E[0].toFixed(1), y: E[1].toFixed(1) },
+      rm1: this.rmark(A, B, D, 15),
+      rm3: this.rmark(E, B, eUp, 13),
+      vA: this.vl(A, -16, 24),
+      vB: this.vl(B, 14, 24),
+      vC: this.vl(C, 18, 8),
+      vD: this.vl(D, -16, 2),
+      vE: this.vl(E, -16, 24),
+      vT: this.vl(T, 0, -16),
+      lp: this.lab(this.mid(A, B), 0, 52, &#x27;p = &#x27; + p, &#x27;#1D4780&#x27;),
+      ll: this.lab(this.mid(B, C), 14, 8, &#x27;l = &#x27; + l, &#x27;#145A3B&#x27;, &#x27;start&#x27;),
+      lbd: this.lab(this.mid(B, D), -34, 26, &#x27;BD = &#x27; + this.nf(bd), &#x27;#B8520A&#x27;, &#x27;middle&#x27;, o(step === 1)),
+      lbe: this.lab(this.mid(B, E), -6, 38, &#x27;BE = &#x27; + this.nf(be), &#x27;#B8520A&#x27;, &#x27;middle&#x27;, o(step === 2)),
+      lte: this.lab(this.mid(T, E), -10, 5, &#x27;t = &#x27; + t, &#x27;#6A3590&#x27;, &#x27;end&#x27;, o(step === 3)),
+      ltb: this.lab(this.mid(T, B), 14, -4, &#x27;TB = &#x27; + this.nf(tb), &#x27;#B02A24&#x27;, &#x27;start&#x27;, o(step === 3)),
+      caption: &#x27;Limas T.ABCD dengan alas &#x27; + p + &#x27; × &#x27; + l + &#x27; dan tinggi &#x27; + t,
+      sliders: sliders,
+      keyF: &#x27;TB = √(t² + (p² + l²) ÷ 4)&#x27;,
+      keyT: &#x27;Rusuk tegak limas diperoleh dari akar jumlah kuadrat tinggi limas dan kuadrat setengah diagonal alas.&#x27;,
+      steps: steps,
+      presets: presets,
+      boxCls: bulat ? &#x27;verdict right &#x27; + this.alt(&#x27;pop&#x27;, s.fx) : &#x27;verdict&#x27;,
+      big: bulat ? &#x27;TB = &#x27; + this.nf(tb) : &#x27;TB ≈ &#x27; + this.nf(tb),
+      l1: &#x27;BD = √(p² + l²) = √&#x27; + bd2 + (this.isInt(bd) ? &#x27; = &#x27; : &#x27; ≈ &#x27;) + this.nf(bd),
+      l2: &#x27;BE = ½ × BD &#x27; + (this.isInt(be) ? &#x27;= &#x27; : &#x27;≈ &#x27;) + this.nf(be),
+      l3: &#x27;TB² = t² + BE² = &#x27; + (t * t) + &#x27; + &#x27; + this.nf(be2) + &#x27; = &#x27; + this.nf(tb2),
+      l4: bulat ? &#x27;TB = √&#x27; + this.nf(tb2) + &#x27; = &#x27; + this.nf(tb) : &#x27;TB = √&#x27; + this.nf(tb2) + &#x27; ≈ &#x27; + this.nf(tb),
+      l1Cls: step === 1 ? &#x27;hl&#x27; : &#x27;&#x27;,
+      l2Cls: step === 2 ? &#x27;hl&#x27; : &#x27;&#x27;,
+      l3Cls: step === 3 ? &#x27;hl&#x27; : &#x27;&#x27;,
+      l4Cls: step === 3 ? &#x27;hl&#x27; : &#x27;&#x27;,
+      isBulat: bulat,
+      note: &#x27;Rumus: TB = √(t² + (p² + l²) ÷ 4). Hasilnya bulat!&#x27;,
+      inTitle: inTitle,
+      inPts: ins.pts, inRm: ins.rm, inH: ins.h, inV: ins.v, inY: ins.y
+    };
+  }
+}
+
+&lt;/script&gt;
+&lt;script&gt;
+DCMount(document.getElementById(&#x27;tpl&#x27;), document.getElementById(&#x27;stage&#x27;), Component, { w: 1000, h: 740 });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></section>
+<section><iframe title="Ilustrasi 4: Garis pelukis kerucut" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;id&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Ilustrasi Bangun Ruang 4 Garis pelukis kerucut&lt;/title&gt;
+
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Lora:ital,wght@1,600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body { margin: 0; }
+button { font-family: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #C9822B; outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+.press { transition: transform .12s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }
+.press:hover:not(:disabled) { transform: translateY(-1px); }
+.press:active:not(:disabled) { transform: scale(.96); }
+.go { min-height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: #2F5D3A; color: #FBF3DC; font-weight: 800; font-size: 16px; }
+.go:hover:not(:disabled) { background: #244A2E; }
+.stp { width: 44px; height: 44px; flex: none; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-size: 22px; font-weight: 700; line-height: 1; padding: 0; }
+.stp:hover:not(:disabled) { background: #FFF6DC; border-color: #C98B3C; }
+.stp:disabled { opacity: .4; }
+.btn { min-height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid #D9C48F; background: #FFFFFF; color: #6E1B1B; font-weight: 700; font-size: 15px; line-height: 20px; }
+.btn:hover:not(:disabled) { background: #FFF6DC; }
+.btn.on, .btn.on:hover:not(:disabled) { background: #2F5D3A; border-color: #2F5D3A; color: #FBF3DC; }
+.rowc { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 14px; padding: 3px 6px 3px 12px; }
+.off { display: none; }
+
+/* efek ledakan titik warna */
+.burst { position: absolute; width: 0; height: 0; pointer-events: none; }
+.arm { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.dot { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; opacity: 0; }
+.arm:nth-child(even) .dot { width: 7px; height: 7px; left: -3.5px; top: -3.5px; }
+.r0 { transform: rotate(0deg); }
+.r1 { transform: rotate(30deg); }
+.r2 { transform: rotate(60deg); }
+.r3 { transform: rotate(90deg); }
+.r4 { transform: rotate(120deg); }
+.r5 { transform: rotate(150deg); }
+.r6 { transform: rotate(180deg); }
+.r7 { transform: rotate(210deg); }
+.r8 { transform: rotate(240deg); }
+.r9 { transform: rotate(270deg); }
+.r10 { transform: rotate(300deg); }
+.r11 { transform: rotate(330deg); }
+.c0 .dot { background: #F2B01E; }
+.c1 .dot { background: #2F5D3A; }
+.c2 .dot { background: #B8520A; }
+.c3 .dot { background: #2A63A8; }
+.fxA .dot { animation: outA .85s ease-out both; }
+.fxB .dot { animation: outB .85s ease-out both; }
+@keyframes outA {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+@keyframes outB {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-110px) scale(.3); }
+}
+.riseA { animation: riseA .4s ease both; }
+.riseB { animation: riseB .4s ease both; }
+@keyframes riseA {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes riseB {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+.d1 { animation-delay: .02s; }
+.d2 { animation-delay: .12s; }
+.d3 { animation-delay: .22s; }
+.d4 { animation-delay: .32s; }
+.popA { animation: popA .45s cubic-bezier(.2, 1.5, .4, 1); }
+.popB { animation: popB .45s cubic-bezier(.2, 1.5, .4, 1); }
+@keyframes popA {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+@keyframes popB {
+  0% { transform: scale(.95); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.ang { fill: rgba(226, 169, 74, .4); stroke: #8A4B0F; transition: fill .25s ease, stroke .25s ease; }
+.ang.right { fill: rgba(47, 93, 58, .32); stroke: #2F5D3A; }
+.verdict { border-radius: 16px; padding: 10px 16px; border: 2px solid #D9C48F; background: #FFFFFF; display: flex; flex-direction: column; gap: 4px; }
+.verdict.right { background: #DDEBCF; border-color: #2F5D3A; }
+.verdict.wrong { background: #FFF1DA; border-color: #E2A94A; }
+.srow { display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #D9C48F; border-radius: 12px; padding: 0 12px; height: 32px; }
+.slab { width: 26px; flex: none; text-align: center; font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 28px; }
+.sval { min-width: 38px; flex: none; text-align: right; font-weight: 800; font-size: 18px; }
+.rng { flex: 1; min-width: 0; height: 24px; margin: 0; }
+.verdict { padding: 8px 16px; }
+.cD { color: #6A3590; }
+.cE { color: #B02A24; }
+.sA { accent-color: #2A63A8; }
+.sB { accent-color: #1F7A55; }
+.sD { accent-color: #6A3590; }
+.sE { accent-color: #B8520A; }
+.hl { background: #FFF1B8; border-radius: 6px; }
+.ln { padding: 0 6px; margin: 0 -6px; }
+.dash { stroke-dasharray: 9 7; animation: dashmove 1s linear infinite; }
+@keyframes dashmove {
+  to { stroke-dashoffset: -32; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash { animation: none !important; }
+}
+.cA { color: #1D4780; }
+.cB { color: #145A3B; }
+.cC { color: #8F3B04; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+#stage { position: absolute; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;/div&gt;
+&lt;template id=&quot;tpl&quot;&gt;
+
+&lt;div style=&quot;width: 1000px; height: 740px; box-sizing: border-box; border: 14px solid #C98B3C; border-radius: 28px; background: #3E6B4A; padding: 18px 24px 22px; display: flex; flex-direction: column; gap: 12px; font-family: &#x27;Nunito&#x27;, system-ui, sans-serif; color: #6E1B1B&quot;&gt;
+
+&lt;div style=&quot;display: flex; flex-direction: column; align-items: center; gap: 8px&quot;&gt;
+&lt;div style=&quot;background: #FBF3DC; border: 4px solid #E2A94A; border-radius: 999px; padding: 4px 44px; font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 30px; line-height: 40px; font-weight: 600; color: #2F5D3A&quot;&gt;Ilustrasi&lt;/div&gt;
+&lt;div style=&quot;color: #FBF3DC; font-size: 16px; line-height: 24px; font-weight: 700&quot;&gt;Ilustrasi 4 · Garis pelukis kerucut&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-height: 0; background: #FBF3DC; border-radius: 18px; padding: 20px; box-sizing: border-box; display: flex; gap: 24px&quot;&gt;
+
+&lt;div style=&quot;flex: none; width: 506px; display: flex; flex-direction: column; gap: 8px&quot;&gt;
+&lt;div style=&quot;position: relative; width: 500px; height: 420px; box-sizing: content-box; background: linear-gradient(rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(74, 124, 89, .12) 1px, transparent 1px) 0 0 / 28px 28px, radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFF8E1 58%, #F3E6BD 100%); border: 3px solid #E2A94A; border-radius: 18px; overflow: hidden&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Kerucut dengan puncak T, pusat alas A, dan titik B pada keliling alas. Segitiga TAB siku-siku di A menghasilkan garis pelukis s.&quot; width=&quot;500&quot; height=&quot;420&quot; viewBox=&quot;0 0 500 420&quot; style=&quot;display: block&quot;&gt;
+&lt;path d=&quot;{{body}}&quot; fill=&quot;rgba(245, 150, 40, .30)&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;3.5&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/path&gt;
+&lt;path d=&quot;{{back}}&quot; fill=&quot;none&quot; stroke=&quot;#7B6A55&quot; stroke-width=&quot;2&quot; stroke-dasharray=&quot;6 5&quot;&gt;&lt;/path&gt;
+&lt;polygon points=&quot;{{tri}}&quot; fill=&quot;rgba(42, 99, 168, .24)&quot; stroke=&quot;none&quot;&gt;&lt;/polygon&gt;
+&lt;line x1=&quot;{{ta.x1}}&quot; y1=&quot;{{ta.y1}}&quot; x2=&quot;{{ta.x2}}&quot; y2=&quot;{{ta.y2}}&quot; stroke=&quot;#145A3B&quot; stroke-width=&quot;4&quot; stroke-dasharray=&quot;7 5&quot;&gt;&lt;/line&gt;
+&lt;line x1=&quot;{{ab.x1}}&quot; y1=&quot;{{ab.y1}}&quot; x2=&quot;{{ab.x2}}&quot; y2=&quot;{{ab.y2}}&quot; stroke=&quot;#1D4780&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot;&gt;&lt;/line&gt;
+&lt;line class=&quot;dash&quot; x1=&quot;{{tb.x1}}&quot; y1=&quot;{{tb.y1}}&quot; x2=&quot;{{tb.x2}}&quot; y2=&quot;{{tb.y2}}&quot; stroke=&quot;#D0342C&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot;&gt;&lt;/line&gt;
+&lt;polyline points=&quot;{{rm}}&quot; fill=&quot;none&quot; stroke=&quot;#4A3B2D&quot; stroke-width=&quot;2.5&quot;&gt;&lt;/polyline&gt;
+&lt;circle cx=&quot;{{dT.x}}&quot; cy=&quot;{{dT.y}}&quot; r=&quot;5.5&quot; fill=&quot;#4A3B2D&quot;&gt;&lt;/circle&gt;
+&lt;circle cx=&quot;{{dA.x}}&quot; cy=&quot;{{dA.y}}&quot; r=&quot;5.5&quot; fill=&quot;#4A3B2D&quot;&gt;&lt;/circle&gt;
+&lt;circle cx=&quot;{{dB.x}}&quot; cy=&quot;{{dB.y}}&quot; r=&quot;7&quot; fill=&quot;#D0342C&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;2.5&quot;&gt;&lt;/circle&gt;
+&lt;g font-family=&quot;&#x27;Lora&#x27;, serif&quot; font-style=&quot;italic&quot; font-weight=&quot;600&quot; font-size=&quot;26&quot; text-anchor=&quot;middle&quot; fill=&quot;#6E1B1B&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;4&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{vT.x}}&quot; y=&quot;{{vT.y}}&quot;&gt;T&lt;/text&gt;
+&lt;text x=&quot;{{vA.x}}&quot; y=&quot;{{vA.y}}&quot;&gt;A&lt;/text&gt;
+&lt;text x=&quot;{{vB.x}}&quot; y=&quot;{{vB.y}}&quot;&gt;B&lt;/text&gt;
+&lt;/g&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;17&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;5&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{lt.x}}&quot; y=&quot;{{lt.y}}&quot; fill=&quot;{{lt.c}}&quot; text-anchor=&quot;{{lt.anc}}&quot; opacity=&quot;{{lt.o}}&quot;&gt;{{lt.t}}&lt;/text&gt;
+&lt;text x=&quot;{{lr.x}}&quot; y=&quot;{{lr.y}}&quot; fill=&quot;{{lr.c}}&quot; text-anchor=&quot;{{lr.anc}}&quot; opacity=&quot;{{lr.o}}&quot;&gt;{{lr.t}}&lt;/text&gt;
+&lt;text x=&quot;{{ls.x}}&quot; y=&quot;{{ls.y}}&quot; fill=&quot;{{ls.c}}&quot; text-anchor=&quot;{{ls.anc}}&quot; opacity=&quot;{{ls.o}}&quot;&gt;{{ls.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;text x=&quot;{{lg.x}}&quot; y=&quot;{{lg.y}}&quot; text-anchor=&quot;{{lg.anc}}&quot; font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-style=&quot;italic&quot; font-weight=&quot;800&quot; font-size=&quot;14&quot; fill=&quot;#B02A24&quot; stroke=&quot;#FFFDF5&quot; stroke-width=&quot;4&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;garis pelukis&lt;/text&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;14&quot;&gt;
+&lt;line x1=&quot;14&quot; y1=&quot;22&quot; x2=&quot;44&quot; y2=&quot;22&quot; stroke=&quot;#D0342C&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot; stroke-dasharray=&quot;7 5&quot;&gt;&lt;/line&gt;
+&lt;text x=&quot;52&quot; y=&quot;27&quot; fill=&quot;#B02A24&quot;&gt;Garis pelukis (s)&lt;/text&gt;
+&lt;line x1=&quot;14&quot; y1=&quot;46&quot; x2=&quot;44&quot; y2=&quot;46&quot; stroke=&quot;#145A3B&quot; stroke-width=&quot;4&quot; stroke-dasharray=&quot;7 5&quot;&gt;&lt;/line&gt;
+&lt;text x=&quot;52&quot; y=&quot;51&quot; fill=&quot;#145A3B&quot;&gt;Tinggi (t)&lt;/text&gt;
+&lt;line x1=&quot;14&quot; y1=&quot;70&quot; x2=&quot;44&quot; y2=&quot;70&quot; stroke=&quot;#1D4780&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot;&gt;&lt;/line&gt;
+&lt;text x=&quot;52&quot; y=&quot;75&quot; fill=&quot;#1D4780&quot;&gt;Jari-jari (r)&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;burst {{fxCls}}&quot; style=&quot;left: 250px; top: 210px&quot;&gt;&lt;sc-for list=&quot;{{particles}}&quot; as=&quot;p&quot; hint-placeholder-count=&quot;12&quot;&gt;&lt;div class=&quot;{{p.cls}}&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/sc-for&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background: #FFF3C9; border: 2px solid #E8D58A; border-radius: 14px; padding: 8px 14px; display: flex; flex-direction: column; gap: 4px&quot;&gt;
+&lt;div style=&quot;display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap&quot;&gt;&lt;span style=&quot;font-size: 12px; line-height: 18px; font-weight: 800; color: #B8520A; letter-spacing: .06em&quot;&gt;INTINYA&lt;/span&gt;&lt;span style=&quot;font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 22px; line-height: 28px; font-weight: 600; color: #2F5D3A&quot;&gt;{{keyF}}&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;font-size: 15px; line-height: 20px; font-weight: 700&quot;&gt;{{keyT}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px&quot;&gt;
+&lt;div style=&quot;font-size: 17px; line-height: 24px; font-weight: 800&quot;&gt;Atur t dan alas. Geser B: s tetap!&lt;/div&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{modes}}&quot; as=&quot;md&quot; hint-placeholder-count=&quot;2&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{md.cls}}&quot; aria-pressed=&quot;{{md.pressed}}&quot; onClick=&quot;{{md.pick}}&quot;&gt;{{md.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; gap: 4px&quot;&gt;
+&lt;sc-for list=&quot;{{sliders}}&quot; as=&quot;sl&quot; hint-placeholder-count=&quot;3&quot;&gt;
+&lt;div class=&quot;srow&quot;&gt;
+&lt;span class=&quot;slab {{sl.cls}}&quot;&gt;{{sl.label}}&lt;/span&gt;
+&lt;input type=&quot;range&quot; class=&quot;rng {{sl.rng}}&quot; min=&quot;{{sl.min}}&quot; max=&quot;{{sl.max}}&quot; step=&quot;1&quot; value=&quot;{{sl.val}}&quot; onChange=&quot;{{sl.set}}&quot; aria-label=&quot;{{sl.aria}}&quot;&gt;
+&lt;span class=&quot;sval&quot;&gt;{{sl.show}}&lt;/span&gt;
+&lt;/div&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px&quot;&gt;
+&lt;sc-for list=&quot;{{presets}}&quot; as=&quot;pr&quot; hint-placeholder-count=&quot;3&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;{{pr.cls}}&quot; aria-pressed=&quot;{{pr.pressed}}&quot; onClick=&quot;{{pr.pick}}&quot;&gt;{{pr.label}}&lt;/button&gt;
+&lt;/sc-for&gt;
+&lt;/div&gt;
+&lt;div class=&quot;{{boxCls}}&quot; aria-live=&quot;polite&quot;&gt;
+&lt;div style=&quot;font-family: &#x27;Fredoka&#x27;, system-ui, sans-serif; font-size: 24px; line-height: 30px; font-weight: 600; color: #2F5D3A&quot;&gt;{{big}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l1Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l1}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l2Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l2}}&lt;/div&gt;
+&lt;div class=&quot;ln {{l3Cls}}&quot; style=&quot;font-family: &#x27;Lora&#x27;, serif; font-style: italic; font-weight: 600; font-size: 16px; line-height: 20px&quot;&gt;{{l3}}&lt;/div&gt;
+&lt;div style=&quot;font-size: 13px; line-height: 18px; font-weight: 800; color: #2F5D3A&quot;&gt;{{rumus}}&lt;/div&gt;
+&lt;sc-if value=&quot;{{isBulat}}&quot; hint-placeholder-val=&quot;{{ false }}&quot;&gt;
+&lt;div style=&quot;font-size: 13px; line-height: 18px; font-weight: 800; color: #2F5D3A&quot;&gt;{{note}}&lt;/div&gt;
+&lt;/sc-if&gt;
+&lt;/div&gt;
+&lt;div class=&quot;verdict&quot; style=&quot;padding: 2px 8px&quot;&gt;
+&lt;svg role=&quot;img&quot; aria-label=&quot;Segitiga siku-siku yang dipakai pada langkah ini&quot; width=&quot;330&quot; height=&quot;88&quot; viewBox=&quot;0 0 330 88&quot; style=&quot;display: block&quot;&gt;
+&lt;text x=&quot;4&quot; y=&quot;13&quot; font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;12&quot; fill=&quot;#6B4F33&quot;&gt;{{inTitle}}&lt;/text&gt;
+&lt;polygon points=&quot;{{inPts}}&quot; fill=&quot;rgba(226, 169, 74, .30)&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;3&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;/polygon&gt;
+&lt;polyline points=&quot;{{inRm}}&quot; fill=&quot;none&quot; stroke=&quot;#5B4636&quot; stroke-width=&quot;2&quot;&gt;&lt;/polyline&gt;
+&lt;g font-family=&quot;&#x27;Nunito&#x27;, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;14&quot; text-anchor=&quot;middle&quot; stroke=&quot;#FFFFFF&quot; stroke-width=&quot;3&quot; style=&quot;paint-order: stroke; stroke-linejoin: round&quot;&gt;
+&lt;text x=&quot;{{inH.x}}&quot; y=&quot;{{inH.y}}&quot; fill=&quot;{{inH.c}}&quot;&gt;{{inH.t}}&lt;/text&gt;
+&lt;text x=&quot;{{inV.x}}&quot; y=&quot;{{inV.y}}&quot; fill=&quot;{{inV.c}}&quot; text-anchor=&quot;end&quot;&gt;{{inV.t}}&lt;/text&gt;
+&lt;text x=&quot;{{inY.x}}&quot; y=&quot;{{inY.y}}&quot; fill=&quot;{{inY.c}}&quot;&gt;{{inY.t}}&lt;/text&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;!function(n){&quot;function&quot;==typeof define&amp;&amp;define.amd?define(n):n()}(function(){var n,l,t,u,i,o,e,r,f,c,s,a,h,p=65536,v=1&lt;&lt;17,d={},y=[],w=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,_=Array.isArray;function g(n,l){for(var t in l)n[t]=l[t];return n}function m(n){n&amp;&amp;n.parentNode&amp;&amp;n.parentNode.removeChild(n)}function b(l,t,u){var i,o,e,r={};for(e in t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:r[e]=t[e];if(arguments.length&gt;2&amp;&amp;(r.children=arguments.length&gt;3?n.call(arguments,2):u),&quot;function&quot;==typeof l&amp;&amp;null!=l.defaultProps)for(e in l.defaultProps)void 0===r[e]&amp;&amp;(r[e]=l.defaultProps[e]);return k(l,r,i,o,null)}function k(n,u,i,o,e){var r={type:n,props:u,key:i,ref:o,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:null==e?++t:e,__i:-1,__u:0};return null==e&amp;&amp;null!=l.vnode&amp;&amp;l.vnode(r),r}function C(n){return n.children}function x(n,l){this.props=n,this.context=l}function S(n,l){if(null==l)return n.__?S(n.__,n.__i+1):null;for(var t;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e)return t.__e;return&quot;function&quot;==typeof n.type?S(n):null}function M(n){var l,t;if(null!=(n=n.__)&amp;&amp;null!=n.__c){for(n.__e=n.__c.base=null,l=0;l&lt;n.__k.length;l++)if(null!=(t=n.__k[l])&amp;&amp;null!=t.__e){n.__e=n.__c.base=t.__e;break}return M(n)}}function P(n){(!n.__d&amp;&amp;(n.__d=!0)&amp;&amp;i.push(n)&amp;&amp;!$.__r++||o!==l.debounceRendering)&amp;&amp;((o=l.debounceRendering)||e)($)}function $(){var n,t,u,o,e,f,c,s;for(i.sort(r);n=i.shift();)n.__d&amp;&amp;(t=i.length,o=void 0,f=(e=(u=n).__v).__e,c=[],s=[],u.__P&amp;&amp;((o=g({},e)).__v=e.__v+1,l.vnode&amp;&amp;l.vnode(o),O(u.__P,o,e,u.__n,u.__P.namespaceURI,32&amp;e.__u?[f]:null,c,null==f?S(e):f,!!(32&amp;e.__u),s),o.__v=e.__v,o.__.__k[o.__i]=o,V(c,o,s),o.__e!=f&amp;&amp;M(o)),i.length&gt;t&amp;&amp;i.sort(r));$.__r=0}function I(n,l,t,u,i,o,e,r,f,c,s){var a,h,v,w,_,g=u&amp;&amp;u.__k||y,m=l.length;for(t.__d=f,A(t,l,g),f=t.__d,a=0;a&lt;m;a++)null!=(v=t.__k[a])&amp;&amp;(h=-1===v.__i?d:g[v.__i]||d,v.__i=a,O(n,v,h,i,o,e,r,f,c,s),w=v.__e,v.ref&amp;&amp;h.ref!=v.ref&amp;&amp;(h.ref&amp;&amp;z(h.ref,null,v),s.push(v.ref,v.__c||w,v)),null==_&amp;&amp;null!=w&amp;&amp;(_=w),v.__u&amp;p||h.__k===v.__k?f=E(v,f,n):&quot;function&quot;==typeof v.type&amp;&amp;void 0!==v.__d?f=v.__d:w&amp;&amp;(f=w.nextSibling),v.__d=void 0,v.__u&amp;=-196609);t.__d=f,t.__e=_}function A(n,l,t){var u,i,o,e,r,f=l.length,c=t.length,s=c,a=0;for(n.__k=[],u=0;u&lt;f;u++)null!=(i=l[u])&amp;&amp;&quot;boolean&quot;!=typeof i&amp;&amp;&quot;function&quot;!=typeof i?(e=u+a,(i=n.__k[u]=&quot;string&quot;==typeof i||&quot;number&quot;==typeof i||&quot;bigint&quot;==typeof i||i.constructor==String?k(null,i,null,null,null):_(i)?k(C,{children:i},null,null,null):void 0===i.constructor&amp;&amp;i.__b&gt;0?k(i.type,i.props,i.key,i.ref?i.ref:null,i.__v):i).__=n,i.__b=n.__b+1,o=null,-1!==(r=i.__i=F(i,t,e,s))&amp;&amp;(s--,(o=t[r])&amp;&amp;(o.__u|=v)),null==o||null===o.__v?(-1==r&amp;&amp;a--,&quot;function&quot;!=typeof i.type&amp;&amp;(i.__u|=p)):r!==e&amp;&amp;(r==e-1?a--:r==e+1?a++:(r&gt;e?a--:a++,i.__u|=p))):i=n.__k[u]=null;if(s)for(u=0;u&lt;c;u++)null!=(o=t[u])&amp;&amp;0==(o.__u&amp;v)&amp;&amp;(o.__e==n.__d&amp;&amp;(n.__d=S(o)),N(o,o))}function E(n,l,t){var u,i;if(&quot;function&quot;==typeof n.type){for(u=n.__k,i=0;u&amp;&amp;i&lt;u.length;i++)u[i]&amp;&amp;(u[i].__=n,l=E(u[i],l,t));return l}n.__e!=l&amp;&amp;(l&amp;&amp;n.type&amp;&amp;!t.contains(l)&amp;&amp;(l=S(n)),t.insertBefore(n.__e,l||null),l=n.__e);do{l=l&amp;&amp;l.nextSibling}while(null!=l&amp;&amp;8===l.nodeType);return l}function F(n,l,t,u){var i=n.key,o=n.type,e=t-1,r=t+1,f=l[t];if(null===f||f&amp;&amp;i==f.key&amp;&amp;o===f.type&amp;&amp;0==(f.__u&amp;v))return t;if(u&gt;(null!=f&amp;&amp;0==(f.__u&amp;v)?1:0))for(;e&gt;=0||r&lt;l.length;){if(e&gt;=0){if((f=l[e])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return e;e--}if(r&lt;l.length){if((f=l[r])&amp;&amp;0==(f.__u&amp;v)&amp;&amp;i==f.key&amp;&amp;o===f.type)return r;r++}}return-1}function H(n,l,t){&quot;-&quot;===l[0]?n.setProperty(l,null==t?&quot;&quot;:t):n[l]=null==t?&quot;&quot;:&quot;number&quot;!=typeof t||w.test(l)?t:t+&quot;px&quot;}function L(n,l,t,u,i){var o;n:if(&quot;style&quot;===l)if(&quot;string&quot;==typeof t)n.style.cssText=t;else{if(&quot;string&quot;==typeof u&amp;&amp;(n.style.cssText=u=&quot;&quot;),u)for(l in u)t&amp;&amp;l in t||H(n.style,l,&quot;&quot;);if(t)for(l in t)u&amp;&amp;t[l]===u[l]||H(n.style,l,t[l])}else if(&quot;o&quot;===l[0]&amp;&amp;&quot;n&quot;===l[1])o=l!==(l=l.replace(/(PointerCapture)$|Capture$/i,&quot;$1&quot;)),l=l.toLowerCase()in n||&quot;onFocusOut&quot;===l||&quot;onFocusIn&quot;===l?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+o]=t,t?u?t.t=u.t:(t.t=f,n.addEventListener(l,o?s:c,o)):n.removeEventListener(l,o?s:c,o);else{if(&quot;http://www.w3.org/2000/svg&quot;==i)l=l.replace(/xlink(H|:h)/,&quot;h&quot;).replace(/sName$/,&quot;s&quot;);else if(&quot;width&quot;!=l&amp;&amp;&quot;height&quot;!=l&amp;&amp;&quot;href&quot;!=l&amp;&amp;&quot;list&quot;!=l&amp;&amp;&quot;form&quot;!=l&amp;&amp;&quot;tabIndex&quot;!=l&amp;&amp;&quot;download&quot;!=l&amp;&amp;&quot;rowSpan&quot;!=l&amp;&amp;&quot;colSpan&quot;!=l&amp;&amp;&quot;role&quot;!=l&amp;&amp;&quot;popover&quot;!=l&amp;&amp;l in n)try{n[l]=null==t?&quot;&quot;:t;break n}catch(n){}&quot;function&quot;==typeof t||(null==t||!1===t&amp;&amp;&quot;-&quot;!==l[4]?n.removeAttribute(l):n.setAttribute(l,&quot;popover&quot;==l&amp;&amp;1==t?&quot;&quot;:t))}}function T(n){return function(t){if(this.l){var u=this.l[t.type+n];if(null==t.u)t.u=f++;else if(t.u&lt;u.t)return;return u(l.event?l.event(t):t)}}}function O(n,t,u,i,o,e,r,f,c,s){var a,h,p,v,d,y,w,m,b,k,S,M,P,$,A,E,F=t.type;if(void 0!==t.constructor)return null;128&amp;u.__u&amp;&amp;(c=!!(32&amp;u.__u),e=[f=t.__e=u.__e]),(a=l.__b)&amp;&amp;a(t);n:if(&quot;function&quot;==typeof F)try{if(m=t.props,b=&quot;prototype&quot;in F&amp;&amp;F.prototype.render,k=(a=F.contextType)&amp;&amp;i[a.__c],S=a?k?k.props.value:a.__:i,u.__c?w=(h=t.__c=u.__c).__=h.__E:(b?t.__c=h=new F(m,S):(t.__c=h=new x(m,S),h.constructor=F,h.render=R),k&amp;&amp;k.sub(h),h.props=m,h.state||(h.state={}),h.context=S,h.__n=i,p=h.__d=!0,h.__h=[],h._sb=[]),b&amp;&amp;null==h.__s&amp;&amp;(h.__s=h.state),b&amp;&amp;null!=F.getDerivedStateFromProps&amp;&amp;(h.__s==h.state&amp;&amp;(h.__s=g({},h.__s)),g(h.__s,F.getDerivedStateFromProps(m,h.__s))),v=h.props,d=h.state,h.__v=t,p)b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;null!=h.componentWillMount&amp;&amp;h.componentWillMount(),b&amp;&amp;null!=h.componentDidMount&amp;&amp;h.__h.push(h.componentDidMount);else{if(b&amp;&amp;null==F.getDerivedStateFromProps&amp;&amp;m!==v&amp;&amp;null!=h.componentWillReceiveProps&amp;&amp;h.componentWillReceiveProps(m,S),!h.__e&amp;&amp;(null!=h.shouldComponentUpdate&amp;&amp;!1===h.shouldComponentUpdate(m,h.__s,S)||t.__v===u.__v)){for(t.__v!==u.__v&amp;&amp;(h.props=m,h.state=h.__s,h.__d=!1),t.__e=u.__e,t.__k=u.__k,t.__k.some(function(n){n&amp;&amp;(n.__=t)}),M=0;M&lt;h._sb.length;M++)h.__h.push(h._sb[M]);h._sb=[],h.__h.length&amp;&amp;r.push(h);break n}null!=h.componentWillUpdate&amp;&amp;h.componentWillUpdate(m,h.__s,S),b&amp;&amp;null!=h.componentDidUpdate&amp;&amp;h.__h.push(function(){h.componentDidUpdate(v,d,y)})}if(h.context=S,h.props=m,h.__P=n,h.__e=!1,P=l.__r,$=0,b){for(h.state=h.__s,h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),A=0;A&lt;h._sb.length;A++)h.__h.push(h._sb[A]);h._sb=[]}else do{h.__d=!1,P&amp;&amp;P(t),a=h.render(h.props,h.state,h.context),h.state=h.__s}while(h.__d&amp;&amp;++$&lt;25);h.state=h.__s,null!=h.getChildContext&amp;&amp;(i=g(g({},i),h.getChildContext())),b&amp;&amp;!p&amp;&amp;null!=h.getSnapshotBeforeUpdate&amp;&amp;(y=h.getSnapshotBeforeUpdate(v,d)),I(n,_(E=null!=a&amp;&amp;a.type===C&amp;&amp;null==a.key?a.props.children:a)?E:[E],t,u,i,o,e,r,f,c,s),h.base=t.__e,t.__u&amp;=-161,h.__h.length&amp;&amp;r.push(h),w&amp;&amp;(h.__E=h.__=null)}catch(n){if(t.__v=null,c||null!=e){for(t.__u|=c?160:128;f&amp;&amp;8===f.nodeType&amp;&amp;f.nextSibling;)f=f.nextSibling;e[e.indexOf(f)]=null,t.__e=f}else t.__e=u.__e,t.__k=u.__k;l.__e(n,t,u)}else null==e&amp;&amp;t.__v===u.__v?(t.__k=u.__k,t.__e=u.__e):t.__e=j(u.__e,t,u,i,o,e,r,c,s);(a=l.diffed)&amp;&amp;a(t)}function V(n,t,u){t.__d=void 0;for(var i=0;i&lt;u.length;i++)z(u[i],u[++i],u[++i]);l.__c&amp;&amp;l.__c(t,n),n.some(function(t){try{n=t.__h,t.__h=[],n.some(function(n){n.call(t)})}catch(n){l.__e(n,t.__v)}})}function j(t,u,i,o,e,r,f,c,s){var a,h,p,v,y,w,g,b=i.props,k=u.props,C=u.type;if(&quot;svg&quot;===C?e=&quot;http://www.w3.org/2000/svg&quot;:&quot;math&quot;===C?e=&quot;http://www.w3.org/1998/Math/MathML&quot;:e||(e=&quot;http://www.w3.org/1999/xhtml&quot;),null!=r)for(a=0;a&lt;r.length;a++)if((y=r[a])&amp;&amp;&quot;setAttribute&quot;in y==!!C&amp;&amp;(C?y.localName===C:3===y.nodeType)){t=y,r[a]=null;break}if(null==t){if(null===C)return document.createTextNode(k);t=document.createElementNS(e,C,k.is&amp;&amp;k),c&amp;&amp;(l.__m&amp;&amp;l.__m(u,r),c=!1),r=null}if(null===C)b===k||c&amp;&amp;t.data===k||(t.data=k);else{if(r=r&amp;&amp;n.call(t.childNodes),b=i.props||d,!c&amp;&amp;null!=r)for(b={},a=0;a&lt;t.attributes.length;a++)b[(y=t.attributes[a]).name]=y.value;for(a in b)if(y=b[a],&quot;children&quot;==a);else if(&quot;dangerouslySetInnerHTML&quot;==a)p=y;else if(!(a in k)){if(&quot;value&quot;==a&amp;&amp;&quot;defaultValue&quot;in k||&quot;checked&quot;==a&amp;&amp;&quot;defaultChecked&quot;in k)continue;L(t,a,null,y,e)}for(a in k)y=k[a],&quot;children&quot;==a?v=y:&quot;dangerouslySetInnerHTML&quot;==a?h=y:&quot;value&quot;==a?w=y:&quot;checked&quot;==a?g=y:c&amp;&amp;&quot;function&quot;!=typeof y||b[a]===y||L(t,a,y,b[a],e);if(h)c||p&amp;&amp;(h.__html===p.__html||h.__html===t.innerHTML)||(t.innerHTML=h.__html),u.__k=[];else if(p&amp;&amp;(t.innerHTML=&quot;&quot;),I(t,_(v)?v:[v],u,i,o,&quot;foreignObject&quot;===C?&quot;http://www.w3.org/1999/xhtml&quot;:e,r,f,r?r[0]:i.__k&amp;&amp;S(i,0),c,s),null!=r)for(a=r.length;a--;)m(r[a]);c||(a=&quot;value&quot;,&quot;progress&quot;===C&amp;&amp;null==w?t.removeAttribute(&quot;value&quot;):void 0!==w&amp;&amp;(w!==t[a]||&quot;progress&quot;===C&amp;&amp;!w||&quot;option&quot;===C&amp;&amp;w!==b[a])&amp;&amp;L(t,a,w,b[a],e),a=&quot;checked&quot;,void 0!==g&amp;&amp;g!==t[a]&amp;&amp;L(t,a,g,b[a],e))}return t}function z(n,t,u){try{if(&quot;function&quot;==typeof n){var i=&quot;function&quot;==typeof n.__u;i&amp;&amp;n.__u(),i&amp;&amp;null==t||(n.__u=n(t))}else n.current=t}catch(n){l.__e(n,u)}}function N(n,t,u){var i,o;if(l.unmount&amp;&amp;l.unmount(n),(i=n.ref)&amp;&amp;(i.current&amp;&amp;i.current!==n.__e||z(i,null,t)),null!=(i=n.__c)){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(n){l.__e(n,t)}i.base=i.__P=null}if(i=n.__k)for(o=0;o&lt;i.length;o++)i[o]&amp;&amp;N(i[o],t,u||&quot;function&quot;!=typeof n.type);u||m(n.__e),n.__c=n.__=n.__e=n.__d=void 0}function R(n,l,t){return this.constructor(n,t)}function q(t,u,i){var o,e,r,f;l.__&amp;&amp;l.__(t,u),e=(o=&quot;function&quot;==typeof i)?null:i&amp;&amp;i.__k||u.__k,r=[],f=[],O(u,t=(!o&amp;&amp;i||u).__k=b(C,null,[t]),e||d,d,u.namespaceURI,!o&amp;&amp;i?[i]:e?null:u.firstChild?n.call(u.childNodes):null,r,!o&amp;&amp;i?i:e?e.__e:u.firstChild,o,f),V(r,t,f)}n=y.slice,l={__e:function(n,l,t,u){for(var i,o,e;l=l.__;)if((i=l.__c)&amp;&amp;!i.__)try{if((o=i.constructor)&amp;&amp;null!=o.getDerivedStateFromError&amp;&amp;(i.setState(o.getDerivedStateFromError(n)),e=i.__d),null!=i.componentDidCatch&amp;&amp;(i.componentDidCatch(n,u||{}),e=i.__d),e)return i.__E=i}catch(l){n=l}throw n}},t=0,u=function(n){return null!=n&amp;&amp;null==n.constructor},x.prototype.setState=function(n,l){var t;t=null!=this.__s&amp;&amp;this.__s!==this.state?this.__s:this.__s=g({},this.state),&quot;function&quot;==typeof n&amp;&amp;(n=n(g({},t),this.props)),n&amp;&amp;g(t,n),null!=n&amp;&amp;this.__v&amp;&amp;(l&amp;&amp;this._sb.push(l),P(this))},x.prototype.forceUpdate=function(n){this.__v&amp;&amp;(this.__e=!0,n&amp;&amp;this.__h.push(n),P(this))},x.prototype.render=C,i=[],e=&quot;function&quot;==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,r=function(n,l){return n.__v.__b-l.__v.__b},$.__r=0,f=0,c=T(!1),s=T(!0),a=0,h={__proto__:null,render:q,hydrate:function n(l,t){q(l,t,n)},createElement:b,h:b,Fragment:C,createRef:function(){return{current:null}},isValidElement:u,Component:x,cloneElement:function(l,t,u){var i,o,e,r,f=g({},l.props);for(e in l.type&amp;&amp;l.type.defaultProps&amp;&amp;(r=l.type.defaultProps),t)&quot;key&quot;==e?i=t[e]:&quot;ref&quot;==e?o=t[e]:f[e]=void 0===t[e]&amp;&amp;void 0!==r?r[e]:t[e];return arguments.length&gt;2&amp;&amp;(f.children=arguments.length&gt;3?n.call(arguments,2):u),k(l.type,f,i||l.key,o||l.ref,null)},createContext:function(n,l){var t={__c:l=&quot;__cC&quot;+a++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var t,u;return this.getChildContext||(t=new Set,(u={})[l]=this,this.getChildContext=function(){return u},this.componentWillUnmount=function(){t=null},this.shouldComponentUpdate=function(n){this.props.value!==n.value&amp;&amp;t.forEach(function(n){n.__e=!0,P(n)})},this.sub=function(n){t.add(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){t&amp;&amp;t.delete(n),l&amp;&amp;l.call(n)}}),n.children}};return t.Provider.__=t.Consumer.contextType=t},toChildArray:function n(l,t){return t=t||[],null==l||&quot;boolean&quot;==typeof l||(_(l)?l.some(function(l){n(l,t)}):t.push(l)),t},options:l},typeof module&lt;&quot;u&quot;?module.exports=h:self.preact=h});
+//# sourceMappingURL=preact.min.umd.js.map
+&lt;/script&gt;
+&lt;script&gt;/* Runtime mini: menjalankan template .dc.html (sc-for, sc-if, {{lubang}}, onClick) tanpa editor kanvas. */
+(function () {
+  var h = preact.h;
+  var render = preact.render;
+
+  class DCLogic {
+    constructor(props) {
+      this.props = props || {};
+      this.state = {};
+      this.__render = null;
+    }
+    setState(p) {
+      var next = typeof p === &#x27;function&#x27; ? p(this.state, this.props) : p;
+      if (next == null) return;
+      this.state = Object.assign({}, this.state, next);
+      if (this.__render) this.__render();
+    }
+    forceUpdate() {
+      if (this.__render) this.__render();
+    }
+  }
+  window.DCLogic = DCLogic;
+
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+
+  function lookup(scope, path) {
+    if (path === &#x27;true&#x27;) return true;
+    if (path === &#x27;false&#x27;) return false;
+    if (path === &#x27;null&#x27;) return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split(&#x27;.&#x27;);
+    var cur = scope;
+    for (var i = 0; i &lt; parts.length; i++) {
+      if (cur == null) return undefined;
+      cur = cur[parts[i]];
+    }
+    return cur;
+  }
+
+  function evalAttr(value, scope) {
+    var m = WHOLE.exec(value);
+    if (m) return lookup(scope, m[1]);
+    return value.replace(HOLE, function (_, p) {
+      var v = lookup(scope, p);
+      return v == null ? &#x27;&#x27; : String(v);
+    });
+  }
+
+  function flatten(list, out) {
+    for (var i = 0; i &lt; list.length; i++) {
+      var c = list[i];
+      if (Array.isArray(c)) flatten(c, out);
+      else if (c !== null &amp;&amp; c !== undefined &amp;&amp; c !== false) out.push(c);
+    }
+    return out;
+  }
+
+  function buildChildren(node, scope) {
+    var out = [];
+    for (var i = 0; i &lt; node.childNodes.length; i++) {
+      out.push(build(node.childNodes[i], scope));
+    }
+    return flatten(out, []);
+  }
+
+  function build(node, scope) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      if (!t.trim() &amp;&amp; t.indexOf(&#x27;\n&#x27;) &gt;= 0) return null;
+      var m = WHOLE.exec(t);
+      if (m) {
+        var raw = lookup(scope, m[1]);
+        return raw == null ? &#x27;&#x27; : String(raw);
+      }
+      return t.replace(HOLE, function (_, p) {
+        var v = lookup(scope, p);
+        return v == null ? &#x27;&#x27; : String(v);
+      });
+    }
+    if (node.nodeType !== 1) return null;
+    var tag = node.localName;
+
+    if (tag === &#x27;sc-if&#x27;) {
+      var cond = evalAttr(node.getAttribute(&#x27;value&#x27;) || &#x27;&#x27;, scope);
+      return cond ? buildChildren(node, scope) : null;
+    }
+    if (tag === &#x27;sc-for&#x27;) {
+      var list = evalAttr(node.getAttribute(&#x27;list&#x27;) || &#x27;&#x27;, scope) || [];
+      var as = node.getAttribute(&#x27;as&#x27;) || &#x27;item&#x27;;
+      var out = [];
+      for (var i = 0; i &lt; list.length; i++) {
+        var sub = Object.create(scope);
+        sub[as] = list[i];
+        sub.$index = i;
+        out.push(buildChildren(node, sub));
+      }
+      return flatten(out, []);
+    }
+
+    var props = {};
+    for (var a = 0; a &lt; node.attributes.length; a++) {
+      var name = node.attributes[a].name;
+      var val = node.attributes[a].value;
+      if (name.indexOf(&#x27;hint-&#x27;) === 0) continue;
+      if (name.indexOf(&#x27;on&#x27;) === 0 &amp;&amp; name.length &gt; 2) {
+        var fn = evalAttr(val, scope);
+        if (typeof fn === &#x27;function&#x27;) {
+          var evt = name.toLowerCase();
+          if (evt === &#x27;onchange&#x27; &amp;&amp; tag === &#x27;input&#x27;) evt = &#x27;oninput&#x27;;
+          props[evt] = fn;
+        }
+        continue;
+      }
+      props[name] = evalAttr(val, scope);
+    }
+    return h.apply(null, [tag, props].concat(buildChildren(node, scope)));
+  }
+
+  window.DCMount = function (templateEl, mountEl, ComponentClass, size) {
+    var root = templateEl.content.firstElementChild;
+    var comp = new ComponentClass({});
+    function draw() {
+      var vals = comp.renderVals();
+      render(build(root, vals), mountEl);
+    }
+    comp.__render = draw;
+    draw();
+
+    var stage = mountEl;
+    function fit() {
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var s = Math.min(vw / size.w, vh / size.h, 2);
+      stage.style.width = size.w + &#x27;px&#x27;;
+      stage.style.height = size.h + &#x27;px&#x27;;
+      stage.style.transformOrigin = &#x27;0 0&#x27;;
+      stage.style.transform = &#x27;scale(&#x27; + s + &#x27;)&#x27;;
+      stage.style.left = Math.max(0, (vw - size.w * s) / 2) + &#x27;px&#x27;;
+      stage.style.top = Math.max(0, (vh - size.h * s) / 2) + &#x27;px&#x27;;
+    }
+    window.addEventListener(&#x27;resize&#x27;, fit);
+    fit();
+    return comp;
+  };
+})();
+&lt;/script&gt;
+&lt;script&gt;
+
+class Component extends DCLogic {
+  S(st) {
+    return Object.assign(this.D(), st || {});
+  }
+
+  fx(n) {
+    if (n === 0) return &#x27;fx0&#x27;;
+    return n % 2 === 1 ? &#x27;fxA&#x27; : &#x27;fxB&#x27;;
+  }
+
+  alt(prefix, n) {
+    if (n === 0) return &#x27;&#x27;;
+    return prefix + (n % 2 === 1 ? &#x27;A&#x27; : &#x27;B&#x27;);
+  }
+
+  burstParticles() {
+    const particles = [];
+    for (let i = 0; i &lt; 12; i++) {
+      particles.push({ cls: &#x27;arm r&#x27; + i + &#x27; c&#x27; + (i % 4) });
+    }
+    return particles;
+  }
+
+  nf(x) {
+    if (Math.abs(x - Math.round(x)) &lt; 1e-9) return String(Math.round(x));
+    return x.toFixed(2).replace(&#x27;.&#x27;, &#x27;,&#x27;);
+  }
+
+  isInt(x) {
+    return Math.abs(x - Math.round(x)) &lt; 1e-9;
+  }
+
+  commit(patch) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      const nxt = Object.assign({}, cur, patch);
+      const out = Object.assign({}, patch);
+      if (this.isBulat(nxt) &amp;&amp; !this.isBulat(cur)) out.fx = cur.fx + 1;
+      return out;
+    });
+  }
+
+  setNum(key, raw, min, max) {
+    let v = Math.round(Number(raw));
+    if (isNaN(v)) return;
+    v = Math.max(min, Math.min(max, v));
+    const patch = {};
+    patch[key] = v;
+    this.commit(patch);
+  }
+
+  pt(P) {
+    return P[0].toFixed(1) + &#x27;,&#x27; + P[1].toFixed(1);
+  }
+
+  ps(P) {
+    return P[0].toFixed(1) + &#x27; &#x27; + P[1].toFixed(1);
+  }
+
+  poly() {
+    const a = Array.prototype.slice.call(arguments);
+    return a.map((P) =&gt; this.pt(P)).join(&#x27; &#x27;);
+  }
+
+  unit(P, Q) {
+    const dx = Q[0] - P[0];
+    const dy = Q[1] - P[1];
+    const L = Math.hypot(dx, dy) || 1;
+    return [dx / L, dy / L];
+  }
+
+  rmark(V, P1, P2, s) {
+    const u1 = this.unit(V, P1);
+    const u2 = this.unit(V, P2);
+    const a = [V[0] + s * u1[0], V[1] + s * u1[1]];
+    const b = [V[0] + s * (u1[0] + u2[0]), V[1] + s * (u1[1] + u2[1])];
+    const c = [V[0] + s * u2[0], V[1] + s * u2[1]];
+    return this.poly(a, b, c);
+  }
+
+  mid(P, Q) {
+    return [(P[0] + Q[0]) / 2, (P[1] + Q[1]) / 2];
+  }
+
+  geo(p, l, t, pyr) {
+    const kx = 0.46;
+    const ky = 0.30;
+    const hu = pyr ? Math.max(t + l * ky / 2, l * ky) : t + l * ky;
+    const u = Math.min(340 / (p + l * kx), 265 / hu, 46);
+    const w = (p + l * kx) * u;
+    const hh = hu * u;
+    const ox = (500 - w) / 2;
+    const oy = 212 + hh / 2 + 10;
+    const pr = (x, y, z) =&gt; [ox + (x + y * kx) * u, oy - (z + y * ky) * u];
+    return { u: u, pr: pr };
+  }
+
+  lab(P, dx, dy, t, c, anc, o) {
+    return { x: (P[0] + dx).toFixed(1), y: (P[1] + dy).toFixed(1), t: t, c: c, anc: anc || &#x27;middle&#x27;, o: o === undefined ? &#x27;1&#x27; : o };
+  }
+
+  vl(P, dx, dy) {
+    return { x: (P[0] + dx).toFixed(1), y: (P[1] + dy).toFixed(1) };
+  }
+
+  inset(legH, legV, tH, tV, tY, cH, cV, cY) {
+    const s = Math.min(190 / legH, 40 / legV);
+    const W = legH * s;
+    const Hv = legV * s;
+    const x0 = Math.max(78, (330 - W) / 2 + 24);
+    const y0 = 68;
+    const O = [x0, y0];
+    const Hh = [x0 + W, y0];
+    const V = [x0, y0 - Hv];
+    const L = Math.hypot(W, Hv) || 1;
+    const rs = Math.max(5, Math.min(12, W * 0.3, Hv * 0.3));
+    const m = this.mid(V, Hh);
+    return {
+      pts: this.poly(O, Hh, V),
+      rm: this.poly([x0 + rs, y0], [x0 + rs, y0 - rs], [x0, y0 - rs]),
+      h: { x: (x0 + W / 2).toFixed(1), y: (y0 + 16).toFixed(1), t: tH, c: cH },
+      v: { x: (x0 - 8).toFixed(1), y: (y0 - Hv / 2 + 5).toFixed(1), t: tV, c: cV },
+      y: { x: (m[0] + Hv / L * 18).toFixed(1), y: (m[1] - W / L * 18 + 5).toFixed(1), t: tY, c: cY }
+    };
+  }
+
+  sliderRow(key, label, cls, rng, min, max, val, show, aria, setter) {
+    return { label: label, cls: cls, rng: rng, min: min, max: max, val: val, show: show, aria: aria, set: setter };
+  }
+
+  D() {
+    return { t: 4, r: 3, d: 6, m: &#x27;r&#x27;, phi: 20, fx: 0 };
+  }
+
+  rad(s) {
+    return s.m === &#x27;d&#x27; ? s.d / 2 : s.r;
+  }
+
+  res(s) {
+    const r = this.rad(s);
+    return Math.sqrt(s.t * s.t + r * r);
+  }
+
+  isBulat(s) {
+    return this.isInt(this.res(s));
+  }
+
+  setMode(m) {
+    this.setState((st) =&gt; {
+      const cur = this.S(st);
+      if (cur.m === m) return null;
+      if (m === &#x27;d&#x27;) return { m: &#x27;d&#x27;, d: cur.r * 2 };
+      return { m: &#x27;r&#x27;, r: Math.max(1, Math.round(cur.d / 2)) };
+    });
+  }
+
+  renderVals() {
+    const s = this.S(this.state);
+    const t = s.t;
+    const r = this.rad(s);
+    const dm = s.m === &#x27;d&#x27;;
+    const f1 = (n) =&gt; n.toFixed(1);
+    const u = Math.min(180 / r, 235 / t, 30);
+    const rx = r * u;
+    const ry = rx * 0.3;
+    const H = t * u + ry;
+    const apexY = 205 - H / 2 + 4;
+    const cy = apexY + t * u;
+    const cx = 250;
+    const T = [cx, apexY];
+    const A = [cx, cy];
+    const ph = s.phi * Math.PI / 180;
+    const B = [cx + rx * Math.cos(ph), cy + ry * Math.sin(ph)];
+    const L = [cx - rx, cy];
+    const R = [cx + rx, cy];
+    const body = &#x27;M&#x27; + this.ps(L) + &#x27; L&#x27; + this.ps(T) + &#x27; L&#x27; + this.ps(R) + &#x27; A&#x27; + f1(rx) + &#x27; &#x27; + f1(ry) + &#x27; 0 0 1 &#x27; + this.ps(L) + &#x27; Z&#x27;;
+    const back = &#x27;M&#x27; + this.ps(L) + &#x27; A&#x27; + f1(rx) + &#x27; &#x27; + f1(ry) + &#x27; 0 0 1 &#x27; + this.ps(R);
+    const seg = (P, Q) =&gt; ({ x1: P[0].toFixed(1), y1: P[1].toFixed(1), x2: Q[0].toFixed(1), y2: Q[1].toFixed(1) });
+    const dot = (P) =&gt; ({ x: P[0].toFixed(1), y: P[1].toFixed(1) });
+
+    const r2 = r * r;
+    const s2 = t * t + r2;
+    const sv = Math.sqrt(s2);
+    const bulat = this.isInt(sv);
+    const dirAB = this.unit(A, B);
+    const mTB = this.mid(T, B);
+    const side = B[0] &gt;= cx ? 1 : -1;
+    const nTB = this.unit(T, B);
+    let nx = -nTB[1];
+    let ny = nTB[0];
+    if ((mTB[0] - A[0]) * nx + (mTB[1] - A[1]) * ny &lt; 0) {
+      nx = -nx;
+      ny = -ny;
+    }
+    const mAB = this.mid(A, B);
+
+    const sliders = [
+      this.sliderRow(&#x27;t&#x27;, &#x27;t&#x27;, &#x27;cD&#x27;, &#x27;sD&#x27;, 1, 12, t, t, &#x27;Tinggi kerucut t&#x27;, (e) =&gt; this.setNum(&#x27;t&#x27;, e.target.value, 1, 12)),
+      dm
+        ? this.sliderRow(&#x27;d&#x27;, &#x27;d&#x27;, &#x27;cA&#x27;, &#x27;sA&#x27;, 2, 20, s.d, s.d, &#x27;Diameter alas d&#x27;, (e) =&gt; this.setNum(&#x27;d&#x27;, e.target.value, 2, 20))
+        : this.sliderRow(&#x27;r&#x27;, &#x27;r&#x27;, &#x27;cA&#x27;, &#x27;sA&#x27;, 1, 10, s.r, s.r, &#x27;Jari-jari alas r&#x27;, (e) =&gt; this.setNum(&#x27;r&#x27;, e.target.value, 1, 10)),
+      this.sliderRow(&#x27;phi&#x27;, &#x27;B&#x27;, &#x27;cE&#x27;, &#x27;sE&#x27;, 0, 360, s.phi, s.phi + &#x27;°&#x27;, &#x27;Posisi titik B mengelilingi alas&#x27;, (e) =&gt; this.setNum(&#x27;phi&#x27;, e.target.value, 0, 360))
+    ];
+    const modes = [
+      { m: &#x27;r&#x27;, label: &#x27;Jari-jari r&#x27; },
+      { m: &#x27;d&#x27;, label: &#x27;Diameter d&#x27; }
+    ].map((q) =&gt; ({
+      label: q.label,
+      pressed: s.m === q.m,
+      cls: &#x27;btn press&#x27; + (s.m === q.m ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.setMode(q.m)
+    }));
+    const presets = [[4, 3], [12, 5], [8, 6]].map((q) =&gt; ({
+      label: &#x27;t = &#x27; + q[0] + &#x27;, r = &#x27; + q[1],
+      pressed: t === q[0] &amp;&amp; r === q[1],
+      cls: &#x27;btn press&#x27; + (t === q[0] &amp;&amp; r === q[1] ? &#x27; on&#x27; : &#x27;&#x27;),
+      pick: () =&gt; this.commit({ t: q[0], r: q[1], d: q[1] * 2 })
+    }));
+
+    const ins = this.inset(r, t, &#x27;r = &#x27; + this.nf(r), &#x27;t = &#x27; + t, &#x27;s = &#x27; + this.nf(sv), &#x27;#1D4780&#x27;, &#x27;#6A3590&#x27;, &#x27;#B02A24&#x27;);
+    const tup = [t, r].sort((x, y) =&gt; x - y);
+    const l1 = dm ? &#x27;r = d ÷ 2 = &#x27; + s.d + &#x27; ÷ 2 = &#x27; + this.nf(r) : &#x27;TB² = TA² + AB²&#x27;;
+    const l2 = &#x27;s² = t² + r² = &#x27; + (t * t) + &#x27; + &#x27; + this.nf(r2) + &#x27; = &#x27; + this.nf(s2);
+    const l3 = bulat ? &#x27;s = √&#x27; + this.nf(s2) + &#x27; = &#x27; + this.nf(sv) : &#x27;s = √&#x27; + this.nf(s2) + &#x27; ≈ &#x27; + this.nf(sv);
+
+    return {
+      particles: this.burstParticles(),
+      fxCls: this.fx(s.fx),
+      body: body,
+      back: back,
+      tri: this.poly(T, A, B),
+      ta: seg(T, A),
+      ab: seg(A, B),
+      tb: seg(T, B),
+      rm: this.rmark(A, [cx, cy - 40], B, 12),
+      dT: dot(T),
+      dA: dot(A),
+      dB: dot(B),
+      vT: this.vl(T, 0, -14),
+      vA: this.vl(A, -16, 22),
+      vB: this.vl(B, dirAB[0] * 22 + (dirAB[0] &gt;= 0 ? 6 : -6), dirAB[1] * 16 + 10),
+      lt: side &gt; 0 ? this.lab(this.mid(T, A), -10, 5, &#x27;t = &#x27; + t, &#x27;#6A3590&#x27;, &#x27;end&#x27;) : this.lab(this.mid(T, A), 10, 5, &#x27;t = &#x27; + t, &#x27;#6A3590&#x27;, &#x27;start&#x27;),
+      lr: this.lab(mAB, 0, ry + 30 + (B[1] &gt; cy ? 0 : 0), &#x27;r = &#x27; + this.nf(r), &#x27;#1D4780&#x27;),
+      ls: this.lab(mTB, nx * 24, ny * 24 + 6, &#x27;s = &#x27; + this.nf(sv), &#x27;#B02A24&#x27;),
+      lg: this.lab(mTB, nx * 24, ny * 24 - 12, &#x27;garis pelukis&#x27;, &#x27;#B02A24&#x27;),
+      caption: &#x27;Kerucut dengan tinggi t = &#x27; + t + &#x27; dan jari-jari r = &#x27; + this.nf(r),
+      sliders: sliders,
+      keyF: &#x27;s = √(t² + r²)&#x27;,
+      keyT: &#x27;Garis pelukis (s) adalah garis dari puncak T ke keliling alas (garis merah). Jika diketahui d: s = √(t² + (d ÷ 2)²).&#x27;,
+      modes: modes,
+      presets: presets,
+      boxCls: bulat ? &#x27;verdict right &#x27; + this.alt(&#x27;pop&#x27;, s.fx) : &#x27;verdict&#x27;,
+      big: bulat ? &#x27;s = &#x27; + this.nf(sv) : &#x27;s ≈ &#x27; + this.nf(sv),
+      l1: l1,
+      l2: l2,
+      l3: l3,
+      l1Cls: &#x27;&#x27;, l2Cls: &#x27;&#x27;, l3Cls: &#x27;&#x27;,
+      rumus: dm ? &#x27;Rumus: s = √(t² + (d ÷ 2)²)&#x27; : &#x27;Rumus: s = √(t² + r²)&#x27;,
+      isBulat: bulat,
+      note: &#x27;Bilangan bulat! (&#x27; + tup[0] + &#x27;, &#x27; + tup[1] + &#x27;, &#x27; + this.nf(sv) + &#x27;) adalah triple Pythagoras.&#x27;,
+      inTitle: &#x27;Segitiga TAB (siku-siku di A)&#x27;,
+      inPts: ins.pts, inRm: ins.rm, inH: ins.h, inV: ins.v, inY: ins.y
+    };
+  }
+}
+
+&lt;/script&gt;
+&lt;script&gt;
+DCMount(document.getElementById(&#x27;tpl&#x27;), document.getElementById(&#x27;stage&#x27;), Component, { w: 1000, h: 740 });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></section>
+
+</body>
+</html>
